@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "eyebrow": "Contacto",
+    "title": "Cuéntanos tu proyecto",
+    "lead": "Haremos todo lo posible por responderte cuanto antes."
+  },
+  "form": {
+    "title": "Formulario de solicitud de presupuesto",
+    "progress": "Tu solicitud:",
+    "group": {
+      "you": "Tus datos",
+      "project": "Tu proyecto",
+      "services": "Servicios adicionales"
+    },
+    "name": "Nombre",
+    "company": "Empresa",
+    "email": "Email",
+    "phone": "Teléfono",
+    "technology": {
+      "label": "Tipo de fabricación",
+      "placeholder": "Selecciona una tecnología",
+      "stamping": "Estampación metálica",
+      "forging": "Forja",
+      "tube": "Conformado de tubo",
+      "machining": "Mecanizado",
+      "wire": "Corte por hilo",
+      "welding": "Soldadura",
+      "molds": "Moldes de inyección",
+      "other": "Otra"
+    },
+    "type": {
+      "legend": "Tipo de proyecto",
+      "prototype": { "title": "Prototipo", "text": "Validar la pieza antes de la serie" },
+      "short": { "title": "Serie corta", "text": "Pocas unidades" },
+      "long": { "title": "Serie larga", "text": "Producción continuada" }
+    },
+    "pieces": "Piezas por año (aproximado)",
+    "date": "Primeras piezas para el",
+    "message": "Cuéntanos tu proyecto",
+    "messageHint": "Material, medidas, acabado… cuanto más detalle, mejor.",
+    "services": {
+      "approval": "Homologación",
+      "tooling": "Utillajes",
+      "warehouse": "Almacén regulador"
+    },
+    "privacy": {
+      "before": "Acepto la",
+      "link": "política de privacidad"
+    },
+    "drawings": "¿Tienes planos? Envíalos por correo a {{s:email}} indicando tu nombre y empresa.",
+    "submit": "Enviar solicitud"
+  },
+  "success": {
+    "title": "¡Solicitud enviada!",
+    "text": "Hemos recibido tu solicitud. Haremos todo lo posible por responderte cuanto antes.",
+    "again": "Enviar otra solicitud"
+  },
+  "card": {
+    "status": "Haremos todo lo posible por responderte cuanto antes",
+    "title": "Datos de contacto",
+    "country": "España",
+    "map": "Ver en el mapa"
+  },
+  "faq": {
+    "eyebrow": "Dudas habituales",
+    "title": "Preguntas frecuentes",
+    "items": {
+      "1": { "q": "¿Cómo puedo pedir un presupuesto?", "a": "Rellena el formulario de esta página o escríbenos a {{s:email}} con tu plano o una descripción de la pieza. Haremos todo lo posible por responderte cuanto antes." },
+      "2": { "q": "¿Hacéis prototipos?", "a": "Sí. La fabricación de prototipos es una de las etapas de nuestra metodología de trabajo." },
+      "3": { "q": "¿Dónde se fabrican las piezas?", "a": "La ingeniería y la gestión de proyectos se hacen en España. La fabricación seriada se realiza en China y los almacenes reguladores están en Amorebieta y Barcelona." },
+      "4": { "q": "¿Fabricáis moldes de inyección?", "a": "Sí. Tenemos un equipo de ingeniería especializado en moldes de inyección y prototipos, y estamos asociados con un moldista que dispone de 2.000 m² de instalaciones." },
+      "5": { "q": "¿Para qué sectores trabajáis?", "a": "Para automoción, eléctrico, electrodoméstico, seguridad vial, bienes de equipo, energías renovables, agricultura y sanitario." },
+      "6": { "q": "¿Subcontratáis alguna tecnología?", "a": "Sí, cuando es necesario. Tenemos personal cualificado y un amplio conocimiento de proveedores de otras tecnologías, como inyección de plástico o aluminio." }
+    }
+  }
+}

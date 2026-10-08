@@ -1,0 +1,28 @@
+{
+  "name": "LCC Manufacturing",
+  "short_name": "LCC",
+  "description": "Desarrollo de proyectos y fabricación industrial: estampación, forja, conformado de tubo, mecanizados, corte por hilo y soldadura. Amorebieta-Etxano (Bizkaia).",
+  "lang": "es",
+  "start_url": "./",
+  "display": "browser",
+  "theme_color": "#07163a",
+  "background_color": "#07163a",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "form": {
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "email": "Introduce un correo electrónico válido.",
+      "message": "Cuéntanos algo más sobre tu proyecto (mínimo 10 caracteres).",
+      "pieces": "Introduce un número entero entre 1 y 100.000.000.",
+      "privacy": "Debes aceptar la política de privacidad para enviar la solicitud.",
+      "phone": "Introduce un teléfono válido (números, espacios y los signos + - ( ))."
+    },
+    "invalid": "Revisa los campos marcados en rojo.",
+    "sending": "Enviando…",
+    "sendingStatus": "Enviando tu solicitud…",
+    "failed": "No hemos podido enviar la solicitud. Inténtalo de nuevo o escríbenos a {email}.",
+    "mailOpened": "Se ha abierto tu programa de correo con la solicitud preparada. Si no se abre, escríbenos a {email}.",
+    "mailSubject": "Solicitud de presupuesto web: {company}"
+  },
+  "lightbox": {
+    "label": "Visor de imágenes",
+    "close": "Cerrar",
+    "prev": "Pieza anterior",
+    "next": "Pieza siguiente",
+    "of": "de"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "eyebrow": "Información legal",
+    "title": "Política de privacidad y cookies",
+    "lead": "Cómo tratamos tus datos personales y qué almacena este sitio web en tu dispositivo."
+  },
+  "updated": "Última actualización: octubre de 2026",
+  "controller": {
+    "title": "Responsable del tratamiento",
+    "intro": "El responsable del tratamiento de los datos personales recogidos a través de este sitio web es:",
+    "name": "Responsable",
+    "taxId": "CIF",
+    "address": "Domicilio",
+    "email": "Correo electrónico",
+    "country": "España"
+  },
+  "sections": {
+    "2": {
+      "title": "Qué datos tratamos",
+      "body": "<p>Tratamos los datos que nos facilitas al enviar el formulario de presupuesto: nombre, empresa, correo electrónico, teléfono (opcional) y los detalles de tu proyecto (tipo de fabricación, tipo de proyecto, piezas por año, fecha deseada, mensaje y servicios adicionales). También registramos el idioma de la página desde la que escribes.</p><p>Como cualquier servidor web, el servicio de alojamiento puede registrar datos técnicos de la conexión (como la dirección IP) con fines de seguridad y funcionamiento.</p>"
+    },
+    "3": {
+      "title": "Para qué los usamos",
+      "body": "<p>Usamos tus datos para atender tu solicitud de presupuesto o tu consulta y para comunicarnos contigo sobre ella. No tomamos decisiones automatizadas ni elaboramos perfiles con tus datos.</p>"
+    },
+    "4": {
+      "title": "Base jurídica",
+      "body": "<p>La base jurídica es tu consentimiento (artículo 6.1.a del Reglamento General de Protección de Datos, RGPD), que otorgas al marcar la casilla de aceptación, y la aplicación de medidas precontractuales a petición tuya (artículo 6.1.b del RGPD).</p>"
+    },
+    "5": {
+      "title": "Cuánto tiempo los conservamos",
+      "body": "<p>Conservaremos tus datos durante el tiempo necesario para atender tu solicitud y, después, debidamente bloqueados durante los plazos legales de prescripción de posibles responsabilidades.</p>"
+    },
+    "6": {
+      "title": "Destinatarios y encargados del tratamiento",
+      "body": "<p>No cedemos tus datos a terceros, salvo obligación legal. Para el alojamiento del sitio web y el almacenamiento de las solicitudes utilizamos los servicios de Google (Google Cloud / Firebase) como encargado del tratamiento, con las garantías adecuadas previstas en el RGPD. Las solicitudes se almacenan en servidores ubicados en la Unión Europea.</p>"
+    },
+    "7": {
+      "title": "Tus derechos",
+      "body": "<p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a <a href=\"mailto:{{s:email}}\">{{s:email}}</a>, indicando el derecho que deseas ejercer y los datos necesarios para identificarte.</p><p>Si consideras que tus datos no se han tratado correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>).</p>"
+    },
+    "8": {
+      "title": "Cookies y almacenamiento local",
+      "body": "<p>Este sitio web no utiliza cookies propias ni de terceros, ni herramientas de analítica o publicidad, y no guarda información en tu dispositivo. Por ello no es necesario solicitar tu consentimiento para el uso de cookies.</p><p>Si en el futuro incorporáramos cookies o herramientas de medición, actualizaríamos esta política y te pediríamos tu consentimiento previo.</p>"
+    },
+    "9": {
+      "title": "Seguridad",
+      "body": "<p>Aplicamos medidas técnicas y organizativas razonables para proteger tus datos: conexión cifrada (HTTPS) y acceso restringido a las solicitudes recibidas.</p>"
+    }
+  }
+}

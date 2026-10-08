@@ -1,0 +1,232 @@
+{{#define bodyClass}}page-home{{/define}}
+
+<!-- ======================================================================
+     1. PORTADA
+     Titular con entrada por líneas, rotador de tecnologías, foto enmarcada y
+     fichas flotantes. El fondo (plano técnico + partículas) es decorativo.
+     ====================================================================== -->
+<section class="hero is-dark" aria-labelledby="hero-title">
+  <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+  <div class="hero__blueprint" aria-hidden="true"></div>
+
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">{{t:home.hero.eyebrow}}</p>
+      <h1 id="hero-title" class="hero__title">{{t:home.hero.title}}</h1>
+      <p class="hero__lead">{{t:home.hero.lead}}</p>
+
+      <!-- Rotador: el texto completo se ofrece a lectores de pantalla; la versión animada es decorativa -->
+      <p class="rotator">
+        <span class="sr-only">{{t:home.hero.integrateFull}}</span>
+        <span class="rotator__live" aria-hidden="true">
+          <span>{{t:home.hero.integrate}}</span>
+          <span class="rotator__window"><span class="rotator__list">{{#repeat 8}}<span>{{t:tech.items.{{@i}}.name}}</span>{{/repeat}}<span>{{t:tech.items.1.name}}</span></span></span>
+        </span>
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn" href="{{link:contact}}#quote"><span>{{t:common.cta.quote}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
+        <a class="btn btn--ghost" href="{{link:tech}}"><span>{{t:home.hero.secondary}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__ring" aria-hidden="true"></div>
+      <div class="hero__photo">{{img:portada.jpg|alt=home.hero.photoAlt|eager|sizes=(max-width: 1000px) 80vw, 500px}}</div>
+      <p class="hero__chip hero__chip--1" aria-hidden="true"><strong>{{t:home.hero.chips.1.value}}</strong> {{t:home.hero.chips.1.label}}</p>
+      <p class="hero__chip hero__chip--2" aria-hidden="true"><strong>{{t:home.hero.chips.2.value}}</strong> {{t:home.hero.chips.2.label}}</p>
+      <p class="hero__chip hero__chip--3" aria-hidden="true"><strong>{{t:home.hero.chips.3.value}}</strong> {{t:home.hero.chips.3.label}}</p>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#manifesto" aria-label="{{a:home.hero.scroll}}">
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+  </a>
+</section>
+
+<!-- ======================================================================
+     2. CINTAS CRUZADAS
+     Dos bandas de texto en movimiento (tecnologías y sectores). Decorativas.
+     ====================================================================== -->
+<div class="ribbons" aria-hidden="true">
+  <div class="ribbon ribbon--sky">
+    <div class="ribbon__track">
+      <div class="ribbon__group">{{#repeat 8}}<span>{{t:tech.items.{{@i}}.name}}</span>{{/repeat}}</div>
+      <div class="ribbon__group">{{#repeat 8}}<span>{{t:tech.items.{{@i}}.name}}</span>{{/repeat}}</div>
+    </div>
+  </div>
+  <div class="ribbon ribbon--navy ribbon--reverse">
+    <div class="ribbon__track">
+      <div class="ribbon__group">{{#repeat 8}}<span>{{t:sectors.{{@i}}}}</span>{{/repeat}}</div>
+      <div class="ribbon__group">{{#repeat 8}}<span>{{t:sectors.{{@i}}}}</span>{{/repeat}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================================
+     3. MANIFIESTO
+     Frase de posicionamiento: las palabras se iluminan al hacer scroll.
+     ====================================================================== -->
+<section class="section manifesto is-dark cut" id="manifesto" aria-labelledby="manifesto-label">
+  <div class="container">
+    <p class="eyebrow" id="manifesto-label">{{t:home.manifesto.eyebrow}}</p>
+    <p class="manifesto__text" data-manifesto>{{t:home.manifesto.text}}</p>
+  </div>
+</section>
+
+<!-- ======================================================================
+     4. QUIÉNES SOMOS
+     Rejilla "bento" con texto, foto y cifras animadas, más las tres ventajas.
+     ====================================================================== -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <p class="eyebrow">{{t:home.about.eyebrow}}</p>
+    <h2 id="about-title" data-split>{{t:home.about.title}}</h2>
+
+    <div class="bento">
+      <div class="bento__text" data-reveal><p>{{t:home.about.text}}</p></div>
+
+      <figure class="bento__photo frame" data-reveal="curtain">
+        <div class="frame__media" data-parallax>{{img:fabrica-01.jpg|alt=home.about.photoAlt}}</div>
+      </figure>
+
+      <div class="stat stat--navy" data-reveal data-spot>
+        <span class="stat__value" data-count data-plain>{{t:home.about.stats.1.value}}</span>
+        <p>{{t:home.about.stats.1.label}}</p>
+      </div>
+      <div class="stat stat--soft" data-reveal data-spot>
+        <span class="stat__value" data-count>{{t:home.about.stats.2.value}}</span>
+        <p>{{t:home.about.stats.2.label}}</p>
+      </div>
+      <div class="stat stat--sky" data-reveal data-spot>
+        <span class="stat__value" data-count>{{t:home.about.stats.3.value}}</span>
+        <p>{{t:home.about.stats.3.label}}</p>
+      </div>
+      <div class="stat stat--deep" data-reveal data-spot>
+        <span class="stat__value" data-count>{{t:home.about.stats.4.value}}</span>
+        <p>{{t:home.about.stats.4.label}}</p>
+      </div>
+    </div>
+
+    <ul class="grid grid--3 benefits" data-stagger>
+      {{#repeat 3}}
+      <li class="card benefit" data-reveal data-spot>
+        <span class="benefit__icon">{{icon:benefit-{{@i}}}}</span>
+        <span class="benefit__num" aria-hidden="true">0{{@i}}</span>
+        <h3>{{t:benefits.{{@i}}.title}}</h3>
+        <p>{{t:benefits.{{@i}}.text}}</p>
+      </li>
+      {{/repeat}}
+    </ul>
+  </div>
+</section>
+
+<!-- ======================================================================
+     5. CARRIL DE TECNOLOGÍAS
+     En escritorio la sección se queda fija y las 8 tecnologías se desplazan de
+     lado al bajar (src/js/20-rail.js). En tablet y móvil es una fila deslizable.
+     ====================================================================== -->
+<section class="rail is-dark" id="technologies" data-rail aria-labelledby="rail-title">
+  <div class="rail__sticky">
+    <div class="rail__intro">
+      <p class="eyebrow">{{t:home.rail.eyebrow}}</p>
+      <h2 id="rail-title" data-split>{{t:home.rail.title}}</h2>
+      <p class="lead">{{t:home.rail.lead}}</p>
+      <a class="btn" href="{{link:tech}}"><span>{{t:home.rail.cta}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
+    </div>
+
+    <section class="rail__viewport" data-rail-viewport tabindex="0" aria-label="{{a:home.rail.region}}">
+      <ul class="rail__track" data-rail-track>
+        {{#repeat 8}}
+        <li class="panel" data-spot>
+          <div class="panel__top">
+            <span class="panel__num" aria-hidden="true">{{@i2}}</span>
+            {{icon:tech-{{@i}}|class=panel__icon}}
+          </div>
+          <div class="panel__body">
+            <p class="panel__value" data-count>{{t:tech.items.{{@i}}.value}}</p>
+            <p class="panel__unit">{{t:tech.items.{{@i}}.unit}}</p>
+            <h3 class="panel__name">{{t:tech.items.{{@i}}.name}}</h3>
+          </div>
+        </li>
+        {{/repeat}}
+      </ul>
+    </section>
+
+    <div class="rail__progress" aria-hidden="true"><span></span></div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     6. SECTORES
+     Mosaico de ocho sectores en tonos de azul.
+     ====================================================================== -->
+<section class="section section--soft" id="sectors" aria-labelledby="sectors-title">
+  <div class="container">
+    <p class="eyebrow">{{t:home.sectors.eyebrow}}</p>
+    <h2 id="sectors-title" data-split>{{t:home.sectors.title}}</h2>
+    <p class="lead" data-reveal>{{t:home.sectors.lead}}</p>
+
+    <ul class="sectors" data-stagger>
+      {{#repeat 8}}
+      <li class="sector sector--{{@i}}" data-reveal="zoom">
+        {{icon:sector-{{@i}}|class=sector__icon}}
+        <h3>{{t:sectors.{{@i}}}}</h3>
+      </li>
+      {{/repeat}}
+    </ul>
+  </div>
+</section>
+
+<!-- ======================================================================
+     7. RESUMEN DEL PROCESO
+     Los ocho pasos de la metodología de trabajo.
+     ====================================================================== -->
+<section class="section" id="process-summary" aria-labelledby="process-title">
+  <div class="container">
+    <p class="eyebrow">{{t:home.process.eyebrow}}</p>
+    <h2 id="process-title" data-split>{{t:home.process.title}}</h2>
+
+    <ol class="steps-mini" data-stagger>
+      {{#repeat 8}}
+      <li data-reveal>
+        <span class="steps-mini__top"><span class="steps-mini__num" aria-hidden="true">{{@i2}}</span>{{icon:step-{{@i}}|class=steps-mini__icon}}</span>
+        <strong>{{t:steps.{{@i}}.title}}</strong>
+      </li>
+      {{/repeat}}
+    </ol>
+
+    <div class="actions" data-reveal>
+      <a class="btn" href="{{link:process}}"><span>{{t:home.process.cta}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     8. CLIENTES
+     Dos cintas de logotipos en sentidos opuestos. El segundo grupo de cada cinta
+     es una copia decorativa para que el bucle no tenga saltos.
+     ====================================================================== -->
+<section class="section section--soft clients" id="clients" aria-labelledby="clients-title">
+  <div class="container">
+    <p class="eyebrow">{{t:home.clients.eyebrow}}</p>
+    <h2 id="clients-title" data-split>{{t:home.clients.title}}</h2>
+  </div>
+
+  <div class="logo-rows" data-reveal>
+    <div class="logo-row">
+      <div class="logo-row__track">
+        <div class="logo-row__group">{{#repeat 11}}{{img:cliente-{{@i2}}.png|alts=clients.{{@i}}}}{{/repeat}}</div>
+        <div class="logo-row__group" aria-hidden="true">{{#repeat 11}}{{img:cliente-{{@i2}}.png|decorative}}{{/repeat}}</div>
+      </div>
+    </div>
+    <div class="logo-row logo-row--reverse">
+      <div class="logo-row__track">
+        <div class="logo-row__group">{{#repeat 11 from 12}}{{img:cliente-{{@i2}}.png|alts=clients.{{@i}}}}{{/repeat}}</div>
+        <div class="logo-row__group" aria-hidden="true">{{#repeat 11 from 12}}{{img:cliente-{{@i2}}.png|decorative}}{{/repeat}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> cta}}

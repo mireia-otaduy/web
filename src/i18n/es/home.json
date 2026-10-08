@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "eyebrow": "Desarrollo de proyectos y fabricación industrial · desde 2008",
+    "title": "<span class=\"line\"><span>Piezas industriales</span></span> <span class=\"line\"><span><em class=\"hl\">a medida</em>, del plano</span></span> <span class=\"line\"><span>a la serie</span></span>",
+    "lead": "Gestionamos tu proyecto de principio a fin: desarrollo de producto, fabricación y logística.",
+    "integrate": "Integramos",
+    "integrateFull": "Integramos en planta estampación metálica, forja, conformado de tubo, mecanizados, corte por hilo, conjuntos soldados, subconjuntos metálicos y plásticos y montajes diversos.",
+    "secondary": "Ver tecnologías",
+    "photoAlt": "Pieza metálica mecanizada de precisión",
+    "scroll": "Ir a la siguiente sección",
+    "chips": {
+      "1": { "value": "2008", "label": "fundación" },
+      "2": { "value": "8", "label": "tecnologías" },
+      "3": { "value": "18", "label": "prensas" }
+    }
+  },
+  "manifesto": {
+    "eyebrow": "Quiénes somos",
+    "text": "Somos tu fábrica en China: abordas proyectos internacionales sin utilizar recursos propios ni aumentar los costes fijos de tu empresa."
+  },
+  "about": {
+    "eyebrow": "Nuestra forma de trabajar",
+    "title": "Tu fábrica, sin montar una fábrica",
+    "text": "LCC Manufacturing S.L. es un grupo empresarial fundado en <strong>2008</strong>, especialista en el desarrollo de proyectos y la fabricación de productos industriales en China. Nuestro objetivo es la <em>satisfacción de nuestros clientes</em>; nuestro compromiso, la generación de valor.",
+    "photoAlt": "Nave de fabricación con puente grúa",
+    "stats": {
+      "1": { "value": "2008", "label": "Año de fundación" },
+      "2": { "value": "8", "label": "Tecnologías integradas" },
+      "3": { "value": "14", "label": "Tornos CNC" },
+      "4": { "value": "18", "label": "Prensas de estampación" }
+    }
+  },
+  "rail": {
+    "eyebrow": "Tecnologías",
+    "title": "Ocho tecnologías, un solo proveedor",
+    "lead": "Tenemos integradas en planta las tecnologías más representativas de transformación de metal y plástico.",
+    "cta": "Ver todas las tecnologías",
+    "region": "Tecnologías de fabricación: desliza para ver todas"
+  },
+  "sectors": {
+    "eyebrow": "Sectores",
+    "title": "Sectores donde trabajamos",
+    "lead": "Fabricamos bajo plano para todo tipo de sectores."
+  },
+  "process": {
+    "eyebrow": "Proceso",
+    "title": "De la idea a la serie en ocho pasos",
+    "cta": "Explorar el proceso paso a paso"
+  },
+  "clients": {
+    "eyebrow": "Clientes",
+    "title": "Empresas que ya fabrican con LCC"
+  }
+}

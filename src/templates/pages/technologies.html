@@ -1,0 +1,210 @@
+{{#define bodyClass}}page-tech{{/define}}
+
+<!-- ======================================================================
+     1. CABECERA DE PÁGINA
+     ====================================================================== -->
+<section class="page-hero is-dark" aria-labelledby="page-title">
+  <div class="page-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">{{t:tech.hero.eyebrow}}</p>
+    <h1 id="page-title" data-split>{{t:tech.hero.title}}</h1>
+    <p class="lead">{{t:tech.hero.lead}}</p>
+  </div>
+</section>
+
+<!-- ======================================================================
+     2. LAS OCHO TECNOLOGÍAS
+     Mosaico de fotos de la planta, filtro por familia (radios + :has, sin JavaScript)
+     y tarjetas que se apilan al bajar en pantallas anchas.
+     ====================================================================== -->
+<section class="section" id="technologies" aria-labelledby="tech-title">
+  <div class="container">
+    <p class="eyebrow">{{t:tech.list.eyebrow}}</p>
+    <h2 id="tech-title" data-split>{{t:tech.list.title}}</h2>
+    <p class="lead" data-reveal>{{t:tech.list.lead}}</p>
+
+    <div class="mosaic">
+      <figure class="frame mosaic__a" data-reveal="curtain"><div class="frame__media">{{img:fabrica-09.jpg|alt=tech.mosaic.1}}</div></figure>
+      <figure class="frame mosaic__b" data-reveal="curtain"><div class="frame__media">{{img:fabrica-11.jpg|alt=tech.mosaic.2}}</div></figure>
+      <figure class="frame mosaic__c" data-reveal="curtain"><div class="frame__media">{{img:fabrica-03.jpg|alt=tech.mosaic.3}}</div></figure>
+      <figure class="frame mosaic__d" data-reveal="curtain"><div class="frame__media">{{img:fabrica-02.jpg|alt=tech.mosaic.4}}</div></figure>
+      <figure class="frame mosaic__e" data-reveal="curtain"><div class="frame__media">{{img:fabrica-08.jpg|alt=tech.mosaic.5}}</div></figure>
+    </div>
+
+    <!-- Filtro: el radio marcado oculta, con CSS, las tarjetas de otras familias -->
+    <fieldset class="filters">
+      <legend>{{t:tech.filter.legend}}</legend>
+      <input type="radio" name="family" id="f-all" checked>
+      <label for="f-all">{{t:tech.filter.all}}</label>
+      <input type="radio" name="family" id="f-forming">
+      <label for="f-forming">{{t:tech.filter.forming}}</label>
+      <input type="radio" name="family" id="f-machining">
+      <label for="f-machining">{{t:tech.filter.machining}}</label>
+      <input type="radio" name="family" id="f-joining">
+      <label for="f-joining">{{t:tech.filter.joining}}</label>
+    </fieldset>
+
+    <ul class="stack" aria-live="polite">
+      {{#repeat 8}}
+      <li class="tech-card" data-family="{{s:techFamilies.{{@i}}}}">
+        <div class="tech-card__visual">
+          <span class="tech-card__num" aria-hidden="true">{{@i2}}</span>
+          {{icon:tech-{{@i}}|class=tech-card__icon}}
+        </div>
+        <div class="tech-card__body">
+          <h3>{{t:tech.items.{{@i}}.name}}</h3>
+          <p>{{t:tech.items.{{@i}}.summary}}</p>
+          {{#if t:tech.items.{{@i}}.list.1}}
+          <ul>
+            <li>{{t:tech.items.{{@i}}.list.1}}</li>
+            {{#if t:tech.items.{{@i}}.list.2}}<li>{{t:tech.items.{{@i}}.list.2}}</li>{{/if}}
+            {{#if t:tech.items.{{@i}}.list.3}}<li>{{t:tech.items.{{@i}}.list.3}}</li>{{/if}}
+          </ul>
+          {{/if}}
+        </div>
+      </li>
+      {{/repeat}}
+    </ul>
+
+    <aside class="note" data-reveal>
+      {{icon:info|class=note__icon}}
+      <p>{{t:tech.subcontracting}}</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================================================================
+     3. MOLDES DE INYECCIÓN
+     ====================================================================== -->
+<section class="section molds is-dark cut" id="molds" aria-labelledby="molds-title">
+  <div class="container">
+    <p class="eyebrow">{{t:tech.molds.eyebrow}}</p>
+    <h2 id="molds-title" data-split>{{t:tech.molds.title}}</h2>
+    <p class="lead" data-reveal>{{t:tech.molds.lead}}</p>
+
+    <div class="stats-row" data-stagger>
+      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count="2000">{{t:tech.molds.stats.1.value}}</span><p>{{t:tech.molds.stats.1.label}}</p></div>
+      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count>{{t:tech.molds.stats.2.value}}</span><p>{{t:tech.molds.stats.2.label}}</p></div>
+      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count>{{t:tech.molds.stats.3.value}}</span><p>{{t:tech.molds.stats.3.label}}</p></div>
+      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count="20">{{t:tech.molds.stats.4.value}}</span><p>{{t:tech.molds.stats.4.label}}</p></div>
+    </div>
+
+    <div class="molds__grid">
+      <div class="molds__text" data-reveal>
+        <h3>{{t:tech.molds.partner.title}}</h3>
+        <p>{{t:tech.molds.partner.text}}</p>
+
+        <h4>{{t:tech.molds.facilities.title}}</h4>
+        <p>{{t:tech.molds.facilities.text}}</p>
+
+        <h4>{{t:tech.molds.machinery.title}}</h4>
+        <ul class="check-list">
+          {{#repeat 7}}<li>{{icon:check}}{{t:tech.molds.machinery.items.{{@i}}}}</li>{{/repeat}}
+        </ul>
+
+        <h4>{{t:tech.molds.metrology.title}}</h4>
+        <p>{{t:tech.molds.metrology.text}}</p>
+      </div>
+
+      <figure class="molds__photo" data-reveal="zoom">
+        {{img:molde-inyeccion.jpg|alt=tech.molds.photoAlt}}
+        <figcaption>{{t:tech.molds.photoCaption}}</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     4. CAPACIDAD INSTALADA
+     Barras decorativas (los datos reales están en la tabla accesible).
+     ====================================================================== -->
+<section class="section" id="capacity" aria-labelledby="capacity-title">
+  <div class="container">
+    <p class="eyebrow">{{t:tech.capacity.eyebrow}}</p>
+    <h2 id="capacity-title" data-split>{{t:tech.capacity.title}}</h2>
+    <p class="lead" data-reveal>{{t:tech.capacity.lead}}</p>
+
+    <div class="bars" aria-hidden="true" data-stagger>
+      <div class="bar" data-reveal><p><span>{{t:tech.capacity.bars.1}}</span><strong>18</strong></p><div class="bar__rail"><i class="bar__fill w-100"></i></div></div>
+      <div class="bar" data-reveal><p><span>{{t:tech.capacity.bars.2}}</span><strong>14</strong></p><div class="bar__rail"><i class="bar__fill w-78"></i></div></div>
+      <div class="bar" data-reveal><p><span>{{t:tech.capacity.bars.3}}</span><strong>10</strong></p><div class="bar__rail"><i class="bar__fill w-56"></i></div></div>
+      <div class="bar" data-reveal><p><span>{{t:tech.capacity.bars.4}}</span><strong>8</strong></p><div class="bar__rail"><i class="bar__fill w-44"></i></div></div>
+      <div class="bar" data-reveal><p><span>{{t:tech.capacity.bars.5}}</span><strong>2</strong></p><div class="bar__rail"><i class="bar__fill w-11"></i></div></div>
+      <div class="bar" data-reveal><p><span>{{t:tech.capacity.bars.6}}</span><strong>2</strong></p><div class="bar__rail"><i class="bar__fill w-11"></i></div></div>
+    </div>
+
+    <section class="table-wrap" data-reveal tabindex="0" aria-labelledby="table-caption">
+      <table class="table">
+        <caption id="table-caption">{{t:tech.table.caption}}</caption>
+        <thead>
+          <tr>
+            <th scope="col">{{t:tech.table.head.family}}</th>
+            <th scope="col">{{t:tech.table.head.technology}}</th>
+            <th scope="col">{{t:tech.table.head.capacity}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" rowspan="3">{{t:tech.filter.forming}}</th><td>{{t:tech.table.rows.1.name}}</td><td>{{t:tech.table.rows.1.value}}</td></tr>
+          <tr><td>{{t:tech.table.rows.2.name}}</td><td>{{t:tech.table.rows.2.value}}</td></tr>
+          <tr><td>{{t:tech.table.rows.3.name}}</td><td>{{t:tech.table.rows.3.value}}</td></tr>
+          <tr><th scope="row" rowspan="4">{{t:tech.filter.machining}}</th><td>{{t:tech.table.rows.4.name}}</td><td>{{t:tech.table.rows.4.value}}</td></tr>
+          <tr><td>{{t:tech.table.rows.5.name}}</td><td>{{t:tech.table.rows.5.value}}</td></tr>
+          <tr><td>{{t:tech.table.rows.6.name}}</td><td>{{t:tech.table.rows.6.value}}</td></tr>
+          <tr><td>{{t:tech.table.rows.7.name}}</td><td>{{t:tech.table.rows.7.value}}</td></tr>
+          <tr><th scope="row" rowspan="3">{{t:tech.filter.joining}}</th><td>{{t:tech.table.rows.8.name}}</td><td>{{t:tech.table.rows.8.value}}</td></tr>
+          <tr><td>{{t:tech.table.rows.9.name}}</td><td>{{t:tech.table.rows.9.value}}</td></tr>
+          <tr><td>{{t:tech.table.rows.10.name}}</td><td>{{t:tech.table.rows.10.value}}</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3">{{t:tech.table.foot}}</td></tr>
+        </tfoot>
+      </table>
+    </section>
+  </div>
+</section>
+
+<!-- ======================================================================
+     5. GALERÍA DE LA PLANTA
+     Acordeón de fotos: la que tiene el cursor encima se ensancha y muestra su pie.
+     ====================================================================== -->
+<section class="section section--soft" id="plant" aria-labelledby="plant-title">
+  <div class="container">
+    <p class="eyebrow">{{t:tech.plant.eyebrow}}</p>
+    <h2 id="plant-title" data-split>{{t:tech.plant.title}}</h2>
+
+    <div class="gallery" data-reveal>
+      <figure class="gallery__item">{{img:fabrica-07.jpg|alt=tech.plant.items.1.alt}}<figcaption>{{t:tech.plant.items.1.caption}}</figcaption></figure>
+      <figure class="gallery__item">{{img:fabrica-04.jpg|alt=tech.plant.items.2.alt}}<figcaption>{{t:tech.plant.items.2.caption}}</figcaption></figure>
+      <figure class="gallery__item">{{img:fabrica-12.jpg|alt=tech.plant.items.3.alt}}<figcaption>{{t:tech.plant.items.3.caption}}</figcaption></figure>
+      <figure class="gallery__item">{{img:fabrica-14.jpg|alt=tech.plant.items.4.alt}}<figcaption>{{t:tech.plant.items.4.caption}}</figcaption></figure>
+      <figure class="gallery__item">{{img:fabrica-10.jpg|alt=tech.plant.items.5.alt}}<figcaption>{{t:tech.plant.items.5.caption}}</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     6. PIEZAS BAJO PLANO
+     Fila deslizable; cada foto abre el visor a pantalla completa (src/js/40-lightbox.js).
+     Sin JavaScript, el enlace abre la imagen en grande.
+     ====================================================================== -->
+<section class="section" id="products" aria-labelledby="products-title">
+  <div class="container">
+    <p class="eyebrow">{{t:tech.products.eyebrow}}</p>
+    <h2 id="products-title" data-split>{{t:tech.products.title}}</h2>
+    <p class="lead" data-reveal>{{t:tech.products.lead}}</p>
+  </div>
+
+  <section class="products" tabindex="0" aria-label="{{a:tech.products.region}}" data-reveal>
+    <ul class="products__list">
+      {{#repeat 12}}
+      <li>
+        <a class="product frame" href="{{asset:img/producto-{{@i2}}.jpg}}" data-lightbox data-caption="{{a:tech.products.items.{{@i}}}}">
+          {{img:producto-{{@i2}}.jpg|alt=tech.products.items.{{@i}}}}
+        </a>
+      </li>
+      {{/repeat}}
+    </ul>
+  </section>
+</section>
+
+{{> cta}}

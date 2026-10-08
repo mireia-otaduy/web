@@ -1,0 +1,36 @@
+{{#define bodyClass}}page-legal{{/define}}
+
+<!-- Cabecera de página -->
+<section class="page-hero page-hero--compact is-dark" aria-labelledby="page-title">
+  <div class="page-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">{{t:legal.hero.eyebrow}}</p>
+    <h1 id="page-title" data-split>{{t:legal.hero.title}}</h1>
+    <p class="lead">{{t:legal.hero.lead}}</p>
+  </div>
+</section>
+
+<!-- Texto legal: titular (LSSI-CE art. 10) y condiciones de uso -->
+<section class="section">
+  <div class="container container--narrow prose">
+    <section>
+      <h2>{{t:legal.owner.title}}</h2>
+      <p>{{t:legal.owner.intro}}</p>
+      <dl class="facts">
+        <div><dt>{{t:legal.owner.name}}</dt><dd>{{s:legalName}}</dd></div>
+        <div><dt>{{t:legal.owner.taxId}}</dt><dd>{{s:legal.cif}}</dd></div>
+        <div><dt>{{t:legal.owner.address}}</dt><dd>{{s:address.street}}, {{s:address.postalCode}} {{s:address.city}} ({{s:address.region}}), {{t:legal.owner.country}}</dd></div>
+        <div><dt>{{t:legal.owner.email}}</dt><dd><a href="mailto:{{s:email}}">{{s:email}}</a></dd></div>
+        <div><dt>{{t:legal.owner.phone}}</dt><dd><a href="tel:{{s:phone.tel}}">{{s:phone.display}}</a></dd></div>
+        {{#if s:legal.registry}}<div><dt>{{t:legal.owner.registry}}</dt><dd>{{s:legal.registry}}</dd></div>{{/if}}
+      </dl>
+    </section>
+
+    {{#repeat 7 from 2}}
+    <section>
+      <h2>{{t:legal.sections.{{@i}}.title}}</h2>
+      {{t:legal.sections.{{@i}}.body}}
+    </section>
+    {{/repeat}}
+  </div>
+</section>

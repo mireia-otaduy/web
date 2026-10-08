@@ -1,0 +1,362 @@
+/* ==========================================================================
+   04 · COMPONENTES REUTILIZABLES
+   Botones, tarjetas, marcos de imagen, etiquetas, avisos y otros bloques que
+   aparecen en varias páginas.
+   ========================================================================== */
+
+/* ---------- Botones ---------- */
+
+/* Botón principal: píldora celeste con un círculo-flecha. Al pasar el cursor sube,
+   la flecha gira y un destello cruza el botón. */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.05rem;
+  min-height: 3.2rem;
+  padding: 0.3rem 0.3rem 0.3rem 1.7rem;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  border-radius: 999px;
+  background-image: linear-gradient(135deg, #9bd5ff, var(--sky) 60%);
+  box-shadow: 0 12px 28px rgb(90 180 255 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.55);
+  color: var(--navy-900);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+}
+
+.btn__arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0.62rem;
+  border-radius: 50%;
+  background-color: var(--navy-900);
+  color: var(--white);
+  transition: rotate 0.4s var(--ease-out), background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -90%;
+  z-index: -1;
+  width: 55%;
+  background-image: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.7), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.8s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 18px 38px rgb(90 180 255 / 0.5), inset 0 1px 0 rgb(255 255 255 / 0.55);
+  color: var(--navy-900);
+  transform: translateY(-3px);
+}
+
+.btn:hover::before {
+  left: 140%;
+}
+
+.btn:hover .btn__arrow {
+  background-color: var(--white);
+  color: var(--navy-900);
+  rotate: -45deg;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+/* Variante con contorno para acciones secundarias sobre fondo oscuro */
+.btn--ghost {
+  background-image: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / 0.45);
+  color: var(--white);
+}
+
+.btn--ghost .btn__arrow {
+  background-color: var(--sky);
+  color: var(--navy-900);
+}
+
+.btn--ghost:hover {
+  box-shadow: inset 0 0 0 1.5px var(--white);
+  color: var(--white);
+}
+
+/* Variante con contorno para fondos claros */
+.btn--outline {
+  background-image: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--navy-900);
+  color: var(--navy-900);
+}
+
+.btn--outline:hover {
+  box-shadow: inset 0 0 0 1.5px var(--blue-600);
+  color: var(--blue-600);
+}
+
+.btn--sm {
+  gap: 0.8rem;
+  min-height: 0;
+  padding: 0.25rem 0.25rem 0.25rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+.btn--sm .btn__arrow {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+/* ---------- Tarjetas ---------- */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background-color: var(--white);
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Barra celeste que crece por abajo al pasar el cursor */
+.card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 0;
+  height: 4px;
+  background-image: linear-gradient(90deg, var(--blue-500), var(--sky));
+  transition: width 0.45s ease;
+}
+
+.card:hover {
+  border-color: var(--blue-600);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+/* ---------- Foco de luz que sigue al cursor ([data-spot], ver src/js/60-effects.js) ----------
+   Reserva el pseudoelemento ::after: los componentes con data-spot no deben usarlo. */
+[data-spot] {
+  position: relative;
+}
+
+[data-spot]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background-image: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgb(90 180 255 / 0.16), transparent 62%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+[data-spot]:hover::after {
+  opacity: 1;
+}
+
+/* ---------- Marco de imagen ---------- */
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--navy-900);
+}
+
+.frame__media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.04);
+  transition: transform 0.9s var(--ease-out), filter 0.5s ease;
+}
+
+.frame:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05) contrast(1.06);
+}
+
+/* Velo inferior y marca de esquina, como las de un plano técnico */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(180deg, transparent 58%, rgb(4 13 36 / 0.42));
+  pointer-events: none;
+}
+
+.frame::before {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-bottom: 3px solid var(--sky);
+  border-left: 3px solid var(--sky);
+  pointer-events: none;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.frame:hover::before {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+/* ---------- Etiquetas (píldoras pequeñas) ---------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: auto 0 0;
+  padding: 1.2rem 0 0;
+  list-style: none;
+}
+
+.tags li {
+  margin: 0;
+  padding: 0.3em 0.9em;
+  border: 1px solid var(--navy-700);
+  border-radius: 999px;
+  color: var(--blue-100);
+  font-size: 0.85rem;
+}
+
+/* ---------- Aviso destacado ---------- */
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 2.4rem;
+  padding: 1.3rem 1.6rem;
+  border-left: 5px solid var(--blue-600);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background-color: var(--blue-100);
+}
+
+.note p {
+  max-width: none;
+  margin: 0;
+}
+
+.note__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.15rem;
+  color: var(--blue-600);
+}
+
+/* ---------- Barra de progreso (formulario y carril) ---------- */
+
+.progress-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: var(--blue-100);
+}
+
+.progress-bar > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background-image: linear-gradient(90deg, var(--blue-600), var(--sky));
+  transition: width 0.6s var(--ease-out);
+}
+
+/* ---------- Punto que late ---------- */
+
+.pulse-dot {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-right: 0.55em;
+  border-radius: 50%;
+  background-color: var(--sky);
+  animation: pulse-dot 2s ease-out infinite;
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgb(90 180 255 / 0.7); }
+  100% { box-shadow: 0 0 0 0.7em rgb(90 180 255 / 0); }
+}
+
+/* ---------- Fila de contacto (teléfono o correo) ---------- */
+
+.contact-chip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background-color: var(--white);
+  color: var(--navy-900);
+  text-decoration: none;
+  transition: transform 0.3s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.contact-chip .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--blue-600);
+}
+
+.contact-chip small {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.contact-chip strong {
+  display: block;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.contact-chip:hover {
+  border-color: var(--blue-600);
+  box-shadow: var(--shadow-sm);
+  color: var(--blue-600);
+  transform: translateX(6px);
+}

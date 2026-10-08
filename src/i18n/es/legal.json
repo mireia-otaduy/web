@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "eyebrow": "Información legal",
+    "title": "Aviso legal",
+    "lead": "Información del titular del sitio web y condiciones de uso."
+  },
+  "owner": {
+    "title": "Titular del sitio web",
+    "intro": "En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de que este sitio web es titularidad de:",
+    "name": "Denominación social",
+    "taxId": "CIF",
+    "address": "Domicilio social",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "registry": "Datos registrales",
+    "country": "España"
+  },
+  "sections": {
+    "2": {
+      "title": "Objeto y aceptación",
+      "body": "<p>El presente aviso legal regula el acceso y el uso del sitio web de LCC Manufacturing S.L. El acceso y la navegación por el sitio web atribuyen la condición de usuario e implican la aceptación de las condiciones aquí recogidas.</p>"
+    },
+    "3": {
+      "title": "Condiciones de uso",
+      "body": "<p>El usuario se compromete a hacer un uso adecuado y lícito del sitio web y de sus contenidos, de conformidad con la legislación aplicable, la buena fe y el orden público. Queda prohibido utilizar el sitio web con fines ilícitos o lesivos para LCC Manufacturing S.L. o para terceros, o realizar cualquier acción que pueda dañar, inutilizar o sobrecargar el sitio web.</p>"
+    },
+    "4": {
+      "title": "Propiedad intelectual e industrial",
+      "body": "<p>Los contenidos del sitio web (textos, fotografías, diseño gráfico, logotipos y código fuente) son titularidad de LCC Manufacturing S.L. o de terceros que han autorizado su uso, y están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o transformación sin autorización expresa.</p><p>Las marcas y logotipos de terceros que aparecen en el sitio web pertenecen a sus respectivos titulares.</p>"
+    },
+    "5": {
+      "title": "Responsabilidad",
+      "body": "<p>La información del sitio web tiene carácter informativo y no constituye una oferta contractual vinculante. LCC Manufacturing S.L. se esfuerza por mantenerla actualizada, pero no garantiza la ausencia de errores ni la disponibilidad continua del sitio web, y se reserva el derecho a modificar sus contenidos sin previo aviso.</p>"
+    },
+    "6": {
+      "title": "Enlaces a terceros",
+      "body": "<p>El sitio web puede contener enlaces a páginas de terceros (por ejemplo, servicios de mapas). LCC Manufacturing S.L. no controla ni se responsabiliza de sus contenidos ni de sus políticas de privacidad.</p>"
+    },
+    "7": {
+      "title": "Legislación aplicable",
+      "body": "<p>Este aviso legal se rige por la legislación española. Para cualquier controversia, las partes se someterán a los juzgados y tribunales que resulten competentes conforme a la normativa aplicable.</p>"
+    },
+    "8": {
+      "title": "Contacto",
+      "body": "<p>Para cualquier consulta sobre este aviso legal puedes escribirnos a <a href=\"mailto:{{s:email}}\">{{s:email}}</a>.</p>"
+    }
+  }
+}

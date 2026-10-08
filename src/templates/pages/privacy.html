@@ -1,0 +1,36 @@
+{{#define bodyClass}}page-legal{{/define}}
+
+<!-- Cabecera de página -->
+<section class="page-hero page-hero--compact is-dark" aria-labelledby="page-title">
+  <div class="page-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">{{t:privacy.hero.eyebrow}}</p>
+    <h1 id="page-title" data-split>{{t:privacy.hero.title}}</h1>
+    <p class="lead">{{t:privacy.hero.lead}}</p>
+  </div>
+</section>
+
+<!-- Política de privacidad (RGPD y LOPDGDD) y de cookies -->
+<section class="section">
+  <div class="container container--narrow prose">
+    <p class="prose__updated">{{t:privacy.updated}}</p>
+
+    <section>
+      <h2>{{t:privacy.controller.title}}</h2>
+      <p>{{t:privacy.controller.intro}}</p>
+      <dl class="facts">
+        <div><dt>{{t:privacy.controller.name}}</dt><dd>{{s:legalName}}</dd></div>
+        <div><dt>{{t:privacy.controller.taxId}}</dt><dd>{{s:legal.cif}}</dd></div>
+        <div><dt>{{t:privacy.controller.address}}</dt><dd>{{s:address.street}}, {{s:address.postalCode}} {{s:address.city}} ({{s:address.region}}), {{t:privacy.controller.country}}</dd></div>
+        <div><dt>{{t:privacy.controller.email}}</dt><dd><a href="mailto:{{s:email}}">{{s:email}}</a></dd></div>
+      </dl>
+    </section>
+
+    {{#repeat 8 from 2}}
+    <section>
+      <h2>{{t:privacy.sections.{{@i}}.title}}</h2>
+      {{t:privacy.sections.{{@i}}.body}}
+    </section>
+    {{/repeat}}
+  </div>
+</section>

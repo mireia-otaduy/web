@@ -1,0 +1,31 @@
+{
+  "ogImageAlt": "LCC Manufacturing: project development and industrial manufacturing",
+  "home": {
+    "title": "LCC Manufacturing | Project development and industrial manufacturing",
+    "description": "Project development and industrial manufacturing: metal stamping, forging, tube forming, machining, wire EDM cutting and welding. Amorebieta-Etxano (Bizkaia, Spain)."
+  },
+  "tech": {
+    "title": "Technologies and manufacturing capabilities | LCC Manufacturing",
+    "description": "Metal stamping, forging, tube forming, machining, wire EDM cutting, welding and injection moulds. Discover the production capabilities of LCC Manufacturing."
+  },
+  "process": {
+    "title": "Our process: from idea to series production | LCC Manufacturing",
+    "description": "End-to-end project management in eight stages: from engineering and prototypes to series production, quality control and buffer warehousing."
+  },
+  "contact": {
+    "title": "Request a quote | LCC Manufacturing",
+    "description": "Tell us about your project. LCC Manufacturing, Parque Empresarial Boroa 19, Amorebieta-Etxano (Bizkaia, Spain). Phone +34 94 651 00 79."
+  },
+  "legal": {
+    "title": "Legal notice | LCC Manufacturing",
+    "description": "Legal notice and owner information for the website of LCC Manufacturing S.L."
+  },
+  "privacy": {
+    "title": "Privacy and cookie policy | LCC Manufacturing",
+    "description": "How LCC Manufacturing S.L. handles your personal data and which cookies this website uses."
+  },
+  "404": {
+    "title": "Page not found | LCC Manufacturing",
+    "description": "The page you are looking for does not exist or has moved."
+  }
+}

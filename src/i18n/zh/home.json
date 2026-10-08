@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "eyebrow": "项目开发与工业制造 · 创立于 2008 年",
+    "title": "<span class=\"line\"><span>工业零部件</span></span> <span class=\"line\"><span><em class=\"hl\">按图定制</em>，从图纸</span></span> <span class=\"line\"><span>到批量生产</span></span>",
+    "lead": "我们从头到尾管理您的项目：产品开发、制造与物流。",
+    "integrate": "我们厂内整合：",
+    "integrateFull": "我们在厂内整合金属冲压、锻造、管材成型、机加工、线切割、焊接组件、金属与塑料子组件以及各类装配。",
+    "secondary": "查看工艺技术",
+    "photoAlt": "精密机加工金属零件",
+    "scroll": "前往下一部分",
+    "chips": {
+      "1": {
+        "value": "2008",
+        "label": "创立于"
+      },
+      "2": {
+        "value": "8",
+        "label": "项工艺技术"
+      },
+      "3": {
+        "value": "18",
+        "label": "台冲压机"
+      }
+    }
+  },
+  "manifesto": {
+    "eyebrow": "关于我们",
+    "text": "我们是您在中国的工厂：无需动用自有资源，也不增加公司的固定成本，即可承接国际项目。"
+  },
+  "about": {
+    "eyebrow": "我们的工作方式",
+    "title": "拥有您自己的工厂，却无需建厂",
+    "text": "LCC Manufacturing S.L. 是一家成立于 <strong>2008</strong> 年的企业集团，专注于在中国开展项目开发和工业产品制造。我们的目标是<em>客户满意</em>；我们的承诺是创造价值。",
+    "photoAlt": "配有桥式起重机的生产车间",
+    "stats": {
+      "1": {
+        "value": "2008",
+        "label": "创立年份"
+      },
+      "2": {
+        "value": "8",
+        "label": "整合的工艺技术"
+      },
+      "3": {
+        "value": "14",
+        "label": "数控车床"
+      },
+      "4": {
+        "value": "18",
+        "label": "冲压机"
+      }
+    }
+  },
+  "rail": {
+    "eyebrow": "工艺技术",
+    "title": "八项工艺，一个供应商",
+    "lead": "我们在厂内整合了最具代表性的金属与塑料加工技术。",
+    "cta": "查看全部工艺技术",
+    "region": "制造工艺：滑动查看全部"
+  },
+  "sectors": {
+    "eyebrow": "行业",
+    "title": "我们服务的行业",
+    "lead": "我们为各类行业按图纸制造。"
+  },
+  "process": {
+    "eyebrow": "流程",
+    "title": "从创意到批量生产，八个步骤",
+    "cta": "逐步了解工作流程"
+  },
+  "clients": {
+    "eyebrow": "客户",
+    "title": "已与 LCC 合作生产的企业"
+  }
+}

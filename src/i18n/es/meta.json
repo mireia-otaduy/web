@@ -1,0 +1,31 @@
+{
+  "ogImageAlt": "LCC Manufacturing: desarrollo de proyectos y fabricación industrial",
+  "home": {
+    "title": "LCC Manufacturing | Desarrollo de proyectos y fabricación industrial",
+    "description": "Desarrollo de proyectos y fabricación industrial: estampación, forja, conformado de tubo, mecanizados, corte por hilo y soldadura. Amorebieta-Etxano (Bizkaia)."
+  },
+  "tech": {
+    "title": "Tecnologías y medios de fabricación | LCC Manufacturing",
+    "description": "Estampación, forja, conformado de tubo, mecanizados, corte por hilo, soldadura y moldes de inyección. Conoce los medios productivos de LCC Manufacturing."
+  },
+  "process": {
+    "title": "Proceso de trabajo: de la idea a la serie | LCC Manufacturing",
+    "description": "Gestión integral del proyecto en ocho etapas: de la ingeniería y los prototipos a la fabricación seriada, el control de calidad y el almacén regulador."
+  },
+  "contact": {
+    "title": "Pide presupuesto | LCC Manufacturing",
+    "description": "Cuéntanos tu proyecto. LCC Manufacturing, Parque Empresarial Boroa 19, Amorebieta-Etxano (Bizkaia). Teléfono +34 94 651 00 79."
+  },
+  "legal": {
+    "title": "Aviso legal | LCC Manufacturing",
+    "description": "Aviso legal e información del titular del sitio web de LCC Manufacturing S.L."
+  },
+  "privacy": {
+    "title": "Política de privacidad y cookies | LCC Manufacturing",
+    "description": "Cómo trata LCC Manufacturing S.L. tus datos personales y qué cookies utiliza este sitio web."
+  },
+  "404": {
+    "title": "Página no encontrada | LCC Manufacturing",
+    "description": "La página que buscas no existe o ha cambiado de dirección."
+  }
+}

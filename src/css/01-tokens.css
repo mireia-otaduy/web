@@ -1,0 +1,77 @@
+/* ==========================================================================
+   01 · TOKENS DE DISEÑO
+   Única fuente de verdad de colores, tipografía, medidas y movimiento.
+   Para cambiar la identidad visual basta con editar este archivo.
+
+   Paleta (contraste de texto verificado ≥ 4,5:1 en los pares de uso):
+     --navy-950  fondo del pie y velos        --blue-600  enlaces y detalles sobre claro
+     --navy-900  azul marino principal        --blue-500  degradados y líneas
+     --navy-800  superficies sobre oscuro     --sky       acento (botones, cifras)
+     --navy-700  bordes sobre oscuro          --blue-300  textos pequeños sobre oscuro
+     --silver    texto secundario sobre oscuro --blue-100 fondos suaves
+   ========================================================================== */
+
+:root {
+  /* Marca */
+  --navy-950: #040d24;
+  --navy-900: #07163a;
+  --navy-800: #0d2352;
+  --navy-700: #17387a;
+  --blue-600: #2257bd;
+  --blue-500: #3b80f0;
+  --sky: #5ab4ff;
+  --blue-300: #a2bdf2;
+  --blue-100: #e6eefc;
+  --silver: #c3cde3;
+  --surface: #f1f3f7;
+  --white: #ffffff;
+
+  /* Semánticos */
+  --ink: var(--navy-900);
+  --ink-soft: #4a5670;
+  --line: #d8dde8;
+  --field-line: #6a7a99;
+  --error: #b42318;
+  --success: #067647;
+
+  /* Tipografía */
+  --font-body: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Space Grotesk", "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Formas y medidas */
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --container: 1240px;
+  --header-h: 4.25rem;
+  --section-y: clamp(4.25rem, 9vw, 7.5rem);
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.18, 1);
+
+  /* Sombras */
+  --shadow-sm: 0 6px 18px rgb(4 13 36 / 0.1);
+  --shadow-md: 0 22px 44px rgb(4 13 36 / 0.16);
+  --shadow-lg: 0 40px 80px rgb(4 13 36 / 0.28);
+}
+
+/* Chino simplificado: las letras latinas conservan Inter y los ideogramas usan la fuente del sistema */
+:lang(zh) {
+  --font-body: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+  --font-display: "Space Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+/* Propiedades registradas: permiten animar ángulos (círculos que se dibujan, bordes con luz) */
+@property --rev {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --ang {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}

@@ -1,0 +1,194 @@
+{{#define bodyClass}}page-contact{{/define}}
+
+<!-- ======================================================================
+     1. CABECERA DE PÁGINA
+     ====================================================================== -->
+<section class="page-hero is-dark" aria-labelledby="page-title">
+  <div class="page-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">{{t:contact.hero.eyebrow}}</p>
+    <h1 id="page-title" data-split>{{t:contact.hero.title}}</h1>
+    <p class="lead">{{t:contact.hero.lead}}</p>
+    <a class="big-mail" href="mailto:{{s:email}}">{{s:email}}</a>
+  </div>
+</section>
+
+<!-- ======================================================================
+     2. FORMULARIO DE PRESUPUESTO + DATOS DE CONTACTO
+     El formulario funciona sin JavaScript (abre el correo del usuario). Con JavaScript
+     se valida en el navegador y se guarda la solicitud en la base de datos (src/js/50-form.js).
+     ====================================================================== -->
+<section class="section section--soft" id="quote" aria-labelledby="quote-title">
+  <div class="container contact-grid">
+
+    <div class="contact-grid__form">
+      <h2 id="quote-title" class="sr-only">{{t:contact.form.title}}</h2>
+
+      <form class="form" method="post" action="mailto:{{s:email}}" enctype="text/plain" data-quote-form>
+
+        <!-- Progreso: se rellena al completar los cinco campos obligatorios (solo con JavaScript) -->
+        <div class="form__progress" aria-hidden="true">
+          <p>{{t:contact.form.progress}} <strong data-progress-text>0 %</strong></p>
+          <div class="progress-bar"><span data-progress-bar></span></div>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>{{t:contact.form.group.you}}</legend>
+          <div class="fields">
+            <div class="field">
+              <input type="text" id="f-name" name="name" placeholder=" " autocomplete="name" maxlength="120" required aria-describedby="f-name-error">
+              <label for="f-name">{{t:contact.form.name}}</label>
+              <span class="field__error" id="f-name-error" data-error-for="f-name"></span>
+            </div>
+            <div class="field">
+              <input type="text" id="f-company" name="company" placeholder=" " autocomplete="organization" maxlength="120" required aria-describedby="f-company-error">
+              <label for="f-company">{{t:contact.form.company}}</label>
+              <span class="field__error" id="f-company-error" data-error-for="f-company"></span>
+            </div>
+            <div class="field">
+              <input type="email" id="f-email" name="email" placeholder=" " autocomplete="email" maxlength="160" required aria-describedby="f-email-error">
+              <label for="f-email">{{t:contact.form.email}}</label>
+              <span class="field__error" id="f-email-error" data-error-for="f-email"></span>
+            </div>
+            <div class="field">
+              <input type="tel" id="f-phone" name="phone" placeholder=" " autocomplete="tel" maxlength="40" aria-describedby="f-phone-error">
+              <label for="f-phone">{{t:contact.form.phone}}</label>
+              <span class="field__error" id="f-phone-error" data-error-for="f-phone"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>{{t:contact.form.group.project}}</legend>
+          <div class="fields">
+            <div class="field field--full field--fixed">
+              <select id="f-technology" name="technology">
+                <option value="">{{t:contact.form.technology.placeholder}}</option>
+                <option value="stamping">{{t:contact.form.technology.stamping}}</option>
+                <option value="forging">{{t:contact.form.technology.forging}}</option>
+                <option value="tube">{{t:contact.form.technology.tube}}</option>
+                <option value="machining">{{t:contact.form.technology.machining}}</option>
+                <option value="wire">{{t:contact.form.technology.wire}}</option>
+                <option value="welding">{{t:contact.form.technology.welding}}</option>
+                <option value="molds">{{t:contact.form.technology.molds}}</option>
+                <option value="other">{{t:contact.form.technology.other}}</option>
+              </select>
+              <label for="f-technology">{{t:contact.form.technology.label}}</label>
+            </div>
+
+            <div class="field--full">
+              <fieldset class="choice-group">
+                <legend>{{t:contact.form.type.legend}}</legend>
+                <div class="choice-cards">
+                  <div class="choice-card">
+                    <input type="radio" id="f-type-prototype" name="projectType" value="prototype">
+                    <label for="f-type-prototype"><strong>{{t:contact.form.type.prototype.title}}</strong><span>{{t:contact.form.type.prototype.text}}</span></label>
+                  </div>
+                  <div class="choice-card">
+                    <input type="radio" id="f-type-short" name="projectType" value="short-run">
+                    <label for="f-type-short"><strong>{{t:contact.form.type.short.title}}</strong><span>{{t:contact.form.type.short.text}}</span></label>
+                  </div>
+                  <div class="choice-card">
+                    <input type="radio" id="f-type-long" name="projectType" value="long-run">
+                    <label for="f-type-long"><strong>{{t:contact.form.type.long.title}}</strong><span>{{t:contact.form.type.long.text}}</span></label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="field">
+              <input type="number" id="f-pieces" name="pieces" placeholder=" " min="1" max="100000000" inputmode="numeric" aria-describedby="f-pieces-error">
+              <label for="f-pieces">{{t:contact.form.pieces}}</label>
+              <span class="field__error" id="f-pieces-error" data-error-for="f-pieces"></span>
+            </div>
+            <div class="field field--fixed">
+              <input type="date" id="f-date" name="date">
+              <label for="f-date">{{t:contact.form.date}}</label>
+            </div>
+            <div class="field field--full">
+              <textarea id="f-message" name="message" placeholder=" " maxlength="3000" required aria-describedby="f-message-error f-message-hint"></textarea>
+              <label for="f-message">{{t:contact.form.message}}</label>
+              <span class="field__error" id="f-message-error" data-error-for="f-message"></span>
+              <span class="field__hint" id="f-message-hint">{{t:contact.form.messageHint}}</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>{{t:contact.form.group.services}}</legend>
+          <div class="chips">
+            <div class="chip"><input type="checkbox" id="f-srv-approval" name="services" value="approval"><label for="f-srv-approval">{{t:contact.form.services.approval}}</label></div>
+            <div class="chip"><input type="checkbox" id="f-srv-tooling" name="services" value="tooling"><label for="f-srv-tooling">{{t:contact.form.services.tooling}}</label></div>
+            <div class="chip"><input type="checkbox" id="f-srv-warehouse" name="services" value="warehouse"><label for="f-srv-warehouse">{{t:contact.form.services.warehouse}}</label></div>
+          </div>
+        </fieldset>
+
+        <!-- Campo trampa para robots: las personas no lo ven ni lo rellenan -->
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="consent">
+          <div class="consent__row">
+            <input type="checkbox" id="f-privacy" name="privacy" required aria-describedby="f-privacy-error">
+            <label for="f-privacy">{{t:contact.form.privacy.before}} <a href="{{link:privacy}}" target="_blank" rel="noopener">{{t:contact.form.privacy.link}}</a></label>
+          </div>
+          <span class="field__error" id="f-privacy-error" data-error-for="f-privacy"></span>
+        </div>
+
+        <p class="form__note">{{icon:paperclip|class=form__note-icon}}<span>{{t:contact.form.drawings}}</span></p>
+
+        <div class="form__actions">
+          <button type="submit" class="btn" data-submit>
+            <span data-submit-label>{{t:contact.form.submit}}</span>{{icon:send|class=btn__arrow}}
+          </button>
+        </div>
+
+        <!-- Estado del envío (mensajes accesibles) -->
+        <div class="form__status" role="status" aria-live="polite" data-form-status hidden></div>
+      </form>
+
+      <!-- Panel de confirmación: sustituye al formulario cuando la solicitud se ha guardado -->
+      <div class="form-success" data-form-success hidden tabindex="-1">
+        {{icon:circle-check|class=form-success__icon}}
+        <h3>{{t:contact.success.title}}</h3>
+        <p>{{t:contact.success.text}}</p>
+        <button type="button" class="btn btn--outline" data-form-reset><span>{{t:contact.success.again}}</span></button>
+      </div>
+    </div>
+
+    <aside class="contact-card" data-reveal data-spot aria-labelledby="contact-card-title">
+      <p class="contact-card__status"><span class="pulse-dot" aria-hidden="true"></span>{{t:contact.card.status}}</p>
+      <h2 id="contact-card-title">{{t:contact.card.title}}</h2>
+      <address>
+        <p class="contact-card__row">{{icon:map-pin}}<span><strong>{{s:legalName}}</strong><br>{{s:address.street}}<br>{{s:address.postalCode}} {{s:address.city}} ({{s:address.region}})<br>{{t:contact.card.country}}</span></p>
+        <p class="contact-card__row">{{icon:phone}}<span><a href="tel:{{s:phone.tel}}">{{s:phone.display}}</a></span></p>
+        <p class="contact-card__row">{{icon:mail}}<span><a href="mailto:{{s:email}}">{{s:email}}</a></span></p>
+      </address>
+      <a class="btn btn--ghost btn--sm" href="{{s:mapsUrl}}" target="_blank" rel="noopener"><span>{{t:contact.card.map}}</span>{{icon:external-link|class=btn__arrow}}</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================================================================
+     3. PREGUNTAS FRECUENTES
+     <details name="faq"> hace que solo una respuesta esté abierta a la vez.
+     ====================================================================== -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="container container--narrow">
+    <p class="eyebrow">{{t:contact.faq.eyebrow}}</p>
+    <h2 id="faq-title" data-split>{{t:contact.faq.title}}</h2>
+
+    <div class="faq" data-stagger>
+      {{#repeat 6}}
+      <details class="faq__item" name="faq" data-reveal>
+        <summary>{{t:contact.faq.items.{{@i}}.q}}</summary>
+        <div class="faq__answer"><p>{{t:contact.faq.items.{{@i}}.a}}</p></div>
+      </details>
+      {{/repeat}}
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="form-config">{{v:formConfig}}</script>

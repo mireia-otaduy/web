@@ -1,0 +1,31 @@
+{
+  "ogImageAlt": "LCC Manufacturing：项目开发与工业制造",
+  "home": {
+    "title": "LCC Manufacturing | 项目开发与工业制造",
+    "description": "项目开发与工业制造：金属冲压、锻造、管材成型、机加工、线切割与焊接。西班牙比斯开省阿莫雷别塔-埃查诺。"
+  },
+  "tech": {
+    "title": "工艺技术与制造能力 | LCC Manufacturing",
+    "description": "金属冲压、锻造、管材成型、机加工、线切割、焊接及注塑模具。了解 LCC Manufacturing 的生产能力。"
+  },
+  "process": {
+    "title": "工作流程：从创意到批量生产 | LCC Manufacturing",
+    "description": "分八个阶段的一体化项目管理：产品与工艺开发、样件、认可、工装、批量生产、质量控制、供应链和调节仓库。"
+  },
+  "contact": {
+    "title": "获取报价 | LCC Manufacturing",
+    "description": "请告诉我们您的项目。LCC Manufacturing，Parque Empresarial Boroa 19，西班牙比斯开省阿莫雷别塔-埃查诺。电话 +34 94 651 00 79。"
+  },
+  "legal": {
+    "title": "法律声明 | LCC Manufacturing",
+    "description": "LCC Manufacturing S.L. 网站的法律声明及网站所有者信息。"
+  },
+  "privacy": {
+    "title": "隐私与 Cookie 政策 | LCC Manufacturing",
+    "description": "LCC Manufacturing S.L. 如何处理您的个人数据，以及本网站使用哪些 Cookie。"
+  },
+  "404": {
+    "title": "页面未找到 | LCC Manufacturing",
+    "description": "您访问的页面不存在或已更换地址。"
+  }
+}

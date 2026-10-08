@@ -1,0 +1,25 @@
+{
+  "form": {
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "message": "Tell us a little more about your project (at least 10 characters).",
+      "pieces": "Enter a whole number between 1 and 100,000,000.",
+      "phone": "Enter a valid phone number (digits, spaces and the signs + - ( )).",
+      "privacy": "You must accept the privacy policy to send the request."
+    },
+    "invalid": "Please review the fields marked in red.",
+    "sending": "Sending…",
+    "sendingStatus": "Sending your request…",
+    "failed": "We couldn't send your request. Please try again or write to us at {email}.",
+    "mailOpened": "Your email app has opened with the request ready to send. If it doesn't open, write to us at {email}.",
+    "mailSubject": "Web quote request: {company}"
+  },
+  "lightbox": {
+    "label": "Image viewer",
+    "close": "Close",
+    "prev": "Previous part",
+    "next": "Next part",
+    "of": "of"
+  }
+}

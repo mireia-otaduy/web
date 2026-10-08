@@ -1,0 +1,25 @@
+{{#define bodyClass}}page-404{{/define}}
+
+<!-- Página de error 404: se muestra en los tres idiomas porque Firebase Hosting sirve un único archivo -->
+<section class="not-found is-dark">
+  <div class="not-found__glow" aria-hidden="true"></div>
+  <div class="container not-found__inner">
+    <p class="not-found__code" aria-hidden="true">404</p>
+
+    <div lang="es">
+      <h1>{{v:nf-es-title}}</h1>
+      <p>{{v:nf-es-text}}</p>
+      <a class="btn" href="/index.html"><span>{{v:nf-es-home}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
+    </div>
+    <div lang="en">
+      <h2>{{v:nf-en-title}}</h2>
+      <p>{{v:nf-en-text}}</p>
+      <a class="btn btn--ghost" href="/en/index.html"><span>{{v:nf-en-home}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
+    </div>
+    <div lang="zh-CN">
+      <h2>{{v:nf-zh-title}}</h2>
+      <p>{{v:nf-zh-text}}</p>
+      <a class="btn btn--ghost" href="/zh/index.html"><span>{{v:nf-zh-home}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
+    </div>
+  </div>
+</section>

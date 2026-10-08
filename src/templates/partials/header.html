@@ -1,0 +1,27 @@
+<!-- Cabecera: logotipo, menú principal, selector de idioma y botón del menú móvil -->
+<header class="site-header">
+  <div class="site-header__bar">
+    <a class="brand" href="{{link:home}}" aria-label="{{a:common.brandAria}}">
+      {{img:logo-lcc.png|alt=common.brandAlt|class=brand__logo|eager}}
+    </a>
+
+    <!-- Menú: en escritorio es una lista normal; en móvil es un panel lateral (API popover, sin JavaScript) -->
+    <nav id="menu" class="nav" popover aria-label="{{a:common.nav.label}}">
+      <button type="button" class="nav__close" popovertarget="menu" popovertargetaction="hide" aria-label="{{a:common.nav.close}}">{{icon:x}}</button>
+      <ul class="nav__list">
+        <li><a class="nav__link"{{#if page=home}} aria-current="page"{{/if}} href="{{link:home}}">{{t:common.nav.home}}</a></li>
+        <li><a class="nav__link"{{#if page=tech}} aria-current="page"{{/if}} href="{{link:tech}}">{{t:common.nav.tech}}</a></li>
+        <li><a class="nav__link"{{#if page=process}} aria-current="page"{{/if}} href="{{link:process}}">{{t:common.nav.process}}</a></li>
+        <li><a class="btn btn--sm"{{#if page=contact}} aria-current="page"{{/if}} href="{{link:contact}}"><span>{{t:common.nav.contact}}</span>{{icon:arrow-right|class=btn__arrow}}</a></li>
+      </ul>
+      <address class="nav__contact">
+        <p>{{s:address.street}}<br>{{s:address.postalCode}} {{s:address.city}} ({{s:address.region}})</p>
+        <p><a href="tel:{{s:phone.tel}}">{{s:phone.display}}</a><br><a href="mailto:{{s:email}}">{{s:email}}</a></p>
+      </address>
+    </nav>
+
+    {{v:langSwitch}}
+
+    <button type="button" class="burger" popovertarget="menu" aria-label="{{a:common.nav.open}}"><span></span><span></span><span></span></button>
+  </div>
+</header>

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "eyebrow": "Project development and industrial manufacturing · since 2008",
+    "title": "<span class=\"line\"><span>Industrial parts</span></span> <span class=\"line\"><span><em class=\"hl\">made to order</em>,</span></span> <span class=\"line\"><span>from drawing</span></span> <span class=\"line\"><span>to series production</span></span>",
+    "lead": "We manage your project from start to finish: product development, manufacturing and logistics.",
+    "integrate": "We integrate",
+    "integrateFull": "We integrate in-house metal stamping, forging, tube forming, machining, wire EDM cutting, welded assemblies, metal and plastic subassemblies and miscellaneous assemblies.",
+    "secondary": "View technologies",
+    "photoAlt": "Precision machined metal part",
+    "scroll": "Go to the next section",
+    "chips": {
+      "1": {
+        "value": "2008",
+        "label": "founded"
+      },
+      "2": {
+        "value": "8",
+        "label": "technologies"
+      },
+      "3": {
+        "value": "18",
+        "label": "presses"
+      }
+    }
+  },
+  "manifesto": {
+    "eyebrow": "Who we are",
+    "text": "We are your factory in China: you take on international projects without using your own resources or increasing your company's fixed costs."
+  },
+  "about": {
+    "eyebrow": "How we work",
+    "title": "Your factory, without building a factory",
+    "text": "LCC Manufacturing S.L. is a business group founded in <strong>2008</strong>, specialising in project development and the manufacture of industrial products in China. Our goal is <em>customer satisfaction</em>; our commitment, creating value.",
+    "photoAlt": "Factory hall with an overhead crane",
+    "stats": {
+      "1": {
+        "value": "2008",
+        "label": "Year founded"
+      },
+      "2": {
+        "value": "8",
+        "label": "Integrated technologies"
+      },
+      "3": {
+        "value": "14",
+        "label": "CNC lathes"
+      },
+      "4": {
+        "value": "18",
+        "label": "Stamping presses"
+      }
+    }
+  },
+  "rail": {
+    "eyebrow": "Technologies",
+    "title": "Eight technologies, one supplier",
+    "lead": "We have the most representative metal and plastic processing technologies integrated in our plant.",
+    "cta": "View all technologies",
+    "region": "Manufacturing technologies: scroll to see them all"
+  },
+  "sectors": {
+    "eyebrow": "Sectors",
+    "title": "Sectors we work in",
+    "lead": "We manufacture to drawing for all kinds of sectors."
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "From idea to series production in eight steps",
+    "cta": "Explore the process step by step"
+  },
+  "clients": {
+    "eyebrow": "Clients",
+    "title": "Companies already manufacturing with LCC"
+  }
+}

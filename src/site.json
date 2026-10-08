@@ -1,0 +1,146 @@
+{
+  "name": "LCC Manufacturing",
+  "legalName": "LCC Manufacturing S.L.",
+  "url": "https://lcc-manufacturing.web.app",
+  "founded": 2008,
+  "themeColor": "#07163a",
+  "defaultLang": "es",
+  "languages": {
+    "es": {
+      "dir": "",
+      "htmlLang": "es",
+      "hreflang": "es",
+      "ogLocale": "es_ES",
+      "code": "ES",
+      "native": "Español"
+    },
+    "en": {
+      "dir": "en/",
+      "htmlLang": "en",
+      "hreflang": "en",
+      "ogLocale": "en_GB",
+      "code": "EN",
+      "native": "English"
+    },
+    "zh": {
+      "dir": "zh/",
+      "htmlLang": "zh-CN",
+      "hreflang": "zh-CN",
+      "ogLocale": "zh_CN",
+      "code": "中文",
+      "native": "中文"
+    }
+  },
+  "pages": {
+    "home": {
+      "template": "index",
+      "priority": "1.0",
+      "files": {
+        "es": "index.html",
+        "en": "index.html",
+        "zh": "index.html"
+      }
+    },
+    "tech": {
+      "template": "technologies",
+      "priority": "0.9",
+      "files": {
+        "es": "tecnologias.html",
+        "en": "technologies.html",
+        "zh": "technologies.html"
+      }
+    },
+    "process": {
+      "template": "process",
+      "priority": "0.8",
+      "files": {
+        "es": "proceso.html",
+        "en": "process.html",
+        "zh": "process.html"
+      }
+    },
+    "contact": {
+      "template": "contact",
+      "priority": "0.9",
+      "files": {
+        "es": "contacto.html",
+        "en": "contact.html",
+        "zh": "contact.html"
+      }
+    },
+    "legal": {
+      "template": "legal",
+      "priority": "0.3",
+      "files": {
+        "es": "aviso-legal.html",
+        "en": "legal-notice.html",
+        "zh": "legal-notice.html"
+      }
+    },
+    "privacy": {
+      "template": "privacy",
+      "priority": "0.3",
+      "files": {
+        "es": "privacidad.html",
+        "en": "privacy.html",
+        "zh": "privacy.html"
+      }
+    }
+  },
+  "address": {
+    "street": "Parque Empresarial Boroa 19, Pabellón 4",
+    "postalCode": "48340",
+    "city": "Amorebieta-Etxano",
+    "region": "Bizkaia",
+    "countryCode": "ES"
+  },
+  "phone": {
+    "display": "+34 94 651 00 79",
+    "tel": "+34946510079"
+  },
+  "email": "info@lcc-manufacturing.com",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Parque+Empresarial+Boroa+19+Amorebieta-Etxano",
+  "legal": {
+    "cif": "B95517835",
+    "registry": ""
+  },
+  "firebase": {
+    "projectId": "lcc-manufacturing",
+    "apiKey": "",
+    "collection": "solicitudes"
+  },
+  "clients": {
+    "1": "Flex-N-Gate",
+    "2": "Grupo Ormazabal",
+    "3": "Alfa Deco Subconjuntos, S.A.",
+    "4": "Pronutec (Gorlan Team)",
+    "5": "Combisa",
+    "6": "Lantegi Batuak",
+    "7": "Grupo Brinean",
+    "8": "Copreci",
+    "9": "Dikar",
+    "10": "Cristofoli",
+    "11": "Tekniker",
+    "12": "Mesa",
+    "13": "Domusa",
+    "14": "Amic",
+    "15": "Industrias Arruti",
+    "16": "Plásticos Irastorza, S.A.",
+    "17": "Proinyec",
+    "18": "Fuymesa",
+    "19": "Icaplast",
+    "20": "Reiner",
+    "21": "Rega Matricería",
+    "22": "Plastibor (Gorlan Team)"
+  },
+  "techFamilies": {
+    "1": "forming",
+    "2": "forming",
+    "3": "forming",
+    "4": "machining",
+    "5": "machining",
+    "6": "joining",
+    "7": "joining",
+    "8": "joining"
+  }
+}

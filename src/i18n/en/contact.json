@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Tell us about your project",
+    "lead": "We will do our best to reply as soon as possible."
+  },
+  "form": {
+    "title": "Quote request form",
+    "progress": "Your request:",
+    "group": {
+      "you": "Your details",
+      "project": "Your project",
+      "services": "Additional services"
+    },
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "technology": {
+      "label": "Type of manufacturing",
+      "placeholder": "Select a technology",
+      "stamping": "Metal stamping",
+      "forging": "Forging",
+      "tube": "Tube forming",
+      "machining": "Machining",
+      "wire": "Wire EDM cutting",
+      "welding": "Welding",
+      "molds": "Injection moulds",
+      "other": "Other"
+    },
+    "type": {
+      "legend": "Project type",
+      "prototype": {
+        "title": "Prototype",
+        "text": "Validate the part before series production"
+      },
+      "short": {
+        "title": "Short run",
+        "text": "A few units"
+      },
+      "long": {
+        "title": "Long run",
+        "text": "Continuous production"
+      }
+    },
+    "pieces": "Parts per year (approx.)",
+    "date": "First parts needed by",
+    "message": "Tell us about your project",
+    "messageHint": "Material, dimensions, finish… the more detail, the better.",
+    "services": {
+      "approval": "Approval",
+      "tooling": "Tooling",
+      "warehouse": "Buffer warehouse"
+    },
+    "privacy": {
+      "before": "I accept the",
+      "link": "privacy policy"
+    },
+    "drawings": "Do you have drawings? Send them by email to {{s:email}} with your name and company.",
+    "submit": "Send request"
+  },
+  "success": {
+    "title": "Request sent!",
+    "text": "We have received your request. We will do our best to reply as soon as possible.",
+    "again": "Send another request"
+  },
+  "card": {
+    "status": "We will do our best to reply as soon as possible",
+    "title": "Contact details",
+    "country": "Spain",
+    "map": "View on map"
+  },
+  "faq": {
+    "eyebrow": "Common questions",
+    "title": "Frequently asked questions",
+    "items": {
+      "1": {
+        "q": "How can I request a quote?",
+        "a": "Fill in the form on this page or write to us at {{s:email}} with your drawing or a description of the part. We will do our best to reply as soon as possible."
+      },
+      "2": {
+        "q": "Do you make prototypes?",
+        "a": "Yes. Prototype manufacturing is one of the stages of our working method."
+      },
+      "3": {
+        "q": "Where are the parts manufactured?",
+        "a": "Engineering and project management are done in Spain. Series production takes place in China and our buffer warehouses are in Amorebieta and Barcelona."
+      },
+      "4": {
+        "q": "Do you make injection moulds?",
+        "a": "Yes. We have an engineering team specialised in injection moulds and prototypes, and we are partnered with a toolmaker with 2,000 m² of facilities."
+      },
+      "5": {
+        "q": "Which sectors do you work for?",
+        "a": "Automotive, electrical, home appliances, road safety, capital goods, renewable energy, agriculture and healthcare."
+      },
+      "6": {
+        "q": "Do you subcontract any technologies?",
+        "a": "Yes, when necessary. We have qualified staff and extensive knowledge of suppliers of other technologies, such as plastic or aluminium injection."
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+/* ==========================================================================
+   08 · EFECTOS DE APARICIÓN Y MOVIMIENTO
+   Capa de movimiento común a todas las páginas. Se activa solo cuando:
+     1. hay JavaScript (la clase .js la añade el script de arranque de <head>), y
+     2. la persona no ha pedido "reducir movimiento" en su sistema.
+   Si algo falla, el contenido sigue siendo visible (ver "Salvaguarda").
+
+   Atributos que controla src/js/10-reveal.js:
+     [data-reveal]            aparición del bloque al entrar en pantalla
+                              (valores: up por defecto, left, right, zoom, fade, blur, curtain)
+     [data-stagger]           escalona la aparición de sus hijos [data-reveal]
+     [data-split]             titular que aparece palabra a palabra
+   Se usan las propiedades individuales translate/scale (y no transform) para no
+   chocar con los efectos de hover de los componentes.
+   ========================================================================== */
+
+/* ---------- Palabras de los titulares ([data-split]) ---------- */
+
+/* Cada palabra va en una "máscara" que recorta su entrada desde abajo */
+.w {
+  display: inline-block;
+  margin: -0.1em 0 -0.16em;
+  padding: 0.1em 0 0.16em;
+  overflow: clip;
+  vertical-align: top;
+}
+
+.w > span {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* El titular permanece oculto hasta que el script lo ha dividido (evita un parpadeo) */
+  .js [data-split]:not(.is-split) {
+    visibility: hidden;
+  }
+
+  .js [data-split] .w > span {
+    translate: 0 115%;
+    transition: translate 1s var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 55ms);
+  }
+
+  .js [data-split].is-in .w > span {
+    translate: 0 0;
+  }
+
+  /* ---------- Aparición de bloques ([data-reveal]) ---------- */
+
+  .js [data-reveal] {
+    opacity: 0;
+    translate: 0 2.4rem;
+    transition:
+      opacity 0.9s var(--ease-out),
+      translate 0.9s var(--ease-out),
+      scale 0.9s var(--ease-out),
+      filter 0.9s var(--ease-out),
+      clip-path 1.2s var(--ease-in-out);
+    transition-delay: calc(var(--d, 0) * 90ms);
+  }
+
+  .js [data-reveal="left"] {
+    translate: -3rem 0;
+  }
+
+  .js [data-reveal="right"] {
+    translate: 3rem 0;
+  }
+
+  .js [data-reveal="zoom"] {
+    translate: 0 1.5rem;
+    scale: 0.93;
+  }
+
+  .js [data-reveal="fade"] {
+    translate: none;
+  }
+
+  .js [data-reveal="blur"] {
+    filter: blur(12px);
+  }
+
+  .js [data-reveal].is-in {
+    opacity: 1;
+    translate: none;
+    scale: none;
+    filter: none;
+  }
+
+  /* Cortina: la foto se abre de arriba abajo y se asienta (de ampliada a su tamaño).
+     El recorte se aplica al contenido interior y NO al elemento observado: un elemento
+     recortado por completo no se considera visible para IntersectionObserver. */
+  .js [data-reveal="curtain"] {
+    opacity: 1;
+    translate: none;
+  }
+
+  .js [data-reveal="curtain"] > .frame__media {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1.2s var(--ease-in-out);
+    transition-delay: calc(var(--d, 0) * 90ms);
+  }
+
+  .js [data-reveal="curtain"].is-in > .frame__media {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Velo y marca de esquina aparecen cuando la cortina ya se ha abierto */
+  .js [data-reveal="curtain"]::before,
+  .js [data-reveal="curtain"]::after {
+    opacity: 0;
+    transition: opacity 0.6s ease 0.9s, width 0.4s ease, height 0.4s ease;
+  }
+
+  .js [data-reveal="curtain"].is-in::before,
+  .js [data-reveal="curtain"].is-in::after {
+    opacity: 1;
+  }
+
+  .js [data-reveal="curtain"] img {
+    scale: 1.3;
+    transition: scale 1.8s var(--ease-out), transform 0.9s var(--ease-out), filter 0.5s ease;
+    transition-delay: calc(var(--d, 0) * 90ms), 0s, 0s;
+  }
+
+  .js [data-reveal="curtain"].is-in img {
+    scale: 1;
+  }
+
+  /* ---------- Salvaguarda ----------
+     Si el script no llega a ejecutarse (.js-ready ausente) el contenido se muestra
+     igualmente a los 4 segundos. */
+  html.js:not(.js-ready) :is([data-reveal], [data-split]) {
+    animation: reveal-failsafe 0.01s 4s forwards;
+  }
+}
+
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+    translate: none;
+    scale: none;
+    filter: none;
+    clip-path: none;
+    visibility: visible;
+  }
+}
+
+/* ---------- Cifras animadas ---------- */
+
+[data-count] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Barra de lectura ---------- */
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 300;
+  height: 3px;
+  pointer-events: none;
+}
+
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  background-image: linear-gradient(90deg, var(--blue-500), var(--sky));
+  transform: scaleX(var(--progress, 0));
+  transform-origin: left;
+}
+
+/* ---------- Transición suave entre páginas (navegadores compatibles) ---------- */
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: 0.25s ease both vt-out;
+  }
+
+  ::view-transition-new(root) {
+    animation: 0.5s var(--ease-out) both vt-in;
+  }
+}
+
+@keyframes vt-out {
+  to { opacity: 0; }
+}
+
+@keyframes vt-in {
+  from { opacity: 0; translate: 0 18px; }
+}
+
+/* ---------- Movimiento reducido ----------
+   Se detienen todas las animaciones decorativas. Los elementos vuelven a su estado
+   normal (visible); las cintas pasan a ser filas estáticas (ver hoja de inicio). */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

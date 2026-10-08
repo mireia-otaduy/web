@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "eyebrow": "Proceso de trabajo",
+    "title": "Cómo trabajamos: de la idea a la serie",
+    "lead": "Gestión integral del proyecto con una metodología de trabajo en ocho etapas."
+  },
+  "steps": {
+    "eyebrow": "Los 8 pasos",
+    "title": "Elige un paso y mira qué hacemos",
+    "legend": "Pasos del proceso de trabajo",
+    "prev": "Paso anterior",
+    "next": "Siguiente paso",
+    "photos": {
+      "5": "Línea de prensas de estampación en la planta de fabricación",
+      "6": "Equipo de medición para el control de calidad",
+      "7": "Carretilla elevadora junto a palés de cajas",
+      "8": "Almacén con estanterías y contenedores"
+    }
+  },
+  "route": {
+    "eyebrow": "Del plano a tu almacén",
+    "title": "El camino de tu pieza",
+    "lead": "Ingeniería y gestión de proyectos en España, fabricación en China y almacenes reguladores en Amorebieta y Barcelona.",
+    "stops": {
+      "1": {
+        "title": "España",
+        "text": "Comercial, ingeniería y gestión de proyectos.",
+        "tags": { "1": "Ingeniería", "2": "Gestión de proyectos" }
+      },
+      "2": {
+        "title": "China",
+        "text": "Fabricamos tus productos industriales en China.",
+        "tags": { "1": "Fabricación seriada" }
+      },
+      "3": {
+        "title": "Amorebieta y Barcelona",
+        "text": "Almacenes reguladores del flujo logístico de los productos que suministramos en España.",
+        "tags": { "1": "Almacén regulador", "2": "Montajes finales", "3": "Inspecciones de calidad" }
+      }
+    }
+  },
+  "benefits": {
+    "eyebrow": "Ventajas",
+    "title": "Qué ganas con LCC"
+  }
+}

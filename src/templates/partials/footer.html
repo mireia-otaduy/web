@@ -1,0 +1,36 @@
+<!-- Pie de página: marca, navegación, datos de contacto y avisos legales -->
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      {{img:logo-lcc-blanco.png|alt=common.brandAlt|class=site-footer__logo}}
+      <p>{{t:common.footer.tagline}}</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="{{a:common.footer.menuTitle}}">
+      <h2 class="site-footer__title">{{t:common.footer.menuTitle}}</h2>
+      <ul>
+        <li><a href="{{link:home}}">{{t:common.nav.home}}</a></li>
+        <li><a href="{{link:tech}}">{{t:common.nav.tech}}</a></li>
+        <li><a href="{{link:process}}">{{t:common.nav.process}}</a></li>
+        <li><a href="{{link:contact}}">{{t:common.nav.contact}}</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__title">{{t:common.footer.contactTitle}}</h2>
+      <address>
+        <p>{{s:address.street}}<br>{{s:address.postalCode}} {{s:address.city}} ({{s:address.region}})</p>
+        <p><a href="tel:{{s:phone.tel}}">{{s:phone.display}}</a><br><a href="mailto:{{s:email}}">{{s:email}}</a></p>
+      </address>
+      <p><a href="{{s:mapsUrl}}" target="_blank" rel="noopener">{{t:common.footer.map}}</a></p>
+    </div>
+  </div>
+
+  <div class="container site-footer__legal">
+    <p>© {{v:year}} {{s:legalName}} · {{t:common.footer.rights}}</p>
+    <ul>
+      <li><a href="{{link:legal}}">{{t:common.footer.legal}}</a></li>
+      <li><a href="{{link:privacy}}">{{t:common.footer.privacy}}</a></li>
+    </ul>
+  </div>
+</footer>

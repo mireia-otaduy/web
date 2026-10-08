@@ -1,0 +1,21 @@
+{
+  "name": "lcc-manufacturing-web",
+  "version": "1.0.0",
+  "description": "Sitio web corporativo de LCC Manufacturing S.L. (español, inglés y chino)",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "check": "node tools/check.mjs",
+    "test": "node tools/build.mjs && node tools/check.mjs",
+    "serve": "node tools/serve.mjs",
+    "dev": "node tools/serve.mjs --watch",
+    "deploy": "node tools/build.mjs && node tools/check.mjs && firebase deploy"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

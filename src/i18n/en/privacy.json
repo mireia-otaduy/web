@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "eyebrow": "Legal information",
+    "title": "Privacy and cookie policy",
+    "lead": "How we handle your personal data and what this website stores on your device."
+  },
+  "updated": "Last updated: October 2026",
+  "controller": {
+    "title": "Data controller",
+    "intro": "The controller of the personal data collected through this website is:",
+    "name": "Controller",
+    "taxId": "Tax ID (CIF)",
+    "address": "Address",
+    "email": "Email",
+    "country": "Spain"
+  },
+  "sections": {
+    "2": {
+      "title": "What data we process",
+      "body": "<p>We process the data you provide when you submit the quote form: name, company, email, phone (optional) and the details of your project (type of manufacturing, project type, parts per year, desired date, message and additional services). We also record the language of the page you write from.</p><p>Like any web server, the hosting service may record technical connection data (such as the IP address) for security and operational purposes.</p>"
+    },
+    "3": {
+      "title": "What we use it for",
+      "body": "<p>We use your data to handle your quote request or enquiry and to communicate with you about it. We do not make automated decisions or build profiles with your data.</p>"
+    },
+    "4": {
+      "title": "Legal basis",
+      "body": "<p>The legal basis is your consent (Article 6.1.a of the General Data Protection Regulation, GDPR), which you give by ticking the acceptance box, and the application of pre-contractual measures at your request (Article 6.1.b GDPR).</p>"
+    },
+    "5": {
+      "title": "How long we keep it",
+      "body": "<p>We will keep your data for as long as necessary to handle your request and, afterwards, duly blocked for the legal limitation periods for possible liabilities.</p>"
+    },
+    "6": {
+      "title": "Recipients and processors",
+      "body": "<p>We do not share your data with third parties, except where required by law. To host the website and store requests we use Google services (Google Cloud / Firebase) as a data processor, with the appropriate safeguards provided for in the GDPR. Requests are stored on servers located in the European Union.</p>"
+    },
+    "7": {
+      "title": "Your rights",
+      "body": "<p>You can exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to <a href=\"mailto:{{s:email}}\">{{s:email}}</a>, stating the right you wish to exercise and the details needed to identify you.</p><p>If you believe your data has not been handled properly, you can lodge a complaint with the Spanish Data Protection Agency (<a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>).</p>"
+    },
+    "8": {
+      "title": "Cookies and local storage",
+      "body": "<p>This website does not use its own or third-party cookies, analytics or advertising tools, and does not store information on your device. Therefore it is not necessary to ask for your consent for cookies.</p><p>If we add cookies or measurement tools in the future, we will update this policy and ask for your prior consent.</p>"
+    },
+    "9": {
+      "title": "Security",
+      "body": "<p>We apply reasonable technical and organisational measures to protect your data: encrypted connection (HTTPS) and restricted access to the requests received.</p>"
+    }
+  }
+}

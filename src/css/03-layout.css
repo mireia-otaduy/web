@@ -1,0 +1,154 @@
+/* ==========================================================================
+   03 · ESTRUCTURA
+   Contenedores, secciones, rótulos, rejillas y los dos "temas" de sección
+   (claro y oscuro). Todo el espaciado vertical sale de --section-y.
+   ========================================================================== */
+
+/* Centra el contenido: 90 % del ancho con un máximo de 1240 px */
+.container {
+  width: min(90%, var(--container));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(90%, 52rem);
+}
+
+/* ---------- Secciones ---------- */
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+  /* "clip" recorta los efectos que entran desde los lados sin romper elementos sticky */
+  overflow-x: clip;
+}
+
+.section--soft {
+  background-color: var(--surface);
+}
+
+/* Tema oscuro: se aplica con .is-dark a una sección (o a cualquier bloque) */
+.is-dark {
+  background-color: var(--navy-900);
+  color: var(--silver);
+}
+
+.is-dark :is(h1, h2, h3, h4) {
+  color: var(--white);
+}
+
+.is-dark :is(p, li, dd) {
+  color: var(--silver);
+}
+
+.is-dark a:not(.btn) {
+  color: var(--sky);
+}
+
+.is-dark a:not(.btn):hover {
+  color: var(--white);
+}
+
+/* Corte diagonal en el borde superior de una sección oscura.
+   La sección sube (margen negativo) y se recorta; en el hueco se ve la anterior. */
+.cut {
+  --cut: clamp(1.5rem, 4.5vw, 4rem);
+  position: relative;
+  z-index: 2;
+  margin-top: calc(var(--cut) * -1);
+  padding-top: calc(var(--cut) + var(--section-y));
+  clip-path: polygon(0 var(--cut), 100% 0, 100% 100%, 0 100%);
+}
+
+/* ---------- Rótulos y textos de apoyo ---------- */
+
+/* Rótulo pequeño sobre cada titular: cuadradito de color + línea de cota */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 36rem;
+  margin: 0 0 1.4rem;
+  color: var(--blue-600);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
+  background-color: var(--sky);
+}
+
+.eyebrow::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background-color: currentcolor;
+  opacity: 0.3;
+}
+
+.is-dark .eyebrow {
+  color: var(--blue-300);
+}
+
+/* Párrafo de entrada, algo mayor, bajo un titular */
+.lead {
+  max-width: 44rem;
+  margin-bottom: 1.6em;
+  color: var(--ink-soft);
+  font-size: clamp(1.1rem, 1.5vw, 1.28rem);
+  line-height: 1.6;
+}
+
+.is-dark .lead {
+  color: var(--silver);
+}
+
+/* ---------- Rejillas y filas de acciones ---------- */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid > li {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+@media (max-width: 1000px) {
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

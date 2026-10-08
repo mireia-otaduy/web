@@ -1,0 +1,245 @@
+{
+  "hero": {
+    "eyebrow": "Tecnologías y medios",
+    "title": "Tecnologías y medios de fabricación",
+    "lead": "Ocho tecnologías integradas en nuestra planta productiva y, cuando es necesario, subcontratación de otras."
+  },
+  "items": {
+    "1": {
+      "name": "Estampación metálica",
+      "value": "18",
+      "unit": "prensas de estampación",
+      "summary": "18 prensas de estampación"
+    },
+    "2": {
+      "name": "Forja",
+      "value": "1",
+      "unit": "prensa de forjado",
+      "summary": "1 prensa de forjado"
+    },
+    "3": {
+      "name": "Conformado de tubo",
+      "value": "1",
+      "unit": "curvadora",
+      "summary": "1 curvadora"
+    },
+    "4": {
+      "name": "Mecanizados",
+      "value": "14",
+      "unit": "tornos CNC",
+      "summary": "14 tornos CNC"
+    },
+    "5": {
+      "name": "Corte por hilo",
+      "value": "8",
+      "unit": "máquinas de corte por hilo",
+      "summary": "8 máquinas de corte por hilo"
+    },
+    "6": {
+      "name": "Conjuntos soldados",
+      "value": "2",
+      "unit": "instalaciones de soldadura MIG",
+      "summary": "2 instalaciones de soldadura MIG"
+    },
+    "7": {
+      "name": "Subconjuntos metálicos y plásticos",
+      "value": "<span class=\"is-text\">Diversas</span>",
+      "unit": "líneas de montaje",
+      "summary": "Diversas líneas de montaje",
+      "list": {
+        "1": "Metálicos",
+        "2": "Plásticos"
+      }
+    },
+    "8": {
+      "name": "Montajes diversos",
+      "value": "1",
+      "unit": "línea de tampografiado",
+      "summary": "Tampografiado, taladrado y corte",
+      "list": {
+        "1": "1 línea de tampografiado",
+        "2": "10 taladradoras",
+        "3": "2 líneas de corte de acero y aluminio"
+      }
+    }
+  },
+  "list": {
+    "eyebrow": "Tecnologías",
+    "title": "Ocho tecnologías, un solo proveedor",
+    "lead": "Las tecnologías más representativas de nuestra planta productiva. Elige una familia para filtrarlas."
+  },
+  "mosaic": {
+    "1": "Línea de prensas de estampación",
+    "2": "Línea de tornos CNC",
+    "3": "Máquina en el taller",
+    "4": "Operaria montando subconjuntos metálicos en una línea de montaje",
+    "5": "Operarios trabajando con taladros de columna"
+  },
+  "filter": {
+    "legend": "Filtrar por familia",
+    "all": "Todas",
+    "forming": "Conformado",
+    "machining": "Mecanizado y corte",
+    "joining": "Unión y acabado"
+  },
+  "subcontracting": "<strong>Subcontratación:</strong> contamos con personal cualificado y un amplio conocimiento de proveedores de otras tecnologías, como inyección de plástico, aluminio, etc.",
+  "molds": {
+    "eyebrow": "Moldes de inyección",
+    "title": "Moldes de inyección y prototipos",
+    "lead": "Tenemos un equipo de ingeniería especializado en moldes de inyección y prototipos, y gestionamos la cadena de valor del molde de manera integral.",
+    "stats": {
+      "1": {
+        "value": "2.000 m²",
+        "label": "Instalaciones del moldista"
+      },
+      "2": {
+        "value": "12",
+        "label": "Inyectoras de 50 a 750 Tn"
+      },
+      "3": {
+        "value": "7",
+        "label": "Centros de mecanizado"
+      },
+      "4": {
+        "value": "20 ºC",
+        "label": "Tridimensional acondicionada"
+      }
+    },
+    "partner": {
+      "title": "Moldista asociado",
+      "text": "Estamos asociados con un moldista que dispone de <strong>2.000 m²</strong> de instalaciones."
+    },
+    "facilities": {
+      "title": "Instalaciones",
+      "text": "12 inyectoras de 50 a 750 Tn y una prensa de ajuste."
+    },
+    "machinery": {
+      "title": "Maquinaria",
+      "items": {
+        "1": "7 centros de mecanizado",
+        "2": "1 centro de alta velocidad con cámara climática",
+        "3": "4 máquinas de erosión por penetración",
+        "4": "5 máquinas de erosión por hilo",
+        "5": "2 rectificadoras",
+        "6": "2 taladradoras profundas",
+        "7": "3 fresadoras"
+      }
+    },
+    "metrology": {
+      "title": "Metrología",
+      "text": "Tridimensional acondicionada a 20 ºC, dinascopio, durómetro, etc."
+    },
+    "photoAlt": "Molde de inyección de plástico",
+    "photoCaption": "Molde de inyección."
+  },
+  "capacity": {
+    "eyebrow": "Capacidad instalada",
+    "title": "Nuestros medios productivos, en cifras",
+    "lead": "Los medios productivos de LCC, de un vistazo y en detalle.",
+    "bars": {
+      "1": "Prensas de estampación",
+      "2": "Tornos CNC",
+      "3": "Taladradoras",
+      "4": "Máquinas de corte por hilo",
+      "5": "Instalaciones de soldadura MIG",
+      "6": "Líneas de corte de acero y aluminio"
+    }
+  },
+  "table": {
+    "caption": "Medios productivos disponibles para tus proyectos",
+    "head": {
+      "family": "Familia",
+      "technology": "Tecnología",
+      "capacity": "Capacidad"
+    },
+    "rows": {
+      "1": {
+        "name": "Estampación metálica",
+        "value": "18 prensas"
+      },
+      "2": {
+        "name": "Forja",
+        "value": "1 prensa de forjado"
+      },
+      "3": {
+        "name": "Conformado de tubo",
+        "value": "1 curvadora"
+      },
+      "4": {
+        "name": "Tornos CNC",
+        "value": "14 tornos"
+      },
+      "5": {
+        "name": "Corte por hilo",
+        "value": "8 máquinas"
+      },
+      "6": {
+        "name": "Taladradoras",
+        "value": "10 taladradoras"
+      },
+      "7": {
+        "name": "Corte de acero y aluminio",
+        "value": "2 líneas de corte"
+      },
+      "8": {
+        "name": "Soldadura MIG",
+        "value": "2 instalaciones"
+      },
+      "9": {
+        "name": "Tampografiado",
+        "value": "1 línea"
+      },
+      "10": {
+        "name": "Montaje",
+        "value": "Diversas líneas de montaje"
+      }
+    },
+    "foot": "8 tecnologías integradas · además, equipos de control de calidad, carretillas y material de almacenaje"
+  },
+  "plant": {
+    "eyebrow": "Planta",
+    "title": "Así se trabaja en planta",
+    "items": {
+      "1": {
+        "alt": "Operario manejando un torno CNC",
+        "caption": "Torneado CNC"
+      },
+      "2": {
+        "alt": "Operario revisando piezas metálicas junto a una prensa",
+        "caption": "Revisión de piezas"
+      },
+      "3": {
+        "alt": "Operarias montando piezas metálicas pequeñas",
+        "caption": "Montaje"
+      },
+      "4": {
+        "alt": "Carretilla elevadora junto a palés de cajas",
+        "caption": "Almacén y logística"
+      },
+      "5": {
+        "alt": "Durómetro para ensayos de dureza",
+        "caption": "Durómetro"
+      }
+    }
+  },
+  "products": {
+    "eyebrow": "Productos",
+    "title": "Piezas bajo plano",
+    "lead": "Muestrario de piezas fabricadas bajo plano. Pulsa una pieza para verla en grande.",
+    "region": "Muestrario de piezas: desliza para ver más",
+    "items": {
+      "1": "Pletinas metálicas zincadas",
+      "2": "Piezas de plástico negro con varillas",
+      "3": "Piezas mecanizadas de fundición",
+      "4": "Varillas y llaves tubulares dobladas",
+      "5": "Fijaciones de aluminio con tornillos",
+      "6": "Soportes de chapa doblada",
+      "7": "Escuadras de chapa y arandelas",
+      "8": "Casquillos de acero y latón",
+      "9": "Ejes cilíndricos mecanizados",
+      "10": "Ejes roscados y tornillería",
+      "11": "Piezas de varilla doblada y soportes",
+      "12": "Varilla doblada con mango"
+    }
+  }
+}

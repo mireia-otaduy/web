@@ -1,0 +1,428 @@
+/* ==========================================================================
+   05 · CABECERA, MENÚ E IDIOMA
+   Barra pegajosa con logotipo, menú, selector de idioma y botón del menú móvil.
+   En móvil el <nav> es un panel lateral que se abre con la API popover
+   (sin JavaScript); el selector de idioma es un <details>.
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 12px 12px;
+  background-color: rgb(255 255 255 / 0.97);
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 8px 22px rgb(4 13 36 / 0.12);
+}
+
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(90%, var(--container));
+  min-height: var(--header-h);
+  margin-inline: auto;
+}
+
+.brand {
+  display: block;
+  margin-right: auto;
+  line-height: 0;
+}
+
+.brand__logo {
+  width: auto;
+  height: 2.6rem;
+}
+
+/* ---------- Menú principal (escritorio) ---------- */
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__list li {
+  margin: 0;
+}
+
+.nav__link {
+  position: relative;
+  display: block;
+  padding: 0.65em 1.05em;
+  border-radius: 10px;
+  color: var(--navy-900);
+  font-size: 0.97rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Subrayado que crece desde la izquierda */
+.nav__link::after {
+  content: "";
+  position: absolute;
+  right: 1.05em;
+  bottom: 0.38em;
+  left: 1.05em;
+  height: 2px;
+  background-color: var(--blue-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.nav__link:hover {
+  background-color: var(--blue-100);
+  color: var(--navy-900);
+}
+
+.nav__link:hover::after,
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav__link[aria-current="page"] {
+  background-color: var(--blue-100);
+  color: var(--navy-700);
+}
+
+/* Elementos que solo existen en el panel móvil */
+.burger,
+.nav__close,
+.nav__contact {
+  display: none;
+}
+
+/* Con el atributo popover, el <nav> se comporta como un menú normal en pantallas grandes */
+@media (min-width: 861px) {
+  .nav[popover] {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: none;
+    color: inherit;
+  }
+}
+
+/* ---------- Selector de idioma ---------- */
+
+.lang {
+  position: relative;
+}
+
+.lang__button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--navy-900);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  list-style: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.lang__button::-webkit-details-marker {
+  display: none;
+}
+
+.lang__button:hover,
+.lang[open] .lang__button {
+  border-color: var(--blue-600);
+  background-color: var(--blue-100);
+}
+
+.lang__button .icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.lang__chevron {
+  width: 0.9rem !important;
+  height: 0.9rem !important;
+  transition: rotate 0.3s ease;
+}
+
+.lang[open] .lang__chevron {
+  rotate: 180deg;
+}
+
+.lang__list {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 5;
+  min-width: 9.5rem;
+  margin: 0;
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+  list-style: none;
+}
+
+.lang__list li {
+  margin: 0;
+}
+
+.lang__list a {
+  display: block;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  color: var(--navy-900);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lang__list a:hover {
+  background-color: var(--blue-100);
+}
+
+.lang__list a[aria-current="true"] {
+  background-color: var(--blue-100);
+  color: var(--blue-600);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lang[open] .lang__list {
+    animation: menu-drop 0.25s var(--ease-out);
+  }
+}
+
+@keyframes menu-drop {
+  from { opacity: 0; translate: 0 -8px; }
+}
+
+/* ---------- Menú móvil: panel lateral con la API popover ---------- */
+
+@media (max-width: 860px) {
+  .site-header__bar {
+    gap: 0.6rem;
+  }
+
+  .brand__logo {
+    height: 2.3rem;
+  }
+
+  /* Botón de tres rayas */
+  .burger {
+    display: grid;
+    place-content: center;
+    gap: 0.32rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--navy-900);
+    cursor: pointer;
+  }
+
+  .burger span {
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease;
+  }
+
+  .burger span:nth-child(2) {
+    width: 0.85rem;
+    margin-left: auto;
+  }
+
+  .burger:hover span:nth-child(2) {
+    width: 1.2rem;
+  }
+
+  /* Panel: ocupa el lado derecho y solo se ve cuando está abierto */
+  .nav[popover] {
+    inset: 0 0 0 auto;
+    width: min(88vw, 26rem);
+    height: 100dvh;
+    margin: 0;
+    padding: 1.4rem 1.6rem 2rem;
+    overflow-y: auto;
+    border: 0;
+    border-radius: 28px 0 0 28px;
+    background-color: var(--navy-900);
+    background-image: linear-gradient(160deg, var(--navy-800), var(--navy-950));
+    color: var(--white);
+  }
+
+  .nav[popover]:popover-open {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .nav[popover]::backdrop {
+    background-color: rgb(4 13 36 / 0.7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+
+  .nav__close {
+    position: relative;
+    display: grid;
+    place-items: center;
+    align-self: flex-end;
+    width: 2.8rem;
+    height: 2.8rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--navy-800);
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav__list li {
+    border-bottom: 1px solid var(--navy-700);
+  }
+
+  .nav__list li:last-child {
+    margin-top: 1.4rem;
+    border-bottom: 0;
+  }
+
+  .nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.2rem;
+    border-radius: 0;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  /* Chevron dibujado con bordes (no depende de ningún glifo de la fuente) */
+  .nav__link::after {
+    position: static;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.3rem;
+    border-top: 2px solid var(--sky);
+    border-right: 2px solid var(--sky);
+    background: none;
+    rotate: 45deg;
+    transform: none;
+  }
+
+  .nav__link:hover,
+  .nav__link[aria-current="page"] {
+    background: none;
+    color: var(--sky);
+  }
+
+  .nav .btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem 0.5rem 1.6rem;
+    font-size: 1.1rem;
+  }
+
+  .nav .btn .btn__arrow {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.62rem;
+  }
+
+  /* Dirección, teléfono y correo al final del panel */
+  .nav__contact {
+    display: block;
+    margin-top: auto;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--navy-700);
+    color: var(--silver);
+    font-size: 0.95rem;
+  }
+
+  .nav__contact p {
+    margin: 0 0 0.6em;
+    color: var(--silver);
+  }
+
+  .nav__contact a {
+    color: var(--white);
+  }
+}
+
+/* Animaciones del panel (solo si el usuario no pide menos movimiento) */
+@media (max-width: 860px) and (prefers-reduced-motion: no-preference) {
+  .nav[popover] {
+    translate: 100% 0;
+    opacity: 0;
+    transition: translate 0.55s var(--ease-out), opacity 0.4s ease, display 0.55s allow-discrete, overlay 0.55s allow-discrete;
+  }
+
+  .nav[popover]:popover-open {
+    translate: 0 0;
+    opacity: 1;
+  }
+
+  @starting-style {
+    .nav[popover]:popover-open {
+      translate: 100% 0;
+      opacity: 0;
+    }
+  }
+
+  .nav[popover]::backdrop {
+    opacity: 0;
+    transition: opacity 0.4s ease, display 0.4s allow-discrete, overlay 0.4s allow-discrete;
+  }
+
+  .nav[popover]:popover-open::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .nav[popover]:popover-open::backdrop {
+      opacity: 0;
+    }
+  }
+
+  /* Los enlaces entran uno detrás de otro */
+  .nav[popover]:popover-open .nav__list li {
+    animation: nav-item-in 0.6s var(--ease-out) backwards;
+  }
+
+  .nav[popover]:popover-open .nav__list li:nth-child(1) { animation-delay: 0.15s; }
+  .nav[popover]:popover-open .nav__list li:nth-child(2) { animation-delay: 0.22s; }
+  .nav[popover]:popover-open .nav__list li:nth-child(3) { animation-delay: 0.29s; }
+  .nav[popover]:popover-open .nav__list li:nth-child(4) { animation-delay: 0.36s; }
+}
+
+@keyframes nav-item-in {
+  from { opacity: 0; translate: 40px 0; }
+}

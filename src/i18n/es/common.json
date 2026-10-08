@@ -1,0 +1,35 @@
+{
+  "skip": "Saltar al contenido",
+  "brandAria": "LCC Manufacturing, ir al inicio",
+  "brandAlt": "LCC Manufacturing",
+  "nav": {
+    "label": "Menú principal",
+    "open": "Abrir menú",
+    "close": "Cerrar menú",
+    "home": "Inicio",
+    "tech": "Tecnologías",
+    "process": "Proceso",
+    "contact": "Contacto"
+  },
+  "lang": {
+    "label": "Cambiar idioma"
+  },
+  "fab": "Pedir presupuesto",
+  "cta": {
+    "eyebrow": "Contacto",
+    "title": "¿Tienes un plano o una idea?",
+    "text": "Cuéntanosla y haremos todo lo posible por responderte cuanto antes.",
+    "quote": "Pedir presupuesto",
+    "call": "Llamar ahora",
+    "write": "Escribir"
+  },
+  "footer": {
+    "tagline": "Desarrollo de proyectos y fabricación de productos industriales.",
+    "menuTitle": "Menú",
+    "contactTitle": "Contacto",
+    "map": "Ver en el mapa",
+    "rights": "Todos los derechos reservados.",
+    "legal": "Aviso legal",
+    "privacy": "Privacidad y cookies"
+  }
+}

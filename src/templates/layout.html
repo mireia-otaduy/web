@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{v:htmlLang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{v:title}}</title>
+  <meta name="description" content="{{v:description}}">
+  <meta name="theme-color" content="{{v:themeColor}}">
+  {{v:robots}}
+
+  <!-- URL canónica y versiones en otros idiomas -->
+  <link rel="canonical" href="{{v:canonical}}">
+  {{v:alternates}}
+
+  <!-- Redes sociales (Open Graph y Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{v:siteName}}">
+  <meta property="og:title" content="{{v:title}}">
+  <meta property="og:description" content="{{v:description}}">
+  <meta property="og:url" content="{{v:canonical}}">
+  <meta property="og:image" content="{{v:ogImage}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{v:ogImageAlt}}">
+  <meta property="og:locale" content="{{v:ogLocale}}">
+  {{v:ogLocaleAlternates}}
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Iconos y manifiesto -->
+  <link rel="icon" href="{{v:root}}favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{v:root}}favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="{{v:root}}apple-touch-icon.png">
+  <link rel="manifest" href="{{v:root}}site.webmanifest">
+
+  <!-- Recursos críticos: tipografías autoalojadas y hoja de estilos -->
+  <link rel="preload" href="{{asset:fonts/inter-latin-wght-normal.woff2}}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{asset:fonts/space-grotesk-latin-wght-normal.woff2}}" as="font" type="font/woff2" crossorigin>
+  {{v:slot-head}}
+  {{v:styles}}
+
+  <!-- Marca la página como "con JavaScript" antes del primer pintado (evita parpadeos en las animaciones) -->
+  <script>{{v:bootScript}}</script>
+  <script src="{{v:js}}" defer></script>
+
+  <!-- Datos estructurados para buscadores -->
+  {{v:jsonld}}
+</head>
+<body class="{{v:slot-bodyClass}}">
+<!--@sprite-->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <a class="skip-link" href="#main">{{t:common.skip}}</a>
+
+  {{> header}}
+
+  <main id="main" tabindex="-1">
+{{v:content}}
+    {{#if page!=contact}}{{> fab}}{{/if}}
+  </main>
+
+  {{> footer}}
+
+  <!-- Textos para el JavaScript (formulario, visor de imágenes…) en el idioma de la página -->
+  <script type="application/json" id="i18n-data">{{v:jsStrings}}</script>
+</body>
+</html>

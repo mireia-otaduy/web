@@ -1,0 +1,35 @@
+{
+  "skip": "Skip to content",
+  "brandAria": "LCC Manufacturing, go to the home page",
+  "brandAlt": "LCC Manufacturing",
+  "nav": {
+    "label": "Main menu",
+    "open": "Open menu",
+    "close": "Close menu",
+    "home": "Home",
+    "tech": "Technologies",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "lang": {
+    "label": "Change language"
+  },
+  "fab": "Request a quote",
+  "cta": {
+    "eyebrow": "Contact",
+    "title": "Got a drawing or an idea?",
+    "text": "Tell us about it and we will do our best to reply as soon as possible.",
+    "quote": "Request a quote",
+    "call": "Call now",
+    "write": "Write to us"
+  },
+  "footer": {
+    "tagline": "Project development and manufacturing of industrial products.",
+    "menuTitle": "Menu",
+    "contactTitle": "Contact",
+    "map": "View on map",
+    "rights": "All rights reserved.",
+    "legal": "Legal notice",
+    "privacy": "Privacy and cookies"
+  }
+}

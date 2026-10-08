@@ -1,0 +1,245 @@
+{
+  "hero": {
+    "eyebrow": "Technologies and capabilities",
+    "title": "Technologies and manufacturing capabilities",
+    "lead": "Eight technologies integrated in our production plant and, when necessary, subcontracting of others."
+  },
+  "items": {
+    "1": {
+      "name": "Metal stamping",
+      "value": "18",
+      "unit": "stamping presses",
+      "summary": "18 stamping presses"
+    },
+    "2": {
+      "name": "Forging",
+      "value": "1",
+      "unit": "forging press",
+      "summary": "1 forging press"
+    },
+    "3": {
+      "name": "Tube forming",
+      "value": "1",
+      "unit": "bending machine",
+      "summary": "1 bending machine"
+    },
+    "4": {
+      "name": "Machining",
+      "value": "14",
+      "unit": "CNC lathes",
+      "summary": "14 CNC lathes"
+    },
+    "5": {
+      "name": "Wire EDM cutting",
+      "value": "8",
+      "unit": "wire EDM cutting machines",
+      "summary": "8 wire EDM cutting machines"
+    },
+    "6": {
+      "name": "Welded assemblies",
+      "value": "2",
+      "unit": "MIG welding stations",
+      "summary": "2 MIG welding stations"
+    },
+    "7": {
+      "name": "Metal and plastic subassemblies",
+      "value": "<span class=\"is-text\">Various</span>",
+      "unit": "assembly lines",
+      "summary": "Various assembly lines",
+      "list": {
+        "1": "Metal",
+        "2": "Plastic"
+      }
+    },
+    "8": {
+      "name": "Miscellaneous assemblies",
+      "value": "1",
+      "unit": "pad printing line",
+      "summary": "Pad printing, drilling and cutting",
+      "list": {
+        "1": "1 pad printing line",
+        "2": "10 drilling machines",
+        "3": "2 steel and aluminium cutting lines"
+      }
+    }
+  },
+  "list": {
+    "eyebrow": "Technologies",
+    "title": "Eight technologies, one supplier",
+    "lead": "The most representative technologies in our production plant. Choose a family to filter them."
+  },
+  "mosaic": {
+    "1": "Stamping press line",
+    "2": "CNC lathe line",
+    "3": "Machine in the workshop",
+    "4": "Worker assembling metal subassemblies on an assembly line",
+    "5": "Workers using pillar drills"
+  },
+  "filter": {
+    "legend": "Filter by family",
+    "all": "All",
+    "forming": "Forming",
+    "machining": "Machining and cutting",
+    "joining": "Joining and finishing"
+  },
+  "subcontracting": "<strong>Subcontracting:</strong> we have qualified staff and extensive knowledge of suppliers of other technologies, such as plastic injection, aluminium, etc.",
+  "molds": {
+    "eyebrow": "Injection moulds",
+    "title": "Injection moulds and prototypes",
+    "lead": "We have an engineering team specialised in injection moulds and prototypes, and we manage the mould value chain end to end.",
+    "stats": {
+      "1": {
+        "value": "2,000 m²",
+        "label": "Toolmaker's facilities"
+      },
+      "2": {
+        "value": "12",
+        "label": "Injection machines from 50 to 750 t"
+      },
+      "3": {
+        "value": "7",
+        "label": "Machining centres"
+      },
+      "4": {
+        "value": "20 ºC",
+        "label": "Climate-controlled CMM"
+      }
+    },
+    "partner": {
+      "title": "Partner toolmaker",
+      "text": "We are partnered with a toolmaker that has <strong>2,000 m²</strong> of facilities."
+    },
+    "facilities": {
+      "title": "Facilities",
+      "text": "12 injection machines from 50 to 750 t and a try-out press."
+    },
+    "machinery": {
+      "title": "Machinery",
+      "items": {
+        "1": "7 machining centres",
+        "2": "1 high-speed centre with climate chamber",
+        "3": "4 sinker EDM machines",
+        "4": "5 wire EDM machines",
+        "5": "2 grinding machines",
+        "6": "2 deep-hole drilling machines",
+        "7": "3 milling machines"
+      }
+    },
+    "metrology": {
+      "title": "Metrology",
+      "text": "Coordinate measuring machine (CMM) in a room kept at 20 ºC, hardness tester, etc."
+    },
+    "photoAlt": "Plastic injection mould",
+    "photoCaption": "Injection mould."
+  },
+  "capacity": {
+    "eyebrow": "Installed capacity",
+    "title": "Our production capabilities, in numbers",
+    "lead": "LCC's production capabilities, at a glance and in detail.",
+    "bars": {
+      "1": "Stamping presses",
+      "2": "CNC lathes",
+      "3": "Drilling machines",
+      "4": "Wire EDM cutting machines",
+      "5": "MIG welding stations",
+      "6": "Steel and aluminium cutting lines"
+    }
+  },
+  "table": {
+    "caption": "Production capabilities available for your projects",
+    "head": {
+      "family": "Family",
+      "technology": "Technology",
+      "capacity": "Capacity"
+    },
+    "rows": {
+      "1": {
+        "name": "Metal stamping",
+        "value": "18 presses"
+      },
+      "2": {
+        "name": "Forging",
+        "value": "1 forging press"
+      },
+      "3": {
+        "name": "Tube forming",
+        "value": "1 bending machine"
+      },
+      "4": {
+        "name": "CNC lathes",
+        "value": "14 lathes"
+      },
+      "5": {
+        "name": "Wire EDM cutting",
+        "value": "8 machines"
+      },
+      "6": {
+        "name": "Drilling machines",
+        "value": "10 drilling machines"
+      },
+      "7": {
+        "name": "Steel and aluminium cutting",
+        "value": "2 cutting lines"
+      },
+      "8": {
+        "name": "MIG welding",
+        "value": "2 stations"
+      },
+      "9": {
+        "name": "Pad printing",
+        "value": "1 line"
+      },
+      "10": {
+        "name": "Assembly",
+        "value": "Various assembly lines"
+      }
+    },
+    "foot": "8 integrated technologies · plus quality control equipment, forklifts and warehousing equipment"
+  },
+  "plant": {
+    "eyebrow": "Plant",
+    "title": "How we work on the shop floor",
+    "items": {
+      "1": {
+        "alt": "Worker operating a CNC lathe",
+        "caption": "CNC turning"
+      },
+      "2": {
+        "alt": "Worker checking metal parts next to a press",
+        "caption": "Part inspection"
+      },
+      "3": {
+        "alt": "Workers assembling small metal parts",
+        "caption": "Assembly"
+      },
+      "4": {
+        "alt": "Forklift next to pallets of boxes",
+        "caption": "Warehouse and logistics"
+      },
+      "5": {
+        "alt": "Hardness tester for hardness testing",
+        "caption": "Hardness tester"
+      }
+    }
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "Parts made to drawing",
+    "lead": "A selection of parts manufactured to drawing. Select a part to view it larger.",
+    "region": "Parts showcase: scroll to see more",
+    "items": {
+      "1": "Zinc-plated metal flat bars",
+      "2": "Black plastic parts with rods",
+      "3": "Machined cast parts",
+      "4": "Bent rods and tubular wrenches",
+      "5": "Aluminium fixings with screws",
+      "6": "Bent sheet-metal brackets",
+      "7": "Sheet-metal angle brackets and washers",
+      "8": "Steel and brass bushings",
+      "9": "Machined cylindrical shafts",
+      "10": "Threaded shafts and fasteners",
+      "11": "Bent rod parts and brackets",
+      "12": "Bent rod with handle"
+    }
+  }
+}

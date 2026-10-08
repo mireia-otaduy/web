@@ -1,0 +1,202 @@
+{{#define bodyClass}}page-process{{/define}}
+
+<!-- ======================================================================
+     1. CABECERA DE PÁGINA
+     ====================================================================== -->
+<section class="page-hero is-dark" aria-labelledby="page-title">
+  <div class="page-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">{{t:process.hero.eyebrow}}</p>
+    <h1 id="page-title" data-split>{{t:process.hero.title}}</h1>
+    <p class="lead">{{t:process.hero.lead}}</p>
+  </div>
+</section>
+
+<!-- ======================================================================
+     2. LOS OCHO PASOS
+     Selector de pasos con radios nativos: el radio marcado muestra su ficha con CSS
+     (selector de hermanos "~"), así funciona con teclado y sin JavaScript.
+     ====================================================================== -->
+<section class="section section--soft" id="steps" aria-labelledby="steps-title">
+  <div class="container">
+    <p class="eyebrow">{{t:process.steps.eyebrow}}</p>
+    <h2 id="steps-title" data-split>{{t:process.steps.title}}</h2>
+
+    <fieldset class="steps" data-reveal>
+      <legend class="sr-only">{{t:process.steps.legend}}</legend>
+
+      <input type="radio" name="step" id="step-1" checked>
+      {{#repeat 7 from 2}}<input type="radio" name="step" id="step-{{@i}}">{{/repeat}}
+
+      <div class="steps__tabs">
+        {{#repeat 8}}
+        <label for="step-{{@i}}"><span class="steps__n">{{@i2}}</span>{{icon:step-{{@i}}|class=steps__icon}}<span class="steps__t">{{t:steps.{{@i}}.title}}</span></label>
+        {{/repeat}}
+      </div>
+
+      <div class="steps__stage">
+        <article class="step-panel step-panel--1">
+          <span class="step-panel__num" aria-hidden="true">01</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.1.title}}</h3>
+            <p>{{t:steps.1.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-8">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-2"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+        </article>
+
+        <article class="step-panel step-panel--2">
+          <span class="step-panel__num" aria-hidden="true">02</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.2.title}}</h3>
+            <p>{{t:steps.2.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-1">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-3"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+        </article>
+
+        <article class="step-panel step-panel--3">
+          <span class="step-panel__num" aria-hidden="true">03</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.3.title}}</h3>
+            <p>{{t:steps.3.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-2">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-4"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+        </article>
+
+        <article class="step-panel step-panel--4">
+          <span class="step-panel__num" aria-hidden="true">04</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.4.title}}</h3>
+            <p>{{t:steps.4.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-3">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-5"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+        </article>
+
+        <article class="step-panel step-panel--5 has-photo">
+          <span class="step-panel__num" aria-hidden="true">05</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.5.title}}</h3>
+            <p>{{t:steps.5.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-4">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-6"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+          <div class="step-panel__photo">{{img:fabrica-09.jpg|alt=process.steps.photos.5}}</div>
+        </article>
+
+        <article class="step-panel step-panel--6 has-photo">
+          <span class="step-panel__num" aria-hidden="true">06</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.6.title}}</h3>
+            <p>{{t:steps.6.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-5">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-7"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+          <div class="step-panel__photo">{{img:fabrica-06.jpg|alt=process.steps.photos.6}}</div>
+        </article>
+
+        <article class="step-panel step-panel--7 has-photo">
+          <span class="step-panel__num" aria-hidden="true">07</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.7.title}}</h3>
+            <p>{{t:steps.7.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-6">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-8"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+          <div class="step-panel__photo">{{img:fabrica-14.jpg|alt=process.steps.photos.7}}</div>
+        </article>
+
+        <article class="step-panel step-panel--8 has-photo">
+          <span class="step-panel__num" aria-hidden="true">08</span>
+          <div class="step-panel__text">
+            <h3>{{t:steps.8.title}}</h3>
+            <p>{{t:steps.8.text}}</p>
+            <div class="step-panel__nav">
+              <label for="step-7">{{icon:arrow-left}}<span>{{t:process.steps.prev}}</span></label>
+              <label for="step-1"><span>{{t:process.steps.next}}</span>{{icon:arrow-right}}</label>
+            </div>
+          </div>
+          <div class="step-panel__photo">{{img:fabrica-13.jpg|alt=process.steps.photos.8}}</div>
+        </article>
+      </div>
+    </fieldset>
+  </div>
+</section>
+
+<!-- ======================================================================
+     3. EL CAMINO DE TU PIEZA
+     España → China → almacenes reguladores, unidos por una ruta animada.
+     ====================================================================== -->
+<section class="section route-section is-dark cut" id="route" aria-labelledby="route-title">
+  <div class="container">
+    <p class="eyebrow">{{t:process.route.eyebrow}}</p>
+    <h2 id="route-title" data-split>{{t:process.route.title}}</h2>
+    <p class="lead" data-reveal>{{t:process.route.lead}}</p>
+
+    <ol class="route" data-stagger>
+      <li class="route__stop" data-reveal data-spot>
+        <span class="route__node" aria-hidden="true"></span>
+        <span class="route__num" aria-hidden="true">01</span>
+        {{icon:step-1|class=route__icon}}
+        <h3>{{t:process.route.stops.1.title}}</h3>
+        <p>{{t:process.route.stops.1.text}}</p>
+        <ul class="tags"><li>{{t:process.route.stops.1.tags.1}}</li><li>{{t:process.route.stops.1.tags.2}}</li></ul>
+      </li>
+      <li class="route__stop" data-reveal data-spot>
+        <span class="route__node" aria-hidden="true"></span>
+        <span class="route__num" aria-hidden="true">02</span>
+        {{icon:step-5|class=route__icon}}
+        <h3>{{t:process.route.stops.2.title}}</h3>
+        <p>{{t:process.route.stops.2.text}}</p>
+        <ul class="tags"><li>{{t:process.route.stops.2.tags.1}}</li></ul>
+      </li>
+      <li class="route__stop" data-reveal data-spot>
+        <span class="route__node" aria-hidden="true"></span>
+        <span class="route__num" aria-hidden="true">03</span>
+        {{icon:step-8|class=route__icon}}
+        <h3>{{t:process.route.stops.3.title}}</h3>
+        <p>{{t:process.route.stops.3.text}}</p>
+        <ul class="tags"><li>{{t:process.route.stops.3.tags.1}}</li><li>{{t:process.route.stops.3.tags.2}}</li><li>{{t:process.route.stops.3.tags.3}}</li></ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================================================================
+     4. VENTAJAS
+     ====================================================================== -->
+<section class="section" id="benefits" aria-labelledby="benefits-title">
+  <div class="container">
+    <p class="eyebrow">{{t:process.benefits.eyebrow}}</p>
+    <h2 id="benefits-title" data-split>{{t:process.benefits.title}}</h2>
+
+    <ul class="grid grid--3 benefits" data-stagger>
+      {{#repeat 3}}
+      <li class="card benefit" data-reveal data-spot>
+        <span class="benefit__icon">{{icon:benefit-{{@i}}}}</span>
+        <span class="benefit__num" aria-hidden="true">0{{@i}}</span>
+        <h3>{{t:benefits.{{@i}}.title}}</h3>
+        <p>{{t:benefits.{{@i}}.text}}</p>
+      </li>
+      {{/repeat}}
+    </ul>
+  </div>
+</section>
+
+{{> cta}}

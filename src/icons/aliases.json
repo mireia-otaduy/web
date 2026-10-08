@@ -1,0 +1,32 @@
+{
+  "tech-1": "layers",
+  "tech-2": "hammer",
+  "tech-3": "spline",
+  "tech-4": "cog",
+  "tech-5": "zap",
+  "tech-6": "flame",
+  "tech-7": "blocks",
+  "tech-8": "drill",
+
+  "sector-1": "car-front",
+  "sector-2": "plug-zap",
+  "sector-3": "washing-machine",
+  "sector-4": "traffic-cone",
+  "sector-5": "factory",
+  "sector-6": "wind",
+  "sector-7": "tractor",
+  "sector-8": "heart-pulse",
+
+  "step-1": "pencil-ruler",
+  "step-2": "box",
+  "step-3": "badge-check",
+  "step-4": "wrench",
+  "step-5": "factory",
+  "step-6": "clipboard-check",
+  "step-7": "truck",
+  "step-8": "warehouse",
+
+  "benefit-1": "trending-down",
+  "benefit-2": "timer",
+  "benefit-3": "target"
+}

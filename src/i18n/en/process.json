@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "eyebrow": "Work process",
+    "title": "How we work: from idea to series production",
+    "lead": "End-to-end project management with a working method in eight stages."
+  },
+  "steps": {
+    "eyebrow": "The 8 steps",
+    "title": "Choose a step and see what we do",
+    "legend": "Steps of the work process",
+    "prev": "Previous step",
+    "next": "Next step",
+    "photos": {
+      "5": "Stamping press line in the manufacturing plant",
+      "6": "Measuring equipment for quality control",
+      "7": "Forklift next to pallets of boxes",
+      "8": "Warehouse with shelving and containers"
+    }
+  },
+  "route": {
+    "eyebrow": "From drawing to your warehouse",
+    "title": "The journey of your part",
+    "lead": "Engineering and project management in Spain, manufacturing in China and buffer warehouses in Amorebieta and Barcelona.",
+    "stops": {
+      "1": {
+        "title": "Spain",
+        "text": "Sales, engineering and project management.",
+        "tags": {
+          "1": "Engineering",
+          "2": "Project management"
+        }
+      },
+      "2": {
+        "title": "China",
+        "text": "We manufacture your industrial products in China.",
+        "tags": {
+          "1": "Series production"
+        }
+      },
+      "3": {
+        "title": "Amorebieta and Barcelona",
+        "text": "Buffer warehouses regulating the logistics flow of the products we supply in Spain.",
+        "tags": {
+          "1": "Buffer warehouse",
+          "2": "Final assembly",
+          "3": "Quality inspections"
+        }
+      }
+    }
+  },
+  "benefits": {
+    "eyebrow": "Benefits",
+    "title": "What you gain with LCC"
+  }
+}

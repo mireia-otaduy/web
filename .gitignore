@@ -1,0 +1,19 @@
+# Dependencias y utilidades locales
+node_modules/
+.DS_Store
+*.log
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log
+ui-debug.log
+
+# Editores
+.idea/
+.vscode/
+
+# Cloud Functions (opcional)
+functions/node_modules/
+functions/.env*
+functions/*.local

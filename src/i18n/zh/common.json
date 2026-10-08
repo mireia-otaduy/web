@@ -1,0 +1,35 @@
+{
+  "skip": "跳到正文",
+  "brandAria": "LCC Manufacturing，返回首页",
+  "brandAlt": "LCC Manufacturing",
+  "nav": {
+    "label": "主菜单",
+    "open": "打开菜单",
+    "close": "关闭菜单",
+    "home": "首页",
+    "tech": "工艺技术",
+    "process": "工作流程",
+    "contact": "联系我们"
+  },
+  "lang": {
+    "label": "切换语言"
+  },
+  "fab": "获取报价",
+  "cta": {
+    "eyebrow": "联系我们",
+    "title": "有图纸或想法吗？",
+    "text": "告诉我们，我们将尽力尽快回复您。",
+    "quote": "获取报价",
+    "call": "立即致电",
+    "write": "发送邮件"
+  },
+  "footer": {
+    "tagline": "项目开发与工业产品制造。",
+    "menuTitle": "菜单",
+    "contactTitle": "联系方式",
+    "map": "在地图中查看",
+    "rights": "保留所有权利。",
+    "legal": "法律声明",
+    "privacy": "隐私与 Cookie"
+  }
+}
