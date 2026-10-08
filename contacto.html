@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pide presupuesto | LCC Manufacturing</title>
+    <meta name="description" content="Cuéntanos tu proyecto. LCC Manufacturing, Parque Empresarial Boroa 19, Amorebieta-Etxano (Bizkaia). Teléfono +34 94 651 00 79.">
+    <meta name="theme-color" content="#07163a">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- ORDEN DE LOS CSS: PRIMERO LO COMÚN Y LO DE ESTA PÁGINA (evaluable), AL FINAL LOS EFECTOS (iag.css) -->
+    <link rel="stylesheet" href="headerfooter.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="iag.css">
+</head>
+<body id="arriba">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <!-- CABECERA COMÚN: SE COPIA IGUAL EN LAS 4 PÁGINAS (SOLO CAMBIA EL ENLACE "activa" DEL MENÚ) -->
+    <header>
+        <div class="barra">
+            <a href="index.html"><img src="img/logo-lcc.png" alt="LCC Manufacturing, ir al inicio" width="249" height="98"></a>
+            <!-- MENÚ: EN ESCRITORIO ES UN MENÚ NORMAL; EN MÓVIL ES UN PANEL (popover) QUE SE ABRE CON LA HAMBURGUESA, SIN JAVASCRIPT -->
+            <nav id="menu" popover aria-label="Menú principal">
+                <button type="button" class="cerrar" popovertarget="menu" popovertargetaction="hide" aria-label="Cerrar menú"><span></span><span></span></button>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tecnologias.html">Tecnologías</a></li>
+                    <li><a href="proceso.html">Proceso</a></li>
+                    <li><a href="contacto.html" class="boton activa" aria-current="page">Contacto</a></li>
+                </ul>
+                <div class="menu-contacto">
+                    <p>Parque Empresarial Boroa 19, Pabellón 4<br>48340 Amorebieta-Etxano (Bizkaia)</p>
+                    <p><a href="tel:+34946510079">+34 94 651 00 79</a><br><a href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a></p>
+                </div>
+            </nav>
+            <button type="button" class="hamburguesa" popovertarget="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <!-- CABECERA DE PÁGINA: FONDO OSCURO ANIMADO CON EL h1 -->
+        <section class="cabecera-pagina fondo-plano oscura">
+            <div class="particulas" aria-hidden="true"></div>
+            <div class="contenedor">
+                <p class="etiqueta">Contacto</p>
+                <h1><span class="p">Cuéntanos</span> <span class="p">tu</span> <span class="p">proyecto</span></h1>
+                <p class="intro">Haremos todo lo posible por responderte a la brevedad.</p>
+                <a class="correo-grande" href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a>
+            </div>
+        </section>
+
+        <!-- FORMULARIO (A LA IZQUIERDA) Y DATOS DE CONTACTO (A LA DERECHA) -->
+        <section id="presupuesto" class="claro">
+            <div class="contenedor contacto-grid">
+
+                <!-- PARA ENVIAR DE VERDAD EL FORMULARIO (VERSIÓN PARA EL JEFE): CAMBIAR action="#" POR action="mailto:info@lcc-manufacturing.com" -->
+                <form action="#" method="post">
+
+                    <!-- BARRA DE AVANCE: SE LLENA SOLA SEGÚN SE RELLENAN LOS 5 CAMPOS OBLIGATORIOS (:has + :valid) -->
+                    <div class="avance" aria-hidden="true">
+                        <p>Tu solicitud: <strong class="porcentaje"></strong></p>
+                        <div class="avance-barra"><span></span></div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Tus datos</legend>
+                        <div class="campos">
+                            <div class="campo">
+                                <input type="text" id="nombre" name="nombre" placeholder=" " autocomplete="name" required>
+                                <label for="nombre">Nombre</label>
+                            </div>
+                            <div class="campo">
+                                <input type="text" id="empresa" name="empresa" placeholder=" " autocomplete="organization" required>
+                                <label for="empresa">Empresa</label>
+                            </div>
+                            <div class="campo">
+                                <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="campo">
+                                <input type="tel" id="telefono" name="telefono" placeholder=" " autocomplete="tel">
+                                <label for="telefono">Teléfono</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Tu proyecto</legend>
+                        <div class="campos">
+                            <div class="completo campo campo-fijo">
+                                <select id="tecnologia" name="tecnologia">
+                                    <option value="">Selecciona una tecnología</option>
+                                    <option value="estampación-metálica">Estampación metálica</option>
+                                    <option value="forja">Forja</option>
+                                    <option value="conformado-de-tubo">Conformado de tubo</option>
+                                    <option value="mecanizado">Mecanizado</option>
+                                    <option value="corte-por-hilo">Corte por hilo</option>
+                                    <option value="soldadura">Soldadura</option>
+                                    <option value="moldes-de-inyección">Moldes de inyección</option>
+                                    <option value="otra">Otra</option>
+                                </select>
+                                <label for="tecnologia">Tipo de fabricación</label>
+                            </div>
+                            <div class="completo">
+                                <fieldset class="tipos">
+                                    <legend>Tipo de proyecto</legend>
+                                    <div class="tarjetas-radio">
+                                        <div class="opcion-tarjeta">
+                                            <input type="radio" id="tipo-prototipo" name="tipo" value="prototipo">
+                                            <label for="tipo-prototipo"><strong>Prototipo</strong><span>Validar la pieza antes de la serie</span></label>
+                                        </div>
+                                        <div class="opcion-tarjeta">
+                                            <input type="radio" id="tipo-corta" name="tipo" value="serie-corta">
+                                            <label for="tipo-corta"><strong>Serie corta</strong><span>Pocas unidades</span></label>
+                                        </div>
+                                        <div class="opcion-tarjeta">
+                                            <input type="radio" id="tipo-larga" name="tipo" value="serie-larga">
+                                            <label for="tipo-larga"><strong>Serie larga</strong><span>Producción continuada</span></label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="campo">
+                                <input type="number" id="piezas" name="piezas" placeholder=" " min="1">
+                                <label for="piezas">Piezas por año (aproximado)</label>
+                            </div>
+                            <div class="campo campo-fijo">
+                                <input type="date" id="fecha" name="fecha">
+                                <label for="fecha">Primeras piezas para el</label>
+                            </div>
+                            <div class="completo campo">
+                                <textarea id="mensaje" name="mensaje" placeholder=" " required></textarea>
+                                <label for="mensaje">Cuéntanos tu proyecto</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Servicios adicionales</legend>
+                        <div class="chips">
+                            <div class="chip">
+                                <input type="checkbox" id="serv-homologacion" name="servicios" value="homologacion">
+                                <label for="serv-homologacion">Homologación</label>
+                            </div>
+                            <div class="chip">
+                                <input type="checkbox" id="serv-utillajes" name="servicios" value="utillajes">
+                                <label for="serv-utillajes">Utillajes</label>
+                            </div>
+                            <div class="chip">
+                                <input type="checkbox" id="serv-almacen" name="servicios" value="almacen">
+                                <label for="serv-almacen">Almacén regulador</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="opcion">
+                        <input type="checkbox" id="privacidad" name="privacidad" required>
+                        <label for="privacidad">Acepto la <a href="https://lccmanufacturing.org/politica-de-privacidad" target="_blank" rel="noopener">política de privacidad</a></label>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="boton">Enviar solicitud</button>
+                    </div>
+                </form>
+
+                <!-- DATOS DE CONTACTO: <br> EN LA DIRECCIÓN Y <hr> COMO SEPARADOR -->
+                <div class="tarjeta-datos revela">
+                    <p class="estado"><span class="punto" aria-hidden="true"></span> Haremos todo lo posible por responderte a la brevedad</p>
+                    <h2>Datos de contacto</h2>
+                    <p><strong>LCC Manufacturing S.L.</strong><br>
+                    Parque Empresarial Boroa 19, Pabellón 4<br>
+                    48340 Amorebieta-Etxano (Bizkaia)<br>
+                    España</p>
+                    <hr>
+                    <p><a href="tel:+34946510079">+34 94 651 00 79</a><br>
+                    <a href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a></p>
+                    <hr>
+                    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Parque+Empresarial+Boroa+19+Amorebieta-Etxano" target="_blank" rel="noopener">Ver en el mapa</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREGUNTAS FRECUENTES: details Y summary (SE ABREN SIN JAVASCRIPT; name="faq" HACE QUE SOLO UNA ESTÉ ABIERTA) -->
+        <section id="faq">
+            <div class="contenedor">
+                <p class="etiqueta">Dudas habituales</p>
+                <h2><span class="p">Preguntas</span> <span class="p">frecuentes</span></h2>
+                <details name="faq">
+                    <summary>¿Hacéis prototipos?</summary>
+                    <p>Sí. La fabricación de prototipos es una de las etapas de nuestra metodología de trabajo.</p>
+                </details>
+                <details name="faq">
+                    <summary>¿Dónde se fabrican las piezas?</summary>
+                    <p>La ingeniería y la gestión de proyectos se hacen en España. La fabricación seriada se realiza en China y los almacenes reguladores están en Amorebieta y Barcelona.</p>
+                </details>
+                <details name="faq">
+                    <summary>¿Fabricáis moldes de inyección?</summary>
+                    <p>Sí. Tenemos un equipo de ingeniería especializado en moldes de inyección y prototipos, y estamos asociados con un moldista que dispone de 2.000 m² de instalaciones.</p>
+                </details>
+                <details name="faq">
+                    <summary>¿Para qué sectores trabajáis?</summary>
+                    <p>Para automoción, eléctrico, electrodoméstico, seguridad vial, bienes de equipo, energías renovables, agricultura y sanitario.</p>
+                </details>
+                <details name="faq">
+                    <summary>¿Subcontratáis alguna tecnología?</summary>
+                    <p>Sí, cuando es necesario. Tenemos personal cualificado y un amplio conocimiento de proveedores de otras tecnologías, como inyección de plástico o aluminio.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE COMÚN: SE COPIA IGUAL EN LAS 4 PÁGINAS -->
+    <footer>
+        <div id="cajetin">
+            <div class="celda-pie">
+                <img src="img/logo-lcc-blanco.png" alt="LCC Manufacturing" width="249" height="98" loading="lazy">
+                <p>Desarrollo de proyectos y fabricación de productos industriales.</p>
+            </div>
+            <div class="celda-pie">
+                <h2>Contacto</h2>
+                <p>Parque Empresarial Boroa 19<br>Pabellón 4<br>48340 Amorebieta-Etxano (Bizkaia)</p>
+                <p><a href="tel:+34946510079">+34 94 651 00 79</a><br><a href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a></p>
+            </div>
+        </div>
+        <p id="aviso">© 2026 LCC Manufacturing S.L. · <a href="https://lccmanufacturing.org/aviso-legal" target="_blank" rel="noopener">Aviso legal</a> · <a href="https://lccmanufacturing.org/politica-de-privacidad" target="_blank" rel="noopener">Política de privacidad</a></p>
+    </footer>
+</body>
+</html>

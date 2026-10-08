@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tecnologías y medios de fabricación | LCC Manufacturing</title>
+    <meta name="description" content="Estampación, forja, conformado de tubo, mecanizados, corte por hilo, soldadura y moldes de inyección. Conoce los medios productivos de LCC Manufacturing.">
+    <meta name="theme-color" content="#07163a">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- ORDEN DE LOS CSS: PRIMERO LO COMÚN Y LO DE ESTA PÁGINA (evaluable), AL FINAL LOS EFECTOS (iag.css) -->
+    <link rel="stylesheet" href="headerfooter.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="tecnologias.css">
+    <link rel="stylesheet" href="iag.css">
+</head>
+<body id="arriba">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <!-- CABECERA COMÚN: SE COPIA IGUAL EN LAS 4 PÁGINAS (SOLO CAMBIA EL ENLACE "activa" DEL MENÚ) -->
+    <header>
+        <div class="barra">
+            <a href="index.html"><img src="img/logo-lcc.png" alt="LCC Manufacturing, ir al inicio" width="249" height="98"></a>
+            <!-- MENÚ: EN ESCRITORIO ES UN MENÚ NORMAL; EN MÓVIL ES UN PANEL (popover) QUE SE ABRE CON LA HAMBURGUESA, SIN JAVASCRIPT -->
+            <nav id="menu" popover aria-label="Menú principal">
+                <button type="button" class="cerrar" popovertarget="menu" popovertargetaction="hide" aria-label="Cerrar menú"><span></span><span></span></button>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tecnologias.html" class="activa" aria-current="page">Tecnologías</a></li>
+                    <li><a href="proceso.html">Proceso</a></li>
+                    <li><a href="contacto.html" class="boton">Contacto</a></li>
+                </ul>
+                <div class="menu-contacto">
+                    <p>Parque Empresarial Boroa 19, Pabellón 4<br>48340 Amorebieta-Etxano (Bizkaia)</p>
+                    <p><a href="tel:+34946510079">+34 94 651 00 79</a><br><a href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a></p>
+                </div>
+            </nav>
+            <button type="button" class="hamburguesa" popovertarget="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <!-- CABECERA DE PÁGINA: FONDO OSCURO ANIMADO CON EL h1 -->
+        <section class="cabecera-pagina fondo-plano oscura">
+            <div class="particulas" aria-hidden="true"></div>
+            <div class="contenedor">
+                <p class="etiqueta">Tecnologías y medios</p>
+                <h1><span class="p">Tecnologías</span> <span class="p">y</span> <span class="p">medios</span> <span class="p">de</span> <span class="p">fabricación</span></h1>
+                <p class="intro">Ocho tecnologías integradas en nuestra planta productiva y, cuando es necesario, subcontratación de otras.</p>
+            </div>
+        </section>
+
+        <!-- LAS 8 TECNOLOGÍAS CON FILTRO (radios + :has) Y CARTAS QUE SE APILAN AL BAJAR (iag.css).
+             LISTAS ANIDADAS (ul DENTRO DE li) EN SUBCONJUNTOS Y MONTAJES -->
+        <section id="tecnologias">
+            <div class="contenedor">
+                <p class="etiqueta">Tecnologías</p>
+                <h2><span class="p">Ocho</span> <span class="p">tecnologías,</span> <span class="p">un</span> <span class="p">solo</span> <span class="p">proveedor</span></h2>
+                <p class="intro">Las tecnologías más representativas de nuestra planta productiva. Elige una familia para filtrarlas.</p>
+                <div class="mosaico">
+                    <figure class="foto-zoom m1">
+                        <img src="img/fabrica-09.jpg" alt="Línea de prensas de estampación" width="700" height="393" loading="lazy">
+                    </figure>
+                    <figure class="foto-zoom m2">
+                        <img src="img/fabrica-11.jpg" alt="Línea de tornos CNC" width="700" height="393" loading="lazy">
+                    </figure>
+                    <figure class="foto-zoom m3">
+                        <img src="img/fabrica-03.jpg" alt="Máquina en el taller" width="393" height="700" loading="lazy">
+                    </figure>
+                    <figure class="foto-zoom m4">
+                        <img src="img/fabrica-02.jpg" alt="Operaria montando subconjuntos metálicos en una línea de montaje" width="700" height="393" loading="lazy">
+                    </figure>
+                    <figure class="foto-zoom m5">
+                        <img src="img/fabrica-08.jpg" alt="Operarios trabajando con taladros de columna" width="700" height="393" loading="lazy">
+                    </figure>
+                </div>
+                <fieldset class="filtros">
+                    <legend>Filtrar por familia</legend>
+                    <input type="radio" name="familia" id="f-todas" checked>
+                    <label for="f-todas">Todas</label>
+                    <input type="radio" name="familia" id="f-conf">
+                    <label for="f-conf">Conformado</label>
+                    <input type="radio" name="familia" id="f-meca">
+                    <label for="f-meca">Mecanizado y corte</label>
+                    <input type="radio" name="familia" id="f-unio">
+                    <label for="f-unio">Unión y acabado</label>
+                </fieldset>
+                <ul class="cuadricula cuadricula-4 pila">
+                    <li class="tarjeta conf">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">01</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Estampación metálica</h3>
+                            <p>18 prensas de estampación</p>
+                        </div>
+                    </li>
+                    <li class="tarjeta conf">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">02</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Forja</h3>
+                            <p>1 prensa de forjado</p>
+                        </div>
+                    </li>
+                    <li class="tarjeta conf">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">03</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Conformado de tubo</h3>
+                            <p>1 curvadora</p>
+                        </div>
+                    </li>
+                    <li class="tarjeta meca">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">04</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Mecanizados</h3>
+                            <p>14 tornos CNC</p>
+                        </div>
+                    </li>
+                    <li class="tarjeta meca">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">05</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Corte por hilo</h3>
+                            <p>8 máquinas de corte por hilo</p>
+                        </div>
+                    </li>
+                    <li class="tarjeta unio">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">06</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Conjuntos soldados</h3>
+                            <p>2 instalaciones de soldadura MIG</p>
+                        </div>
+                    </li>
+                    <li class="tarjeta unio">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">07</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Subconjuntos metálicos y plásticos</h3>
+                            <p>Diversas líneas de montaje</p>
+                            <ul>
+                                <li>Metálicos</li>
+                                <li>Plásticos</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="tarjeta unio">
+                        <div class="media sin-foto">
+                            <span class="numero" aria-hidden="true">08</span>
+                        </div>
+                        <div class="cuerpo">
+                            <h3>Montajes diversos</h3>
+                            <ul>
+                                <li>1 línea de tampografiado</li>
+                                <li>10 taladradoras</li>
+                                <li>2 líneas de corte de acero y aluminio</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="recuadro revela">
+                    <p><strong>Subcontratación:</strong> contamos con personal cualificado y un amplio conocimiento de proveedores de otras tecnologías, como inyección de plástico, aluminio, etc.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOLDES: FONDO OSCURO. TÍTULOS h2, h3, h4, h5 Y h6 UNO DENTRO DE OTRO, SIN SALTAR NIVELES -->
+        <section id="moldes" class="oscura corte">
+            <div class="contenedor">
+                <p class="etiqueta">Moldes de inyección</p>
+                <h2><span class="p">Moldes</span> <span class="p">de</span> <span class="p">inyección</span> <span class="p">y</span> <span class="p">prototipos</span></h2>
+                <p class="intro">Tenemos un equipo de ingeniería especializado en moldes de inyección y prototipos, y gestionamos la cadena de valor del molde de manera integral.</p>
+                <div class="cifras-mini">
+                    <div class="revela"><span class="contador v-2 miles">2.000 m²</span><p>Instalaciones del moldista</p></div>
+                    <div class="revela"><span class="contador v-12">12</span><p>Inyectoras de 50 a 750 Tn</p></div>
+                    <div class="revela"><span class="contador v-7">7</span><p>Centros de mecanizado</p></div>
+                    <div class="revela"><span class="contador v-20 grados">20 ºC</span><p>Tridimensional acondicionada</p></div>
+                </div>
+                <div class="dos-columnas">
+                    <div class="jerarquia">
+                        <h3>Moldista asociado</h3>
+                        <p>Estamos asociados con un moldista que dispone de <strong>2.000 m²</strong> de instalaciones.</p>
+                        <h4>Instalaciones</h4>
+                        <p>12 inyectoras de 50 a 750 Tn y una prensa de ajuste.</p>
+                        <h5>Maquinaria</h5>
+                        <ul>
+                            <li>7 centros de mecanizado</li>
+                            <li>1 centro de alta velocidad con cámara climática</li>
+                            <li>4 máquinas de erosión por penetración</li>
+                            <li>5 máquinas de erosión por hilo</li>
+                            <li>2 rectificadoras</li>
+                            <li>2 taladradoras profundas</li>
+                            <li>3 fresadoras</li>
+                        </ul>
+                        <h6>Metrología</h6>
+                        <p>Tridimensional acondicionada a 20 ºC, dinascopio, durómetro, etc.</p>
+                    </div>
+                    <div class="tarjeta-foto revela">
+                        <img src="img/molde-inyeccion.jpg" alt="Molde de inyección de plástico" width="848" height="544" loading="lazy">
+                        <p class="pie"><em>Molde de inyección.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPACIDAD INSTALADA: BARRAS QUE CRECEN + TABLA CON thead, tbody, tfoot, rowspan Y colspan -->
+        <section id="capacidad">
+            <div class="contenedor">
+                <p class="etiqueta">Capacidad instalada</p>
+                <h2><span class="p">Capacidad</span> <span class="p">real,</span> <span class="p">no</span> <span class="p">promesas</span></h2>
+                <p class="intro">Los medios productivos de LCC, de un vistazo y en detalle.</p>
+                <div class="barras" aria-hidden="true">
+                    <div class="barra-dato">
+                        <p><span>Prensas de estampación</span> <strong>18</strong></p>
+                        <div class="carril-barra"><i class="relleno r18"></i></div>
+                    </div>
+                    <div class="barra-dato">
+                        <p><span>Tornos CNC</span> <strong>14</strong></p>
+                        <div class="carril-barra"><i class="relleno r14"></i></div>
+                    </div>
+                    <div class="barra-dato">
+                        <p><span>Taladradoras</span> <strong>10</strong></p>
+                        <div class="carril-barra"><i class="relleno r10"></i></div>
+                    </div>
+                    <div class="barra-dato">
+                        <p><span>Máquinas de corte por hilo</span> <strong>8</strong></p>
+                        <div class="carril-barra"><i class="relleno r8"></i></div>
+                    </div>
+                    <div class="barra-dato">
+                        <p><span>Instalaciones de soldadura MIG</span> <strong>2</strong></p>
+                        <div class="carril-barra"><i class="relleno r2"></i></div>
+                    </div>
+                    <div class="barra-dato">
+                        <p><span>Líneas de corte acero y aluminio</span> <strong>2</strong></p>
+                        <div class="carril-barra"><i class="relleno r2"></i></div>
+                    </div>
+                </div>
+                <div class="tabla-caja revela">
+                    <table>
+                        <caption>Medios productivos disponibles para tus proyectos</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Familia</th>
+                                <th scope="col">Tecnología</th>
+                                <th scope="col">Capacidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" rowspan="3">Conformado</th>
+                                <td>Estampación metálica</td>
+                                <td>18 prensas</td>
+                            </tr>
+                            <tr>
+                                <td>Forja</td>
+                                <td>1 prensa de forjado</td>
+                            </tr>
+                            <tr>
+                                <td>Conformado de tubo</td>
+                                <td>1 curvadora</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" rowspan="4">Mecanizado y corte</th>
+                                <td>Tornos CNC</td>
+                                <td>14 tornos</td>
+                            </tr>
+                            <tr>
+                                <td>Corte por hilo</td>
+                                <td>8 máquinas</td>
+                            </tr>
+                            <tr>
+                                <td>Taladradoras</td>
+                                <td>10 taladradoras</td>
+                            </tr>
+                            <tr>
+                                <td>Corte de acero y aluminio</td>
+                                <td>2 líneas de corte</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" rowspan="3">Unión y acabado</th>
+                                <td>Soldadura MIG</td>
+                                <td>2 instalaciones</td>
+                            </tr>
+                            <tr>
+                                <td>Tampografiado</td>
+                                <td>1 línea</td>
+                            </tr>
+                            <tr>
+                                <td>Montaje</td>
+                                <td>Diversas líneas de montaje</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">8 tecnologías integradas · además, equipos de control de calidad, carretillas y material de almacenaje</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA ACORDEÓN: AL PASAR EL RATÓN, LA FOTO SE ABRE Y MUESTRA SU PIE (iag.css) -->
+        <section id="galeria" class="claro">
+            <div class="contenedor">
+                <p class="etiqueta">Planta</p>
+                <h2><span class="p">Así</span> <span class="p">se</span> <span class="p">trabaja</span> <span class="p">en</span> <span class="p">planta</span></h2>
+                <div class="galeria">
+                    <figure class="foto-zoom">
+                        <img src="img/fabrica-07.jpg" alt="Operario manejando un torno CNC" width="700" height="393" loading="lazy">
+                        <figcaption>Torneado CNC</figcaption>
+                    </figure>
+                    <figure class="foto-zoom">
+                        <img src="img/fabrica-04.jpg" alt="Operario revisando piezas metálicas junto a una prensa" width="700" height="393" loading="lazy">
+                        <figcaption>Revisión de piezas</figcaption>
+                    </figure>
+                    <figure class="foto-zoom">
+                        <img src="img/fabrica-12.jpg" alt="Operarias montando piezas metálicas pequeñas" width="700" height="393" loading="lazy">
+                        <figcaption>Montaje</figcaption>
+                    </figure>
+                    <figure class="foto-zoom">
+                        <img src="img/fabrica-14.jpg" alt="Carretilla elevadora junto a palés de cajas" width="700" height="393" loading="lazy">
+                        <figcaption>Almacén y logística</figcaption>
+                    </figure>
+                    <figure class="foto-zoom">
+                        <img src="img/fabrica-10.jpg" alt="Durómetro para ensayos de dureza" width="393" height="700" loading="lazy">
+                        <figcaption>Durómetro</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS: UNA SOLA FILA QUE SE DESLIZA A MANO (scroll lateral con el dedo, el ratón o el teclado).
+             CADA FOTO ABRE UN VISOR A PANTALLA COMPLETA (ENLACES A #prod-N Y LA PSEUDO-CLASE :target, SIN JAVASCRIPT) -->
+        <section id="productos">
+            <div class="contenedor">
+                <p class="etiqueta">Productos</p>
+                <h2><span class="p">Piezas</span> <span class="p">bajo</span> <span class="p">plano</span></h2>
+                <p class="intro">Muestrario de piezas fabricadas bajo plano. Pulsa una pieza para verla en grande.</p>
+            </div>
+            <div class="rail" id="cintas-productos" tabindex="0" role="region" aria-label="Muestrario de piezas">
+                <ul class="rail-lista">
+                        <li>
+                            <a class="foto-zoom" href="#prod-1">
+                                <img src="img/producto-01.jpg" alt="Pletinas metálicas zincadas" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-2">
+                                <img src="img/producto-02.jpg" alt="Piezas de plástico negro con varillas" width="360" height="480" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-3">
+                                <img src="img/producto-03.jpg" alt="Piezas mecanizadas de fundición" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-4">
+                                <img src="img/producto-04.jpg" alt="Varillas y llaves tubulares dobladas" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-5">
+                                <img src="img/producto-05.jpg" alt="Fijaciones de aluminio con tornillos" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-6">
+                                <img src="img/producto-06.jpg" alt="Soportes de chapa doblada" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-7">
+                                <img src="img/producto-07.jpg" alt="Escuadras de chapa y arandelas" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-8">
+                                <img src="img/producto-08.jpg" alt="Casquillos de acero y latón" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-9">
+                                <img src="img/producto-09.jpg" alt="Ejes cilíndricos mecanizados" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-10">
+                                <img src="img/producto-10.jpg" alt="Ejes roscados y tornillería" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-11">
+                                <img src="img/producto-11.jpg" alt="Piezas de varilla doblada y soportes" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="foto-zoom" href="#prod-12">
+                                <img src="img/producto-12.jpg" alt="Varilla doblada con mango" width="480" height="360" loading="lazy">
+                            </a>
+                        </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- LLAMADA FINAL A LA ACCIÓN (NO APARECE EN contacto.html) -->
+        <section class="cta" id="cta">
+            <div class="contenedor">
+                <div class="cta-tarjeta">
+                    <div class="cta-texto">
+                        <p class="etiqueta">Contacto</p>
+                        <h2><span class="p">¿Tienes</span> <span class="p">un</span> <span class="p">plano</span> <span class="p">o</span> <span class="p">una</span> <span class="p">idea?</span></h2>
+                        <p class="intro">Cuéntanosla y haremos todo lo posible por responderte a la brevedad.</p>
+                    </div>
+                    <div class="cta-acciones">
+                        <a class="boton" href="contacto.html#presupuesto">Pedir presupuesto</a>
+                        <a class="accion" href="tel:+34946510079"><span>Llamar ahora</span><strong>+34 94 651 00 79</strong></a>
+                        <a class="accion" href="mailto:info@lcc-manufacturing.com"><span>Escribir</span><strong>info@lcc-manufacturing.com</strong></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISORES DE LAS PIEZAS (SE MUESTRAN SOLO CUANDO LA DIRECCIÓN TERMINA EN #prod-N) -->
+        <div class="visor" id="prod-1">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-01.jpg" alt="Pletinas metálicas zincadas" width="480" height="360" loading="lazy">
+                <figcaption>Pletinas metálicas zincadas · 1 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-12" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-2" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-2">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-02.jpg" alt="Piezas de plástico negro con varillas" width="360" height="480" loading="lazy">
+                <figcaption>Piezas de plástico negro con varillas · 2 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-1" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-3" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-3">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-03.jpg" alt="Piezas mecanizadas de fundición" width="480" height="360" loading="lazy">
+                <figcaption>Piezas mecanizadas de fundición · 3 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-2" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-4" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-4">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-04.jpg" alt="Varillas y llaves tubulares dobladas" width="480" height="360" loading="lazy">
+                <figcaption>Varillas y llaves tubulares dobladas · 4 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-3" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-5" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-5">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-05.jpg" alt="Fijaciones de aluminio con tornillos" width="480" height="360" loading="lazy">
+                <figcaption>Fijaciones de aluminio con tornillos · 5 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-4" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-6" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-6">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-06.jpg" alt="Soportes de chapa doblada" width="480" height="360" loading="lazy">
+                <figcaption>Soportes de chapa doblada · 6 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-5" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-7" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-7">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-07.jpg" alt="Escuadras de chapa y arandelas" width="480" height="360" loading="lazy">
+                <figcaption>Escuadras de chapa y arandelas · 7 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-6" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-8" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-8">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-08.jpg" alt="Casquillos de acero y latón" width="480" height="360" loading="lazy">
+                <figcaption>Casquillos de acero y latón · 8 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-7" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-9" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-9">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-09.jpg" alt="Ejes cilíndricos mecanizados" width="480" height="360" loading="lazy">
+                <figcaption>Ejes cilíndricos mecanizados · 9 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-8" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-10" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-10">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-10.jpg" alt="Ejes roscados y tornillería" width="480" height="360" loading="lazy">
+                <figcaption>Ejes roscados y tornillería · 10 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-9" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-11" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-11">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-11.jpg" alt="Piezas de varilla doblada y soportes" width="480" height="360" loading="lazy">
+                <figcaption>Piezas de varilla doblada y soportes · 11 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-10" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-12" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+        <div class="visor" id="prod-12">
+            <a class="visor-fondo" href="#cintas-productos" aria-label="Cerrar visor"></a>
+            <figure>
+                <img src="img/producto-12.jpg" alt="Varilla doblada con mango" width="480" height="360" loading="lazy">
+                <figcaption>Varilla doblada con mango · 12 de 12</figcaption>
+            </figure>
+            <a class="visor-ant" href="#prod-11" aria-label="Pieza anterior">←</a>
+            <a class="visor-sig" href="#prod-1" aria-label="Pieza siguiente">→</a>
+            <a class="visor-cerrar" href="#cintas-productos" aria-label="Cerrar visor">✕</a>
+        </div>
+    </main>
+
+    <!-- PIE COMÚN: SE COPIA IGUAL EN LAS 4 PÁGINAS -->
+    <footer>
+        <div id="cajetin">
+            <div class="celda-pie">
+                <img src="img/logo-lcc-blanco.png" alt="LCC Manufacturing" width="249" height="98" loading="lazy">
+                <p>Desarrollo de proyectos y fabricación de productos industriales.</p>
+            </div>
+            <div class="celda-pie">
+                <h2>Contacto</h2>
+                <p>Parque Empresarial Boroa 19<br>Pabellón 4<br>48340 Amorebieta-Etxano (Bizkaia)</p>
+                <p><a href="tel:+34946510079">+34 94 651 00 79</a><br><a href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a></p>
+            </div>
+        </div>
+        <p id="aviso">© 2026 LCC Manufacturing S.L. · <a href="https://lccmanufacturing.org/aviso-legal" target="_blank" rel="noopener">Aviso legal</a> · <a href="https://lccmanufacturing.org/politica-de-privacidad" target="_blank" rel="noopener">Política de privacidad</a></p>
+    </footer>
+
+    <!-- BOTÓN FIJO: SIEMPRE VISIBLE ABAJO A LA DERECHA (position: fixed) -->
+    <a id="boton_fijo" class="boton" href="contacto.html#presupuesto">Pedir presupuesto</a>
+</body>
+</html>

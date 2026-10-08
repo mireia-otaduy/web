@@ -1,0 +1,506 @@
+/* ==========================================================================
+   INDEX.CSS
+   Estilos propios de index.html (la página de inicio). Lo común está en
+   headerfooter.css y base.css; los efectos y animaciones, en iag.css.
+
+   Apartados:
+     1. Portada
+     2. Manifiesto y rejilla "bento"
+     3. Carril de tecnologías
+     4. Sectores
+     5. Resumen del proceso
+     6. Clientes
+     7. Tablet y móvil (@media)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. PORTADA
+   ========================================================================== */
+
+/* elementos solo decorativos: se ven únicamente con iag.css */
+.plano,
+.anillo,
+.ficha,
+.cintas {
+    display: none;
+}
+
+/* .portada = primera pantalla: texto a la izquierda y foto enmarcada a la derecha */
+.portada {
+    padding: 5rem 0 6rem;
+}
+
+/* .portada-grid = dos columnas (display: grid) */
+.portada-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+.portada-texto h1 {
+    color: var(--blanco);
+    font-size: 4.2rem;
+    line-height: 1.05;
+}
+
+.portada-texto .intro {
+    max-width: 34em;
+    color: var(--plata);
+}
+
+.portada-visual {
+    position: relative;
+}
+
+.marco-foto {
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.marco-foto img {
+    width: 100%;
+}
+
+/* .marca = palabra del título que se destaca */
+.marca {
+    color: var(--celeste);
+}
+
+/* .rotador = frase "Integramos ..." (las palabras que rotan solas se añaden en iag.css) */
+.rotador {
+    margin: 0 0 1.4em;
+    color: var(--plata);
+}
+
+.rotador .animado {
+    display: none;
+}
+
+
+/* ==========================================================================
+   2. MANIFIESTO Y REJILLA "BENTO"
+   ========================================================================== */
+
+/* .enorme = frase grande del manifiesto (en iag.css sus palabras se iluminan al hacer scroll) */
+.enorme {
+    max-width: 24em;
+    margin: 0;
+    color: var(--blanco);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+}
+
+/* .bento = rejilla de 12 columnas con celdas de distinto tamaño (como una caja de herramientas):
+   el texto, la foto y las 4 cifras ocupan las zonas que se nombran en grid-template-areas */
+.bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+        "t t t t t t t f f f f f"
+        "a a a b b b b f f f f f"
+        "c c c c d d d f f f f f";
+    gap: 1.2rem;
+    margin-top: 2.6rem;
+}
+
+.celda {
+    padding: 1.8rem;
+    border-radius: var(--radio);
+}
+
+.celda-texto {
+    grid-area: t;
+    padding: 0.4rem 1rem 0 0;
+}
+
+.celda-texto p {
+    color: var(--texto-suave);
+}
+
+.celda-foto {
+    grid-area: f;
+    padding: 0;
+}
+
+.celda-foto .foto-zoom {
+    height: 100%;
+    min-height: 22rem;
+}
+
+.celda-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.c-a { grid-area: a; }
+.c-b { grid-area: b; }
+.c-c { grid-area: c; }
+.c-d { grid-area: d; }
+
+/* cada cifra tiene su color de fondo y el color de su número (--num-color):
+   marino, azul claro, celeste y marino medio */
+.celda-cifra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.6rem;
+    min-height: 11rem;
+}
+
+.celda-cifra p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.c-a {
+    --num-color: var(--celeste);
+    background-color: var(--azul-900);
+    color: var(--plata);
+}
+
+.c-b {
+    --num-color: var(--azul-600);
+    background-color: var(--azul-100);
+    color: var(--texto);
+}
+
+.c-c {
+    --num-color: var(--azul-900);
+    background-color: var(--celeste);
+    color: var(--azul-900);
+}
+
+.c-d {
+    --num-color: var(--celeste);
+    background-color: var(--azul-800);
+    color: var(--plata);
+}
+
+/* .contador = el número grande (en iag.css cuenta desde 0 al hacer scroll) */
+.contador {
+    display: block;
+    color: var(--num-color, var(--azul-600));
+    font-size: 3.6rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+
+/* ==========================================================================
+   3. CARRIL DE TECNOLOGÍAS
+   ========================================================================== */
+
+/* .carril-marco = caja que centra el título y las 8 tecnologías (igual que .contenedor) */
+.carril-marco {
+    width: 90%;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+}
+
+/* .carril = las 8 tecnologías en una fila que se desliza con el dedo o el ratón.
+   En escritorio, iag.css lo convierte en una fila que se mueve al hacer scroll */
+.carril {
+    display: flex;
+    gap: 1rem;
+    margin: 2.2rem 0 0;
+    padding: 0 0 1.4rem;
+    overflow-x: auto;
+    list-style: none;
+}
+
+.panel {
+    display: flex;
+    flex: 0 0 17.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5em;
+    min-height: 17rem;
+    margin: 0;
+    padding: 1.5em;
+    background-color: var(--azul-800);
+    border: 1px solid var(--azul-700);
+    border-radius: var(--radio);
+}
+
+.panel:hover {
+    border-color: var(--celeste);
+}
+
+.panel .numero {
+    color: var(--celeste);
+    font-size: 1.3rem;
+}
+
+/* .dato = el número grande de cada tecnología; .unidad = qué es */
+.dato {
+    margin: 0;
+    color: var(--blanco);
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.dato-texto {
+    font-size: 2rem;
+}
+
+.unidad {
+    margin: 0.4em 0 0.9em;
+    color: var(--plata);
+}
+
+.panel h3 {
+    margin: 0;
+    color: var(--blanco);
+    font-size: 1.05rem;
+}
+
+/* .progreso = barra de avance del carril (solo con iag.css) */
+.progreso {
+    display: none;
+}
+
+
+/* ==========================================================================
+   4. SECTORES: mosaico de 8 tarjetas, cada una en un tono de azul
+   ========================================================================== */
+
+/* .sectores = rejilla de 4 columnas y 2 filas (display: grid) */
+.sectores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2.4rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* .sector = una tarjeta: el nombre abajo a la izquierda */
+.sector {
+    display: flex;
+    align-items: flex-end;
+    min-height: 9.5rem;
+    margin: 0;
+    padding: 1.4rem;
+    border-radius: var(--radio-pequeno);
+}
+
+.sector h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+/* un tono de azul para cada sector: de oscuro a claro */
+.tono-1 {
+    background-color: var(--azul-900);
+    color: var(--blanco);
+}
+
+.tono-2 {
+    background-color: var(--azul-800);
+    color: var(--blanco);
+}
+
+.tono-3 {
+    background-color: var(--azul-700);
+    color: var(--blanco);
+}
+
+.tono-4 {
+    background-color: var(--azul-600);
+    color: var(--blanco);
+}
+
+.tono-5 {
+    background-color: var(--azul-500);
+    color: var(--azul-900);
+}
+
+.tono-6 {
+    background-color: var(--celeste);
+    color: var(--azul-900);
+}
+
+.tono-7 {
+    background-color: var(--azul-300);
+    color: var(--azul-900);
+}
+
+.tono-8 {
+    background-color: var(--azul-100);
+    color: var(--azul-900);
+}
+
+.sector h3 {
+    color: inherit;
+}
+
+
+/* ==========================================================================
+   5. RESUMEN DEL PROCESO
+   ========================================================================== */
+
+/* .mini-pasos = resumen del proceso: 8 pasos en una rejilla (ol) */
+.mini-pasos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.2em 1.6em;
+    margin: 2.4em 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mini-pasos li {
+    margin: 0;
+    padding-top: 1.1em;
+    border-top: 2px solid var(--azul-600);
+}
+
+.mini-pasos .numero {
+    margin: 0.2em 0 0.25em;
+    font-size: 2.2rem;
+}
+
+.mini-pasos strong {
+    display: block;
+}
+
+
+/* ==========================================================================
+   6. CLIENTES
+   ========================================================================== */
+
+/* .cintas-logos = los logos de los clientes en filas. Aquí, sin efectos, es una rejilla normal;
+   la copia (.copia) solo se usa para el bucle de iag.css, y aquí se oculta */
+.cintas-logos {
+    width: 90%;
+    max-width: var(--ancho-maximo);
+    margin: 2em auto 0;
+}
+
+.cinta {
+    margin-bottom: 1em;
+}
+
+.grupo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.copia {
+    display: none;
+}
+
+.cintas-logos .grupo img {
+    width: 9rem;
+    height: 4.5rem;
+    padding: 0.6em;
+    object-fit: contain;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-pequeno);
+}
+
+
+/* ==========================================================================
+   7. TABLET Y MÓVIL
+   ========================================================================== */
+
+/* hasta 1000 px (tablet) */
+@media (max-width: 1000px) {
+
+    .portada {
+        padding: 3.5rem 0 4.5rem;
+    }
+
+    .portada-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .portada-texto h1 {
+        font-size: 3.2rem;
+    }
+
+    .enorme {
+        font-size: 2.4rem;
+    }
+
+    .bento {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "t t t t t t"
+            "f f f f f f"
+            "a a a b b b"
+            "c c c d d d";
+    }
+
+    .celda-foto .foto-zoom {
+        min-height: 18rem;
+    }
+
+    .sectores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mini-pasos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* hasta 700 px (móvil) */
+@media (max-width: 700px) {
+
+    .portada {
+        padding: 2.5rem 0 3.5rem;
+    }
+
+    .portada-texto h1 {
+        font-size: 2.6rem;
+    }
+
+    .enorme {
+        font-size: 1.75rem;
+    }
+
+    .celda-foto .foto-zoom {
+        min-height: 15rem;
+    }
+
+    .contador {
+        font-size: 2.6rem;
+    }
+
+    .panel {
+        flex-basis: 76vw;
+    }
+
+    .sectores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
+    }
+
+    .sector {
+        min-height: 7.5rem;
+        padding: 1.1rem;
+    }
+
+    .sector h3 {
+        font-size: 1.15rem;
+    }
+
+    .mini-pasos {
+        grid-template-columns: 1fr;
+    }
+}

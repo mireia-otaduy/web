@@ -1,0 +1,549 @@
+/* ==========================================================================
+   BASE.CSS
+   Lo que comparten las 4 páginas además de la cabecera y el pie: texto, títulos,
+   secciones, botones, tarjetas, la cabecera oscura de cada página, la llamada
+   final y el botón fijo.
+   Los colores NO se escriben aquí: salen de las variables de headerfooter.css.
+
+   Apartados:
+     1. Base (body, títulos, texto, enlaces, imágenes)
+     2. Estructura (contenedor, secciones, rejillas, fotos)
+     3. Botones
+     4. Cabecera oscura de cada página
+     5. Tarjetas
+     6. Llamada final y botón fijo
+     7. Tablet y móvil (@media)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. BASE
+   ========================================================================== */
+
+/* * = todos los elementos. box-sizing: border-box hace que el padding y el
+   borde cuenten dentro del ancho (si no, un 100 % + padding se sale de la pantalla) */
+* {
+    box-sizing: border-box;
+}
+
+/* body = toda la página: tipo de letra, tamaño, interlineado y color del texto */
+body {
+    margin: 0;
+    background-color: var(--blanco);
+    color: var(--texto);
+    font-family: var(--fuente);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+
+/* Títulos: mismo estilo en las 4 páginas */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5em;
+    color: var(--texto);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+h1 {
+    font-size: 4.4rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 3.4rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* p = párrafos. max-width evita líneas demasiado largas (lectura cómoda) */
+p {
+    margin: 0 0 1em;
+    max-width: 68ch;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+/* hr = línea de separación fina */
+hr {
+    margin: 1.4em 0;
+    border: 0;
+    border-top: 1px solid var(--borde);
+}
+
+/* a = enlaces: mismo color en toda la web */
+a {
+    color: var(--azul-600);
+}
+
+a:hover {
+    color: var(--azul-900);
+}
+
+/* :focus = el elemento seleccionado con el teclado se rodea con una línea azul */
+a:focus,
+button:focus,
+summary:focus {
+    outline: 3px solid var(--azul-500);
+    outline-offset: 3px;
+}
+
+/* sobre fondo oscuro los enlaces (menos los botones) son celestes */
+.oscura a {
+    color: var(--celeste);
+}
+
+.oscura a:hover {
+    color: var(--blanco);
+}
+
+/* img = imágenes: nunca más anchas que su caja y con la altura proporcional */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    margin: 0 0 1em;
+    padding-left: 1.2em;
+}
+
+li {
+    margin: 0 0 0.4em;
+}
+
+/* .solo-lectores = texto invisible que solo leen los lectores de pantalla */
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* ==========================================================================
+   2. ESTRUCTURA
+   ========================================================================== */
+
+/* .contenedor = centra el contenido: 90 % del ancho y como máximo 1240 px */
+.contenedor {
+    width: 90%;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+}
+
+/* section = cada bloque de la página, con aire arriba y abajo */
+section {
+    position: relative;
+    padding: 6.5rem 0;
+}
+
+/* tres fondos para dar ritmo: blanco (por defecto), gris claro y azul marino */
+.claro {
+    background-color: var(--gris-claro);
+}
+
+.oscura {
+    background-color: var(--azul-900);
+    color: var(--blanco);
+}
+
+.oscura h1,
+.oscura h2,
+.oscura h3,
+.oscura h4 {
+    color: var(--blanco);
+}
+
+.oscura p {
+    color: var(--plata);
+}
+
+/* .intro = primer párrafo grande debajo de un título */
+.intro {
+    margin-bottom: 1.6em;
+    color: var(--texto-suave);
+    font-size: 1.2rem;
+}
+
+/* .etiqueta = rótulo pequeño sobre cada título, con tipo de letra de máquina */
+.etiqueta {
+    max-width: 30rem;
+    margin: 0 0 1.4rem;
+    color: var(--azul-600);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.oscura .etiqueta {
+    color: var(--azul-300);
+}
+
+/* .cuadricula = tarjetas en rejilla. Las variantes fijan cuántas columnas hay */
+.cuadricula {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2.2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cuadricula-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cuadricula-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cuadricula > li {
+    margin: 0;
+}
+
+/* .foto-zoom = caja de una foto: esquinas redondeadas y un marco de color detrás */
+.foto-zoom {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radio);
+}
+
+.foto-zoom img {
+    width: 100%;
+}
+
+/* .pie = texto pequeño bajo una foto */
+.pie {
+    margin: 0.8em 0 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* .particulas = adorno animado (solo se ve con iag.css) */
+.particulas {
+    display: none;
+}
+
+
+/* ==========================================================================
+   3. BOTONES (un solo estilo para todos los de la misma función)
+   ========================================================================== */
+
+/* .boton = botón principal: celeste con texto azul marino */
+.boton {
+    display: inline-block;
+    padding: 0.85em 1.8em;
+    background-color: var(--celeste);
+    border: 0;
+    border-radius: 999px;
+    color: var(--azul-900);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--azul-900);
+    color: var(--blanco);
+}
+
+.oscura .boton {
+    color: var(--azul-900);
+}
+
+.oscura .boton:hover {
+    background-color: var(--blanco);
+    color: var(--azul-900);
+}
+
+/* .botones = fila de botones que bajan a otra línea si no caben */
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9em;
+    margin-top: 2em;
+}
+
+
+/* ==========================================================================
+   4. CABECERA OSCURA DE CADA PÁGINA (tecnologías, proceso y contacto)
+   ========================================================================== */
+
+/* .cabecera-pagina = zona azul marino con el h1, justo debajo de la cabecera */
+.cabecera-pagina {
+    padding: 5rem 0 5.5rem;
+}
+
+.cabecera-pagina h1 {
+    max-width: 14em;
+    margin-bottom: 0.4em;
+}
+
+.cabecera-pagina .intro {
+    max-width: 40em;
+    color: var(--plata);
+}
+
+
+/* ==========================================================================
+   5. TARJETAS
+   ========================================================================== */
+
+/* .tarjeta = bloque blanco con borde fino; todas las tarjetas son iguales */
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+}
+
+.tarjeta:hover {
+    border-color: var(--azul-600);
+}
+
+.cuerpo {
+    padding: 1.3em 1.5em 1.6em;
+}
+
+.cuerpo h3 {
+    margin-bottom: 0.4em;
+}
+
+.cuerpo p {
+    margin: 0 0 0.6em;
+    color: var(--texto-suave);
+}
+
+.cuerpo ul {
+    margin: 0.4em 0 0;
+    color: var(--texto-suave);
+}
+
+/* .numero = número grande (01, 02...) de tarjetas, pasos y paneles */
+.numero {
+    display: block;
+    color: var(--azul-600);
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+/* tarjeta de ventaja: número arriba y texto debajo */
+.ventaja {
+    padding: 2em 1.8em;
+}
+
+.ventaja .numero {
+    margin-bottom: 0.6em;
+}
+
+.ventaja p {
+    margin: 0;
+    color: var(--texto-suave);
+}
+
+
+/* ==========================================================================
+   6. LLAMADA FINAL Y BOTÓN FIJO
+   ========================================================================== */
+
+.cta {
+    padding-top: 2rem;
+}
+
+/* .cta-tarjeta = tarjeta de dos mitades: a la izquierda el título sobre azul marino
+   y a la derecha las tres formas de contactar sobre azul muy claro */
+.cta-tarjeta {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    overflow: hidden;
+    border: 1px solid var(--azul-700);
+    border-radius: 28px;
+}
+
+.cta-texto {
+    padding: 3.5rem;
+    background-color: var(--azul-900);
+}
+
+.cta-texto h2 {
+    max-width: 10em;
+    color: var(--blanco);
+    font-size: 3.4rem;
+}
+
+.cta-texto .intro {
+    margin-bottom: 0;
+    color: var(--plata);
+}
+
+.cta-texto .etiqueta {
+    color: var(--azul-300);
+}
+
+.cta-acciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.9rem;
+    padding: 3.5rem;
+    background-color: var(--azul-100);
+}
+
+.cta-acciones .boton {
+    padding: 1.1em 1.8em;
+    text-align: center;
+}
+
+/* .accion = fila con teléfono o email: texto pequeño arriba y dato grande debajo */
+.accion {
+    display: block;
+    padding: 1rem 1.3rem;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-pequeno);
+    color: var(--azul-900);
+    text-decoration: none;
+}
+
+.accion span {
+    display: block;
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+}
+
+.accion strong {
+    display: block;
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+}
+
+.accion:hover {
+    border-color: var(--azul-600);
+    color: var(--azul-600);
+}
+
+/* #boton_fijo = botón "Pedir presupuesto" siempre visible abajo a la derecha (position: fixed) */
+#boton_fijo {
+    position: fixed;
+    right: 1.2em;
+    bottom: 1.2em;
+    z-index: 90;
+    box-shadow: 0 10px 24px rgba(4, 13, 36, 0.35);
+}
+
+
+/* ==========================================================================
+   7. TABLET Y MÓVIL
+   ========================================================================== */
+
+/* hasta 1000 px (tablet): menos columnas y títulos algo más pequeños */
+@media (max-width: 1000px) {
+
+    h1 {
+        font-size: 3.4rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    section {
+        padding: 5rem 0;
+    }
+
+    .cuadricula-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-tarjeta {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-texto h2 {
+        font-size: 2.8rem;
+    }
+}
+
+/* hasta 700 px (móvil): una columna, textos y espacios más ajustados */
+@media (max-width: 700px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 2.1rem;
+    }
+
+    section {
+        padding: 3.8rem 0;
+    }
+
+    .intro {
+        font-size: 1.1rem;
+    }
+
+    .cuadricula-3,
+    .cuadricula-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .botones a {
+        text-align: center;
+    }
+
+    .cabecera-pagina {
+        padding: 3.5rem 0 3.8rem;
+    }
+
+    .cta-texto,
+    .cta-acciones {
+        padding: 2.2rem 1.6rem;
+    }
+
+    .cta-texto h2 {
+        font-size: 2.2rem;
+    }
+
+    #boton_fijo {
+        right: 0.8em;
+        bottom: 0.8em;
+    }
+}

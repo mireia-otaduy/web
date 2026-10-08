@@ -1,0 +1,443 @@
+/* ==========================================================================
+   TECNOLOGIAS.CSS
+   Estilos propios de tecnologias.html. Lo común está en headerfooter.css y
+   base.css; los efectos, el filtro, las cartas apiladas, el visor a pantalla
+   completa y el resto de código avanzado, en iag.css.
+
+   Apartados:
+     1. Fotos de la planta (mosaico)
+     2. Filtro y tarjetas de tecnologías
+     3. Moldes de inyección
+     4. Capacidad instalada: barras y tabla
+     5. Galería de la planta
+     6. Piezas bajo plano (fila que se desliza a mano) y visor
+     7. Tablet y móvil (@media)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. FOTOS DE LA PLANTA (mosaico)
+   ========================================================================== */
+
+/* .mosaico = las 5 fotos en una fila que baja a otra línea si no caben (display: flex) */
+.mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2.4rem 0;
+}
+
+.mosaico figure {
+    flex: 1 1 14rem;
+}
+
+.mosaico img {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+}
+
+
+/* ==========================================================================
+   2. FILTRO Y TARJETAS DE TECNOLOGÍAS
+   ========================================================================== */
+
+/* .filtros = botones en forma de píldora; en realidad son radios ocultos con su etiqueta */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0 0 0.6rem;
+    padding: 0;
+    border: 0;
+}
+
+.filtros legend {
+    margin: 0 0 0.8rem;
+    padding: 0;
+    color: var(--texto-suave);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.filtros input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.filtros label {
+    display: block;
+    margin: 0;
+    padding: 0.65em 1.4em;
+    background-color: var(--azul-100);
+    border-radius: 999px;
+    color: var(--azul-900);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filtros label:hover {
+    background-color: var(--azul-300);
+}
+
+/* .media = parte de arriba de la tarjeta de tecnología: un bloque azul con el número */
+.media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 9rem;
+    background-color: var(--azul-800);
+}
+
+.media .numero {
+    color: var(--celeste);
+    font-size: 4rem;
+}
+
+/* .recuadro = aviso destacado (subcontratación) */
+.recuadro {
+    margin: 2.4em 0 0;
+    padding: 1.4em 1.8em;
+    background-color: var(--azul-100);
+    border-left: 5px solid var(--azul-600);
+    border-radius: 0 var(--radio-pequeno) var(--radio-pequeno) 0;
+}
+
+.recuadro p {
+    margin: 0;
+    max-width: none;
+}
+
+
+/* ==========================================================================
+   3. MOLDES DE INYECCIÓN
+   ========================================================================== */
+
+/* .cifras-mini = cuatro datos del moldista en una fila */
+.cifras-mini {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin: 2.2em 0;
+}
+
+.cifras-mini div {
+    padding: 1.3em 1.4em;
+    background-color: var(--azul-800);
+    border: 1px solid var(--azul-700);
+    border-radius: var(--radio-pequeno);
+}
+
+.cifras-mini .contador {
+    --num-color: var(--celeste);
+    color: var(--num-color);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.cifras-mini p {
+    margin: 0.5em 0 0;
+    color: var(--plata);
+    font-size: 0.92rem;
+}
+
+/* .dos-columnas = texto a un lado y foto al otro (display: grid) */
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* .jerarquia = bloque de moldes con títulos h3, h4, h5 y h6 uno dentro de otro */
+.jerarquia h3 {
+    margin-top: 0;
+}
+
+.jerarquia h4,
+.jerarquia h5,
+.jerarquia h6 {
+    margin-top: 1.4em;
+    padding-left: 1rem;
+    border-left: 3px solid var(--celeste);
+}
+
+.jerarquia h5,
+.jerarquia h6 {
+    color: var(--azul-300);
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.jerarquia p,
+.jerarquia ul {
+    color: var(--plata);
+}
+
+/* .tarjeta-foto = la foto del molde (tiene fondo blanco) dentro de una tarjeta blanca */
+.tarjeta-foto {
+    padding: 1.4em;
+    background-color: var(--blanco);
+    border-radius: var(--radio);
+}
+
+.tarjeta-foto img {
+    width: 100%;
+    border-radius: var(--radio-pequeno);
+}
+
+/* el pie de la foto del molde va sobre blanco, por eso es gris oscuro (y no el gris claro del fondo azul) */
+.tarjeta-foto .pie {
+    color: var(--texto-suave);
+}
+
+
+/* ==========================================================================
+   4. CAPACIDAD INSTALADA: BARRAS Y TABLA
+   ========================================================================== */
+
+/* .barras = barras de capacidad (decorativas: los datos reales están en la tabla) */
+.barras {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4em 3em;
+    margin: 0 0 3em;
+}
+
+.barra-dato p {
+    display: flex;
+    justify-content: space-between;
+    max-width: none;
+    margin: 0 0 0.5em;
+    font-weight: 600;
+}
+
+.barra-dato strong {
+    color: var(--azul-600);
+}
+
+.carril-barra {
+    height: 12px;
+    overflow: hidden;
+    background-color: var(--azul-100);
+    border-radius: 999px;
+}
+
+/* .relleno = la parte llena de la barra; su ancho es proporcional (18 prensas = 100 %) */
+.relleno {
+    display: block;
+    height: 100%;
+    background-color: var(--azul-600);
+    border-radius: 999px;
+}
+
+.r18 { width: 100%; }
+.r14 { width: 78%; }
+.r10 { width: 56%; }
+.r8  { width: 44%; }
+.r2  { width: 11%; }
+
+/* .tabla-caja = caja de la tabla; en móvil se desplaza de lado dentro de ella */
+.tabla-caja {
+    overflow-x: auto;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+}
+
+table {
+    width: 100%;
+    min-width: 32rem;
+    border-collapse: collapse;
+}
+
+caption {
+    padding: 1.1em 1.4em;
+    color: var(--texto-suave);
+    font-weight: 700;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.9em 1.4em;
+    border-bottom: 1px solid var(--borde);
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--azul-900);
+    color: var(--blanco);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+/* th de cada fila (la familia) */
+tbody th {
+    background-color: var(--azul-100);
+    border-right: 1px solid var(--borde);
+    color: var(--azul-900);
+    vertical-align: middle;
+}
+
+/* última columna = la capacidad, en azul y negrita */
+tbody td:last-child {
+    color: var(--azul-600);
+    font-weight: 700;
+}
+
+tbody tr:hover td {
+    background-color: var(--gris-claro);
+}
+
+tfoot td {
+    background-color: var(--gris-claro);
+    border-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   5. GALERÍA DE LA PLANTA
+   ========================================================================== */
+
+/* .galeria = 5 fotos con su pie. Aquí, una rejilla; en iag.css, un acordeón que se abre con el ratón */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    margin-top: 2.4rem;
+}
+
+.galeria figure {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blanco);
+}
+
+.galeria img {
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
+}
+
+/* figcaption = el pie de la foto */
+figcaption {
+    padding: 0.8em 1.1em;
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+
+/* ==========================================================================
+   6. PIEZAS BAJO PLANO: UNA FILA QUE SE DESLIZA A MANO
+   ========================================================================== */
+
+/* .rail = caja con scroll lateral (overflow-x: auto): se arrastra con el dedo, con el ratón
+   (barra de abajo) o con la rueda y la tecla Mayús. Así se ven las 12 piezas */
+.rail {
+    margin-top: 2.4rem;
+    padding: 0 5% 1.4rem;
+    overflow-x: auto;
+}
+
+/* .rail-lista = las 12 fotos en 2 filas y tantas columnas como haga falta */
+.rail-lista {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: 16rem;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.rail-lista li {
+    margin: 0;
+}
+
+.rail-lista img {
+    width: 100%;
+    height: 11rem;
+    object-fit: cover;
+    border: 1px solid var(--borde);
+}
+
+
+/* .visor = foto de una pieza a pantalla completa. Está oculto; iag.css lo muestra cuando la
+   dirección de la página termina en su identificador (#prod-3) */
+.visor {
+    display: none;
+}
+
+
+/* ==========================================================================
+   7. TABLET Y MÓVIL
+   ========================================================================== */
+
+/* hasta 1000 px (tablet) */
+@media (max-width: 1000px) {
+
+    .cifras-mini,
+    .barras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dos-columnas {
+        grid-template-columns: 1fr;
+        gap: 2.4rem;
+    }
+}
+
+/* hasta 700 px (móvil) */
+@media (max-width: 700px) {
+
+    .barras {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cifras-mini div {
+        padding: 1em;
+    }
+
+    .cifras-mini .contador {
+        font-size: 1.4rem;
+    }
+
+    .rail-lista {
+        grid-auto-columns: 12.5rem;
+    }
+
+    .rail-lista img {
+        height: 9rem;
+    }
+
+    .mosaico figure {
+        flex: 1 1 9rem;
+    }
+
+    .mosaico img {
+        height: 9rem;
+    }
+}

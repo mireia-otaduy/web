@@ -1,0 +1,239 @@
+/* ==========================================================================
+   PROCESO.CSS
+   Estilos propios de proceso.html. Lo común está en headerfooter.css y base.css;
+   los efectos, la elección de pasos (radios) y la ruta animada, en iag.css.
+
+   Apartados:
+     1. Los 8 pasos
+     2. El camino de la pieza
+     3. Tablet y móvil (@media)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. LOS 8 PASOS
+   ========================================================================== */
+
+.pasos-interactivos {
+    margin-top: 2.6rem;
+}
+
+/* los 8 radios están ocultos: se manejan pulsando las etiquetas */
+.pasos-interactivos > input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* .pasos-lista = los 8 botones de paso en una fila con scroll lateral (en móvil se desliza con el dedo) */
+.pasos-lista {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.6rem;
+    overflow-x: auto;
+}
+
+.pasos-lista label {
+    display: flex;
+    flex: 1 0 11.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 1rem 1.1rem;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-pequeno);
+    cursor: pointer;
+}
+
+.pasos-lista .n {
+    color: var(--azul-600);
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.pasos-lista .t {
+    color: var(--azul-900);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.pasos-lista label:hover {
+    border-color: var(--azul-600);
+}
+
+/* .ficha-paso = el contenido de un paso: número grande a la izquierda y texto a la derecha */
+.ficha-paso {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding: 3rem;
+    background-color: var(--azul-900);
+    border-radius: var(--radio);
+    color: var(--plata);
+}
+
+.gran-num {
+    color: var(--celeste);
+    font-size: 8rem;
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    line-height: 0.8;
+}
+
+.ficha-texto h3 {
+    color: var(--blanco);
+    font-size: 2.2rem;
+}
+
+.ficha-texto p {
+    color: var(--plata);
+    font-size: 1.15rem;
+}
+
+/* .ficha-nav = "Paso anterior" y "Siguiente paso": etiquetas que marcan otro radio */
+.ficha-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+}
+
+.ficha-nav label {
+    padding: 0.6em 1.2em;
+    border: 1px solid var(--azul-300);
+    border-radius: 999px;
+    color: var(--blanco);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ficha-nav label:hover {
+    background-color: var(--celeste);
+    border-color: var(--celeste);
+    color: var(--azul-900);
+}
+
+.ficha-paso .foto-zoom {
+    grid-column: 1 / 3;
+}
+
+.ficha-paso .foto-zoom img {
+    height: 17rem;
+    object-fit: cover;
+}
+
+
+/* ==========================================================================
+   2. EL CAMINO DE LA PIEZA
+   ========================================================================== */
+
+/* .ruta = línea animada que une los 3 bloques (solo se ve con iag.css) */
+.ruta {
+    display: none;
+}
+
+/* .camino = tres bloques sobre fondo oscuro: España, China y almacenes */
+.camino {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6em;
+    margin: 2.2em 0 0;
+}
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    padding: 1.7em;
+    background-color: var(--azul-800);
+    border: 1px solid var(--azul-700);
+    border-radius: var(--radio);
+}
+
+.paso:hover {
+    border-color: var(--celeste);
+}
+
+.paso .numero {
+    margin-bottom: 0.4em;
+    color: var(--celeste);
+    font-size: 2.6rem;
+}
+
+.paso h3 {
+    margin-bottom: 0.4em;
+}
+
+.paso p {
+    margin: 0 0 0.8em;
+}
+
+/* .mini-etiquetas = pastillas pequeñas al pie de cada bloque (margin-top: auto las baja al final) */
+.mini-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: auto 0 0;
+    padding: 1.2em 0 0;
+    list-style: none;
+}
+
+.mini-etiquetas li {
+    margin: 0;
+    padding: 0.3em 0.9em;
+    border: 1px solid var(--azul-700);
+    border-radius: 999px;
+    color: var(--azul-100);
+    font-size: 0.85rem;
+}
+
+
+/* ==========================================================================
+   3. TABLET Y MÓVIL
+   ========================================================================== */
+
+/* hasta 1000 px (tablet) */
+@media (max-width: 1000px) {
+
+    .camino {
+        grid-template-columns: 1fr;
+    }
+
+    .ficha-paso {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .ficha-paso .foto-zoom {
+        grid-column: 1 / 2;
+    }
+
+    .gran-num {
+        font-size: 6rem;
+    }
+}
+
+/* hasta 700 px (móvil) */
+@media (max-width: 700px) {
+
+    .ficha-paso {
+        padding: 1.6rem;
+    }
+
+    .ficha-texto h3 {
+        font-size: 1.7rem;
+    }
+
+    .gran-num {
+        font-size: 4.5rem;
+    }
+}
