@@ -24,6 +24,8 @@ function startSite() {
       init();
     } catch (error) {
       console.error(`[LCC] Error al iniciar ${init.name}:`, error);
+      // Si falla la aparición animada, se devuelve la página a su estado estático: el contenido nunca queda oculto
+      if (init === initReveal) root.classList.remove('js');
     }
   }
 

@@ -150,6 +150,7 @@ Añade a `firebase.json` el bloque `"functions": [{ "source": "functions", "code
 | **CIF y datos registrales** | El CIF `B95517835` consta en el registro público LEI y su dígito de control es válido, pero confírmalo. Faltan los datos del Registro Mercantil (`legal.registry` en `src/site.json`): si se rellenan, aparecen en el Aviso legal. |
 | **Sectores** | La web publicada de la empresa lista 6 sectores; esta incluye además *Agricultura* y *Sanitario*. Confirma que se atienden. |
 | **Cifras de maquinaria** | 18 prensas, 14 tornos CNC, 8 de corte por hilo, etc. provienen de los textos entregados y no se han podido contrastar de forma independiente. |
+| **«Corte por hilo»** | Se ha traducido como *wire EDM cutting* (inglés) y 线切割 (chino), que es lo habitual en la industria. Confirma que la máquina es de electroerosión por hilo y no de otro tipo de corte. |
 | **«Dinascopio»** | Término de metrología del texto original que no se ha podido identificar; está en la versión española y se omite en inglés y chino. Confírmalo o corrígelo. |
 | **Logotipos de clientes** | Confirma que hay permiso para mostrarlos. |
 | **Fotografías** | Se han eliminado los metadatos EXIF. Las fotos de planta son de baja resolución (700 px). |
@@ -164,6 +165,12 @@ móvil: 0 errores de consola, 0 peticiones fallidas, sin desbordamiento horizont
 axe-core sin violaciones (con y sin animaciones), HTML válido (html-validate), formulario completo (validación,
 envío a Firestore simulado, fallo de red, antispam), selector de idioma, menú móvil, filtros, pasos, visor de
 imágenes, modo sin JavaScript, JavaScript bloqueado y «reducir movimiento».
+
+**Lo que NO se ha podido comprobar** (el entorno de desarrollo solo dispone de Chromium y no tiene acceso a Google):
+Firefox y Safari (el código usa funciones estándar —`:has()`, `<dialog>`, `popover`, `Intl.Segmenter`— compatibles
+con navegadores actuales, pero conviene probar la web en ellos antes de publicar), el despliegue real en Firebase
+Hosting, las reglas de Firestore contra el emulador y la Cloud Function de avisos. Pasa por esas pruebas antes de
+dar la web por cerrada.
 
 ## 9. Licencias de terceros
 

@@ -69,5 +69,14 @@ function initRail() {
   motionQuery.addEventListener('change', measure);
   if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(measure);
 
+  // Si cambia la altura del contenido de encima (fuentes, imágenes, traducciones largas), se recalcula el punto de inicio
+  if ('ResizeObserver' in window) {
+    let frame = 0;
+    new ResizeObserver(() => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(measure);
+    }).observe(doc.body);
+  }
+
   measure();
 }
