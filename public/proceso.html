@@ -39,12 +39,12 @@
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="assets/css/site.7882777b44.css">
+  <link rel="stylesheet" href="assets/css/site.7f2794884d.css">
   <link rel="stylesheet" href="assets/css/page-process.5f45f759ee.css">
 
   <!-- Marca la página como "con JavaScript" antes del primer pintado (evita parpadeos en las animaciones) -->
   <script>document.documentElement.classList.add('js')</script>
-  <script src="assets/js/site.c66b36f0cd.js" defer></script>
+  <script src="assets/js/site.c2aae381d5.js" defer></script>
 
   <!-- Datos estructurados para buscadores -->
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lcc-manufacturing.web.app/#organization","name":"LCC Manufacturing","legalName":"LCC Manufacturing S.L.","url":"https://lcc-manufacturing.web.app/","logo":"https://lcc-manufacturing.web.app/assets/img/logo-lcc.png","foundingDate":"2008","email":"info@lcc-manufacturing.com","telephone":"+34946510079","address":{"@type":"PostalAddress","streetAddress":"Parque Empresarial Boroa 19, Pabellón 4","postalCode":"48340","addressLocality":"Amorebieta-Etxano","addressRegion":"Bizkaia","addressCountry":"ES"}},{"@type":"WebSite","@id":"https://lcc-manufacturing.web.app/#website","url":"https://lcc-manufacturing.web.app/","name":"LCC Manufacturing","publisher":{"@id":"https://lcc-manufacturing.web.app/#organization"},"inLanguage":["es","en","zh-CN"]},{"@type":"WebPage","@id":"https://lcc-manufacturing.web.app/proceso.html#webpage","url":"https://lcc-manufacturing.web.app/proceso.html","name":"Proceso de trabajo: de la idea a la serie | LCC Manufacturing","description":"Gestión integral del proyecto en ocho etapas: de la ingeniería y los prototipos a la fabricación seriada, el control de calidad y el almacén regulador.","inLanguage":"es","isPartOf":{"@id":"https://lcc-manufacturing.web.app/#website"},"about":{"@id":"https://lcc-manufacturing.web.app/#organization"}}]}</script>
@@ -91,7 +91,7 @@
   <div class="page-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow">Proceso de trabajo</p>
-    <h1 id="page-title" data-split>Cómo trabajamos: de la idea a la serie</h1>
+    <h1 id="page-title" data-split="chars">Cómo trabajamos: de la idea a la serie</h1>
     <p class="lead">Gestión integral del proyecto con una metodología de trabajo en ocho etapas.</p>
   </div>
 </section>
@@ -104,9 +104,9 @@
 <section class="section section--soft" id="steps" aria-labelledby="steps-title">
   <div class="container">
     <p class="eyebrow">Los 8 pasos</p>
-    <h2 id="steps-title" data-split>Elige un paso y mira qué hacemos</h2>
+    <h2 id="steps-title" data-split="slide">Elige un paso y mira qué hacemos</h2>
 
-    <fieldset class="steps" data-reveal>
+    <fieldset class="steps" data-reveal="zoom">
       <legend class="sr-only">Pasos del proceso de trabajo</legend>
 
       <input type="radio" name="step" id="step-1" checked>
@@ -244,33 +244,33 @@
 <section class="section route-section is-dark cut" id="route" aria-labelledby="route-title">
   <div class="container">
     <p class="eyebrow">Del plano a tu almacén</p>
-    <h2 id="route-title" data-split>El camino de tu pieza</h2>
+    <h2 id="route-title" data-split="flip">El camino de tu pieza</h2>
     <p class="lead" data-reveal>Ingeniería y gestión de proyectos en España, fabricación en China y almacenes reguladores en Amorebieta y Barcelona.</p>
 
     <ol class="route" data-stagger>
-      <li class="route__stop" data-reveal data-spot>
+      <li class="route__stop" data-reveal="tilt" data-spot data-tilt>
         <span class="route__node" aria-hidden="true"></span>
         <span class="route__num" aria-hidden="true">01</span>
         <svg class="icon route__icon" aria-hidden="true" focusable="false"><use href="#i-step-1"/></svg>
         <h3>España</h3>
         <p>Comercial, ingeniería y gestión de proyectos.</p>
-        <ul class="tags"><li>Ingeniería</li><li>Gestión de proyectos</li></ul>
+        <ul class="tags" data-cascade="pop"><li>Ingeniería</li><li>Gestión de proyectos</li></ul>
       </li>
-      <li class="route__stop" data-reveal data-spot>
+      <li class="route__stop" data-reveal="flip" data-spot data-tilt>
         <span class="route__node" aria-hidden="true"></span>
         <span class="route__num" aria-hidden="true">02</span>
         <svg class="icon route__icon" aria-hidden="true" focusable="false"><use href="#i-step-5"/></svg>
         <h3>China</h3>
         <p>Fabricamos tus productos industriales en China.</p>
-        <ul class="tags"><li>Fabricación seriada</li></ul>
+        <ul class="tags" data-cascade="pop"><li>Fabricación seriada</li></ul>
       </li>
-      <li class="route__stop" data-reveal data-spot>
+      <li class="route__stop" data-reveal="tilt-r" data-spot data-tilt>
         <span class="route__node" aria-hidden="true"></span>
         <span class="route__num" aria-hidden="true">03</span>
         <svg class="icon route__icon" aria-hidden="true" focusable="false"><use href="#i-step-8"/></svg>
         <h3>Amorebieta y Barcelona</h3>
         <p>Almacenes reguladores del flujo logístico de los productos que suministramos en España.</p>
-        <ul class="tags"><li>Almacén regulador</li><li>Montajes finales</li><li>Inspecciones de calidad</li></ul>
+        <ul class="tags" data-cascade="pop"><li>Almacén regulador</li><li>Montajes finales</li><li>Inspecciones de calidad</li></ul>
       </li>
     </ol>
   </div>
@@ -279,28 +279,28 @@
 <!-- ======================================================================
      4. VENTAJAS
      ====================================================================== -->
-<section class="section" id="benefits" aria-labelledby="benefits-title">
+<section class="section" id="benefits" aria-labelledby="benefits-title" data-recede>
   <div class="container">
     <p class="eyebrow">Ventajas</p>
-    <h2 id="benefits-title" data-split>Qué ganas con LCC</h2>
+    <h2 id="benefits-title" data-split="scale">Qué ganas con LCC</h2>
 
     <ul class="grid grid--3 benefits" data-stagger>
 
-      <li class="card benefit" data-reveal data-spot>
+      <li class="card benefit" data-reveal="flip" data-spot data-tilt>
         <span class="benefit__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-benefit-1"/></svg></span>
         <span class="benefit__num" aria-hidden="true">01</span>
         <h3>Mejorar la cuenta de resultados</h3>
         <p>Mediante la reducción de los costes de compra.</p>
       </li>
 
-      <li class="card benefit" data-reveal data-spot>
+      <li class="card benefit" data-reveal="flip" data-spot data-tilt>
         <span class="benefit__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-benefit-2"/></svg></span>
         <span class="benefit__num" aria-hidden="true">02</span>
         <h3>Mejorar las industrializaciones</h3>
         <p>Mediante la reducción de los plazos de fabricación de los utillajes.</p>
       </li>
 
-      <li class="card benefit" data-reveal data-spot>
+      <li class="card benefit" data-reveal="flip" data-spot data-tilt>
         <span class="benefit__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-benefit-3"/></svg></span>
         <span class="benefit__num" aria-hidden="true">03</span>
         <h3>Acceso a mercados más competitivos</h3>
@@ -311,16 +311,21 @@
   </div>
 </section>
 
+<!-- Franja de texto gigante: los ocho pasos, solo con contorno, se desplazan de lado al hacer scroll (decorativo) -->
+<div class="band" aria-hidden="true">
+  <div class="band__track" data-scroll-x="26"><span data-text="Desarrollo de producto y proceso"></span><span data-text="Fabricación de prototipos"></span><span data-text="Homologación"></span><span data-text="Fabricación de utillajes"></span><span data-text="Fabricación seriada"></span><span data-text="Control de calidad"></span><span data-text="Cadena de suministro"></span><span data-text="Almacén regulador"></span></div>
+</div>
+
 <!-- Llamada final a la acción (se repite en las páginas de contenido, no en contacto) -->
 <section class="section cta" aria-labelledby="cta-title">
   <div class="container">
     <div class="cta__card" data-reveal="zoom">
       <div class="cta__main is-dark">
         <p class="eyebrow">Contacto</p>
-        <h2 id="cta-title" data-split>¿Tienes un plano o una idea?</h2>
+        <h2 id="cta-title" data-split="chars">¿Tienes un plano o una idea?</h2>
         <p class="lead">Cuéntanosla y haremos todo lo posible por responderte cuanto antes.</p>
       </div>
-      <div class="cta__actions">
+      <div class="cta__actions" data-cascade>
         <a class="btn" href="contacto.html#quote"><span>Pedir presupuesto</span><svg class="icon btn__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
         <a class="contact-chip" href="tel:+34946510079">
           <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg><span><small>Llamar ahora</small><strong>+34 94 651 00 79</strong></span>
@@ -341,14 +346,14 @@
   </main>
 
   <!-- Pie de página: marca, navegación, datos de contacto y avisos legales -->
-<footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div class="site-footer__brand">
+<footer class="site-footer" data-depth="60">
+  <div class="container site-footer__grid" data-stagger>
+    <div class="site-footer__brand" data-reveal="left">
       <picture><source type="image/webp" srcset="assets/img/logo-lcc-blanco.webp"><img src="assets/img/logo-lcc-blanco.png" alt="LCC Manufacturing" width="249" height="98" class="site-footer__logo" loading="lazy" decoding="async"></picture>
       <p>Desarrollo de proyectos y fabricación de productos industriales.</p>
     </div>
 
-    <nav class="site-footer__col" aria-label="Menú">
+    <nav class="site-footer__col" data-reveal aria-label="Menú">
       <h2 class="site-footer__title">Menú</h2>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -358,7 +363,7 @@
       </ul>
     </nav>
 
-    <div class="site-footer__col">
+    <div class="site-footer__col" data-reveal>
       <h2 class="site-footer__title">Contacto</h2>
       <address>
         <p>Parque Empresarial Boroa 19, Pabellón 4<br>48340 Amorebieta-Etxano (Bizkaia)</p>
@@ -368,7 +373,7 @@
     </div>
   </div>
 
-  <div class="container site-footer__legal">
+  <div class="container site-footer__legal" data-reveal="fade">
     <p>© 2026 LCC Manufacturing S.L. · Todos los derechos reservados.</p>
     <ul>
       <li><a href="aviso-legal.html">Aviso legal</a></li>
@@ -378,6 +383,6 @@
 </footer>
 
   <!-- Textos para el JavaScript (formulario, visor de imágenes…) en el idioma de la página -->
-  <script type="application/json" id="i18n-data">{"form":{"errors":{"required":"Este campo es obligatorio.","email":"Introduce un correo electrónico válido.","message":"Cuéntanos algo más sobre tu proyecto (mínimo 10 caracteres).","pieces":"Introduce un número entero entre 1 y 100.000.000.","privacy":"Debes aceptar la política de privacidad para enviar la solicitud.","phone":"Introduce un teléfono válido (números, espacios y los signos + - ( ))."},"invalid":"Revisa los campos marcados en rojo.","sending":"Enviando…","sendingStatus":"Enviando tu solicitud…","failed":"No hemos podido enviar la solicitud. Inténtalo de nuevo o escríbenos a {email}.","mailOpened":"Se ha abierto tu programa de correo con la solicitud preparada. Si no se abre, escríbenos a {email}.","mailSubject":"Solicitud de presupuesto web: {company}"},"lightbox":{"label":"Visor de imágenes","close":"Cerrar","prev":"Pieza anterior","next":"Pieza siguiente","of":"de"}}</script>
+  <script type="application/json" id="i18n-data">{"form":{"errors":{"required":"Este campo es obligatorio.","email":"Introduce un correo electrónico válido.","message":"Cuéntanos algo más sobre tu proyecto (mínimo 10 caracteres).","pieces":"Introduce un número entero entre 1 y 100.000.000.","privacy":"Debes aceptar la política de privacidad para enviar la solicitud.","phone":"Introduce un teléfono válido (números, espacios y los signos + - ( ))."},"invalid":"Revisa los campos marcados en rojo.","sending":"Enviando…","sendingStatus":"Enviando tu solicitud…","failed":"No hemos podido enviar la solicitud. Inténtalo de nuevo o escríbenos a {email}.","mailOpened":"Se ha abierto tu programa de correo con la solicitud preparada. Si no se abre, escríbenos a {email}.","mailSubject":"Solicitud de presupuesto web: {company}"},"lightbox":{"label":"Visor de imágenes","close":"Cerrar","prev":"Pieza anterior","next":"Pieza siguiente","of":"de"},"sectionNav":"Secciones de la página"}</script>
 </body>
 </html>

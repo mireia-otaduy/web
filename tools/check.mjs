@@ -9,6 +9,7 @@
  *   - <html lang>, <title>, descripción, canonical y alternativas hreflang recíprocas
  *   - imágenes con alt, width y height; enlaces externos con rel="noopener"
  *   - ausencia de estilos en línea (los bloquea la política CSP) y de scripts no autorizados
+ *   - que data-reveal, data-split y data-cascade usen variantes que existen
  *   - que el sitemap solo liste archivos que existen
  *   - textos sin traducir (idénticos al español) en inglés y chino
  *
@@ -41,6 +42,14 @@ const htmlFiles = walk(PUBLIC).filter((file) => file.endsWith('.html'));
 const htmlCache = new Map(htmlFiles.map((file) => [file, fs.readFileSync(file, 'utf8')]));
 const idsOf = (html) => new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
 const rel = (file) => path.relative(PUBLIC, file);
+
+/* ---------- Variantes de efectos admitidas (ver src/css/08-effects.css y 09-fx.css) ---------- */
+
+const EFFECT_VALUES = {
+  reveal: new Set(['', 'left', 'right', 'zoom', 'fade', 'blur', 'curtain', 'curtain-up', 'curtain-left', 'curtain-right', 'iris', 'diagonal', 'blinds', 'flip', 'tilt', 'tilt-r', 'pop', 'drop', 'spin', 'skew', 'unfold', 'swing', 'rise']),
+  split: new Set(['', 'chars', 'blur', 'flip', 'slide', 'scale']),
+  cascade: new Set(['', 'left', 'pop'])
+};
 
 /* ---------- Comprobaciones por página ---------- */
 
@@ -88,6 +97,13 @@ for (const file of htmlFiles) {
     }
   }
   if (!isNotFound && !/application\/ld\+json/.test(html)) fail(name, 'faltan datos estructurados JSON-LD');
+
+  // Efectos de movimiento: los valores de data-reveal, data-split y data-cascade deben existir (evita erratas silenciosas)
+  for (const [attr, allowed] of Object.entries(EFFECT_VALUES)) {
+    for (const [, value] of html.matchAll(new RegExp(`\\sdata-${attr}="([^"]*)"`, 'g'))) {
+      if (!allowed.has(value)) fail(name, `data-${attr}="${value}" no es una variante conocida (${[...allowed].filter(Boolean).join(', ')})`);
+    }
+  }
 
   // Imágenes
   for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {

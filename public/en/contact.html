@@ -39,12 +39,12 @@
   <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="../assets/css/site.7882777b44.css">
+  <link rel="stylesheet" href="../assets/css/site.7f2794884d.css">
   <link rel="stylesheet" href="../assets/css/page-contact.0c0147b1c1.css">
 
   <!-- Marca la página como "con JavaScript" antes del primer pintado (evita parpadeos en las animaciones) -->
   <script>document.documentElement.classList.add('js')</script>
-  <script src="../assets/js/site.c66b36f0cd.js" defer></script>
+  <script src="../assets/js/site.c2aae381d5.js" defer></script>
 
   <!-- Datos estructurados para buscadores -->
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lcc-manufacturing.web.app/#organization","name":"LCC Manufacturing","legalName":"LCC Manufacturing S.L.","url":"https://lcc-manufacturing.web.app/","logo":"https://lcc-manufacturing.web.app/assets/img/logo-lcc.png","foundingDate":"2008","email":"info@lcc-manufacturing.com","telephone":"+34946510079","address":{"@type":"PostalAddress","streetAddress":"Parque Empresarial Boroa 19, Pabellón 4","postalCode":"48340","addressLocality":"Amorebieta-Etxano","addressRegion":"Bizkaia","addressCountry":"ES"}},{"@type":"WebSite","@id":"https://lcc-manufacturing.web.app/#website","url":"https://lcc-manufacturing.web.app/","name":"LCC Manufacturing","publisher":{"@id":"https://lcc-manufacturing.web.app/#organization"},"inLanguage":["es","en","zh-CN"]},{"@type":"ContactPage","@id":"https://lcc-manufacturing.web.app/en/contact.html#webpage","url":"https://lcc-manufacturing.web.app/en/contact.html","name":"Request a quote | LCC Manufacturing","description":"Tell us about your project. LCC Manufacturing, Parque Empresarial Boroa 19, Amorebieta-Etxano (Bizkaia, Spain). Phone +34 94 651 00 79.","inLanguage":"en","isPartOf":{"@id":"https://lcc-manufacturing.web.app/#website"},"about":{"@id":"https://lcc-manufacturing.web.app/#organization"}}]}</script>
@@ -91,7 +91,7 @@
   <div class="page-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow">Contact</p>
-    <h1 id="page-title" data-split>Tell us about your project</h1>
+    <h1 id="page-title" data-split="chars">Tell us about your project</h1>
     <p class="lead">We will do our best to reply as soon as possible.</p>
     <a class="big-mail" href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a>
   </div>
@@ -116,7 +116,7 @@
           <div class="progress-bar"><span data-progress-bar></span></div>
         </div>
 
-        <fieldset class="fieldset">
+        <fieldset class="fieldset" data-reveal="left">
           <legend>Your details</legend>
           <div class="fields">
             <div class="field">
@@ -142,7 +142,7 @@
           </div>
         </fieldset>
 
-        <fieldset class="fieldset">
+        <fieldset class="fieldset" data-reveal="left">
           <legend>Your project</legend>
           <div class="fields">
             <div class="field field--full field--fixed">
@@ -163,7 +163,7 @@
             <div class="field--full">
               <fieldset class="choice-group">
                 <legend>Project type</legend>
-                <div class="choice-cards">
+                <div class="choice-cards" data-cascade="pop">
                   <div class="choice-card">
                     <input type="radio" id="f-type-prototype" name="projectType" value="prototype">
                     <label for="f-type-prototype"><strong>Prototype</strong><span>Validate the part before series production</span></label>
@@ -198,9 +198,9 @@
           </div>
         </fieldset>
 
-        <fieldset class="fieldset">
+        <fieldset class="fieldset" data-reveal="left">
           <legend>Additional services</legend>
-          <div class="chips">
+          <div class="chips" data-cascade="pop">
             <div class="chip"><input type="checkbox" id="f-srv-approval" name="services" value="approval"><label for="f-srv-approval">Approval</label></div>
             <div class="chip"><input type="checkbox" id="f-srv-tooling" name="services" value="tooling"><label for="f-srv-tooling">Tooling</label></div>
             <div class="chip"><input type="checkbox" id="f-srv-warehouse" name="services" value="warehouse"><label for="f-srv-warehouse">Buffer warehouse</label></div>
@@ -242,7 +242,7 @@
       </div>
     </div>
 
-    <aside class="contact-card" data-reveal data-spot aria-labelledby="contact-card-title">
+    <aside class="contact-card" data-reveal="right" data-spot data-tilt aria-labelledby="contact-card-title">
       <p class="contact-card__status"><span class="pulse-dot" aria-hidden="true"></span>We will do our best to reply as soon as possible</p>
       <h2 id="contact-card-title">Contact details</h2>
       <address>
@@ -259,39 +259,39 @@
      3. PREGUNTAS FRECUENTES
      <details name="faq"> hace que solo una respuesta esté abierta a la vez.
      ====================================================================== -->
-<section class="section" id="faq" aria-labelledby="faq-title">
+<section class="section" id="faq" aria-labelledby="faq-title" data-recede>
   <div class="container container--narrow">
     <p class="eyebrow">Common questions</p>
-    <h2 id="faq-title" data-split>Frequently asked questions</h2>
+    <h2 id="faq-title" data-split="blur">Frequently asked questions</h2>
 
     <div class="faq" data-stagger>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>How can I request a quote?</summary>
         <div class="faq__answer"><p>Fill in the form on this page or write to us at info@lcc-manufacturing.com with your drawing or a description of the part. We will do our best to reply as soon as possible.</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>Do you make prototypes?</summary>
         <div class="faq__answer"><p>Yes. Prototype manufacturing is one of the stages of our working method.</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>Where are the parts manufactured?</summary>
         <div class="faq__answer"><p>Engineering and project management are done in Spain. Series production takes place in China and our buffer warehouses are in Amorebieta and Barcelona.</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>Do you make injection moulds?</summary>
         <div class="faq__answer"><p>Yes. We have an engineering team specialised in injection moulds and prototypes, and we are partnered with a toolmaker with 2,000 m² of facilities.</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>Which sectors do you work for?</summary>
         <div class="faq__answer"><p>Automotive, electrical, home appliances, road safety, capital goods, renewable energy, agriculture and healthcare.</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>Do you subcontract any technologies?</summary>
         <div class="faq__answer"><p>Yes, when necessary. We have qualified staff and extensive knowledge of suppliers of other technologies, such as plastic or aluminium injection.</p></div>
       </details>
@@ -305,14 +305,14 @@
   </main>
 
   <!-- Pie de página: marca, navegación, datos de contacto y avisos legales -->
-<footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div class="site-footer__brand">
+<footer class="site-footer" data-depth="60">
+  <div class="container site-footer__grid" data-stagger>
+    <div class="site-footer__brand" data-reveal="left">
       <picture><source type="image/webp" srcset="../assets/img/logo-lcc-blanco.webp"><img src="../assets/img/logo-lcc-blanco.png" alt="LCC Manufacturing" width="249" height="98" class="site-footer__logo" loading="lazy" decoding="async"></picture>
       <p>Project development and manufacturing of industrial products.</p>
     </div>
 
-    <nav class="site-footer__col" aria-label="Menu">
+    <nav class="site-footer__col" data-reveal aria-label="Menu">
       <h2 class="site-footer__title">Menu</h2>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -322,7 +322,7 @@
       </ul>
     </nav>
 
-    <div class="site-footer__col">
+    <div class="site-footer__col" data-reveal>
       <h2 class="site-footer__title">Contact</h2>
       <address>
         <p>Parque Empresarial Boroa 19, Pabellón 4<br>48340 Amorebieta-Etxano (Bizkaia)</p>
@@ -332,7 +332,7 @@
     </div>
   </div>
 
-  <div class="container site-footer__legal">
+  <div class="container site-footer__legal" data-reveal="fade">
     <p>© 2026 LCC Manufacturing S.L. · All rights reserved.</p>
     <ul>
       <li><a href="legal-notice.html">Legal notice</a></li>
@@ -342,6 +342,6 @@
 </footer>
 
   <!-- Textos para el JavaScript (formulario, visor de imágenes…) en el idioma de la página -->
-  <script type="application/json" id="i18n-data">{"form":{"errors":{"required":"This field is required.","email":"Enter a valid email address.","message":"Tell us a little more about your project (at least 10 characters).","pieces":"Enter a whole number between 1 and 100,000,000.","phone":"Enter a valid phone number (digits, spaces and the signs + - ( )).","privacy":"You must accept the privacy policy to send the request."},"invalid":"Please review the fields marked in red.","sending":"Sending…","sendingStatus":"Sending your request…","failed":"We couldn't send your request. Please try again or write to us at {email}.","mailOpened":"Your email app has opened with the request ready to send. If it doesn't open, write to us at {email}.","mailSubject":"Web quote request: {company}"},"lightbox":{"label":"Image viewer","close":"Close","prev":"Previous part","next":"Next part","of":"of"}}</script>
+  <script type="application/json" id="i18n-data">{"form":{"errors":{"required":"This field is required.","email":"Enter a valid email address.","message":"Tell us a little more about your project (at least 10 characters).","pieces":"Enter a whole number between 1 and 100,000,000.","phone":"Enter a valid phone number (digits, spaces and the signs + - ( )).","privacy":"You must accept the privacy policy to send the request."},"invalid":"Please review the fields marked in red.","sending":"Sending…","sendingStatus":"Sending your request…","failed":"We couldn't send your request. Please try again or write to us at {email}.","mailOpened":"Your email app has opened with the request ready to send. If it doesn't open, write to us at {email}.","mailSubject":"Web quote request: {company}"},"lightbox":{"label":"Image viewer","close":"Close","prev":"Previous part","next":"Next part","of":"of"},"sectionNav":"Page sections"}</script>
 </body>
 </html>

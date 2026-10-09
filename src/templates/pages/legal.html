@@ -5,7 +5,7 @@
   <div class="page-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow">{{t:legal.hero.eyebrow}}</p>
-    <h1 id="page-title" data-split>{{t:legal.hero.title}}</h1>
+    <h1 id="page-title" data-split="chars">{{t:legal.hero.title}}</h1>
     <p class="lead">{{t:legal.hero.lead}}</p>
   </div>
 </section>
@@ -13,7 +13,7 @@
 <!-- Texto legal: titular (LSSI-CE art. 10) y condiciones de uso -->
 <section class="section">
   <div class="container container--narrow prose">
-    <section>
+    <section data-reveal>
       <h2>{{t:legal.owner.title}}</h2>
       <p>{{t:legal.owner.intro}}</p>
       <dl class="facts">
@@ -27,7 +27,7 @@
     </section>
 
     {{#repeat 7 from 2}}
-    <section>
+    <section data-reveal>
       <h2>{{t:legal.sections.{{@i}}.title}}</h2>
       {{t:legal.sections.{{@i}}.body}}
     </section>

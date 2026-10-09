@@ -7,7 +7,7 @@
   <div class="page-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow">{{t:tech.hero.eyebrow}}</p>
-    <h1 id="page-title" data-split>{{t:tech.hero.title}}</h1>
+    <h1 id="page-title" data-split="chars">{{t:tech.hero.title}}</h1>
     <p class="lead">{{t:tech.hero.lead}}</p>
   </div>
 </section>
@@ -20,15 +20,15 @@
 <section class="section" id="technologies" aria-labelledby="tech-title">
   <div class="container">
     <p class="eyebrow">{{t:tech.list.eyebrow}}</p>
-    <h2 id="tech-title" data-split>{{t:tech.list.title}}</h2>
+    <h2 id="tech-title" data-split="blur">{{t:tech.list.title}}</h2>
     <p class="lead" data-reveal>{{t:tech.list.lead}}</p>
 
-    <div class="mosaic">
-      <figure class="frame mosaic__a" data-reveal="curtain"><div class="frame__media">{{img:fabrica-09.jpg|alt=tech.mosaic.1}}</div></figure>
-      <figure class="frame mosaic__b" data-reveal="curtain"><div class="frame__media">{{img:fabrica-11.jpg|alt=tech.mosaic.2}}</div></figure>
-      <figure class="frame mosaic__c" data-reveal="curtain"><div class="frame__media">{{img:fabrica-03.jpg|alt=tech.mosaic.3}}</div></figure>
-      <figure class="frame mosaic__d" data-reveal="curtain"><div class="frame__media">{{img:fabrica-02.jpg|alt=tech.mosaic.4}}</div></figure>
-      <figure class="frame mosaic__e" data-reveal="curtain"><div class="frame__media">{{img:fabrica-08.jpg|alt=tech.mosaic.5}}</div></figure>
+    <div class="mosaic" data-stagger>
+      <figure class="frame mosaic__a" data-reveal="curtain-left"><div class="frame__media" data-parallax>{{img:fabrica-09.jpg|alt=tech.mosaic.1}}</div></figure>
+      <figure class="frame mosaic__b" data-reveal="iris"><div class="frame__media" data-parallax>{{img:fabrica-11.jpg|alt=tech.mosaic.2}}</div></figure>
+      <figure class="frame mosaic__c" data-reveal="curtain-right"><div class="frame__media" data-parallax>{{img:fabrica-03.jpg|alt=tech.mosaic.3}}</div></figure>
+      <figure class="frame mosaic__d" data-reveal="blinds"><div class="frame__media" data-parallax>{{img:fabrica-02.jpg|alt=tech.mosaic.4}}</div></figure>
+      <figure class="frame mosaic__e" data-reveal="curtain-up"><div class="frame__media" data-parallax>{{img:fabrica-08.jpg|alt=tech.mosaic.5}}</div></figure>
     </div>
 
     <!-- Filtro: el radio marcado oculta, con CSS, las tarjetas de otras familias -->
@@ -66,7 +66,7 @@
       {{/repeat}}
     </ul>
 
-    <aside class="note" data-reveal>
+    <aside class="note" data-reveal="drop">
       {{icon:info|class=note__icon}}
       <p>{{t:tech.subcontracting}}</p>
     </aside>
@@ -79,18 +79,18 @@
 <section class="section molds is-dark cut" id="molds" aria-labelledby="molds-title">
   <div class="container">
     <p class="eyebrow">{{t:tech.molds.eyebrow}}</p>
-    <h2 id="molds-title" data-split>{{t:tech.molds.title}}</h2>
+    <h2 id="molds-title" data-split="flip">{{t:tech.molds.title}}</h2>
     <p class="lead" data-reveal>{{t:tech.molds.lead}}</p>
 
     <div class="stats-row" data-stagger>
-      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count="2000">{{t:tech.molds.stats.1.value}}</span><p>{{t:tech.molds.stats.1.label}}</p></div>
-      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count>{{t:tech.molds.stats.2.value}}</span><p>{{t:tech.molds.stats.2.label}}</p></div>
-      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count>{{t:tech.molds.stats.3.value}}</span><p>{{t:tech.molds.stats.3.label}}</p></div>
-      <div class="stat-mini" data-reveal data-spot><span class="stat-mini__value" data-count="20">{{t:tech.molds.stats.4.value}}</span><p>{{t:tech.molds.stats.4.label}}</p></div>
+      <div class="stat-mini" data-reveal="pop" data-spot data-tilt><span class="stat-mini__value" data-count="2000">{{t:tech.molds.stats.1.value}}</span><p>{{t:tech.molds.stats.1.label}}</p></div>
+      <div class="stat-mini" data-reveal="pop" data-spot data-tilt><span class="stat-mini__value" data-count>{{t:tech.molds.stats.2.value}}</span><p>{{t:tech.molds.stats.2.label}}</p></div>
+      <div class="stat-mini" data-reveal="pop" data-spot data-tilt><span class="stat-mini__value" data-count>{{t:tech.molds.stats.3.value}}</span><p>{{t:tech.molds.stats.3.label}}</p></div>
+      <div class="stat-mini" data-reveal="pop" data-spot data-tilt><span class="stat-mini__value" data-count="20">{{t:tech.molds.stats.4.value}}</span><p>{{t:tech.molds.stats.4.label}}</p></div>
     </div>
 
     <div class="molds__grid">
-      <div class="molds__text" data-reveal>
+      <div class="molds__text" data-cascade>
         <h3>{{t:tech.molds.partner.title}}</h3>
         <p>{{t:tech.molds.partner.text}}</p>
 
@@ -98,7 +98,7 @@
         <p>{{t:tech.molds.facilities.text}}</p>
 
         <h4>{{t:tech.molds.machinery.title}}</h4>
-        <ul class="check-list">
+        <ul class="check-list" data-cascade="left">
           {{#repeat 7}}<li>{{icon:check}}{{t:tech.molds.machinery.items.{{@i}}}}</li>{{/repeat}}
         </ul>
 
@@ -106,7 +106,7 @@
         <p>{{t:tech.molds.metrology.text}}</p>
       </div>
 
-      <figure class="molds__photo" data-reveal="zoom">
+      <figure class="molds__photo" data-reveal="tilt-r">
         {{img:molde-inyeccion.jpg|alt=tech.molds.photoAlt}}
         <figcaption>{{t:tech.molds.photoCaption}}</figcaption>
       </figure>
@@ -118,10 +118,10 @@
      4. CAPACIDAD INSTALADA
      Barras decorativas (los datos reales están en la tabla accesible).
      ====================================================================== -->
-<section class="section" id="capacity" aria-labelledby="capacity-title">
+<section class="section" id="capacity" aria-labelledby="capacity-title" data-recede>
   <div class="container">
     <p class="eyebrow">{{t:tech.capacity.eyebrow}}</p>
-    <h2 id="capacity-title" data-split>{{t:tech.capacity.title}}</h2>
+    <h2 id="capacity-title" data-split="slide">{{t:tech.capacity.title}}</h2>
     <p class="lead" data-reveal>{{t:tech.capacity.lead}}</p>
 
     <div class="bars" aria-hidden="true" data-stagger>
@@ -133,7 +133,7 @@
       <div class="bar" data-reveal><p><span>{{t:tech.capacity.bars.6}}</span><strong>2</strong></p><div class="bar__rail"><i class="bar__fill w-11"></i></div></div>
     </div>
 
-    <section class="table-wrap" data-reveal tabindex="0" aria-labelledby="table-caption">
+    <section class="table-wrap" data-reveal="unfold" tabindex="0" aria-labelledby="table-caption">
       <table class="table">
         <caption id="table-caption">{{t:tech.table.caption}}</caption>
         <thead>
@@ -143,7 +143,7 @@
             <th scope="col">{{t:tech.table.head.capacity}}</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody data-cascade="left">
           <tr><th scope="row" rowspan="3">{{t:tech.filter.forming}}</th><td>{{t:tech.table.rows.1.name}}</td><td>{{t:tech.table.rows.1.value}}</td></tr>
           <tr><td>{{t:tech.table.rows.2.name}}</td><td>{{t:tech.table.rows.2.value}}</td></tr>
           <tr><td>{{t:tech.table.rows.3.name}}</td><td>{{t:tech.table.rows.3.value}}</td></tr>
@@ -164,13 +164,21 @@
 </section>
 
 <!-- ======================================================================
+     4 bis. FRANJA DE TEXTO GIGANTE
+     Los ocho sectores, solo con contorno, se desplazan de lado al hacer scroll (decorativo).
+     ====================================================================== -->
+<div class="band" aria-hidden="true">
+  <div class="band__track" data-scroll-x="-26">{{#repeat 8}}<span data-text="{{a:sectors.{{@i}}}}"></span>{{/repeat}}</div>
+</div>
+
+<!-- ======================================================================
      5. GALERÍA DE LA PLANTA
      Acordeón de fotos: la que tiene el cursor encima se ensancha y muestra su pie.
      ====================================================================== -->
-<section class="section section--soft" id="plant" aria-labelledby="plant-title">
+<section class="section section--soft" id="plant" aria-labelledby="plant-title" data-recede>
   <div class="container">
     <p class="eyebrow">{{t:tech.plant.eyebrow}}</p>
-    <h2 id="plant-title" data-split>{{t:tech.plant.title}}</h2>
+    <h2 id="plant-title" data-split="scale">{{t:tech.plant.title}}</h2>
 
     <div class="gallery" data-reveal>
       <figure class="gallery__item">{{img:fabrica-07.jpg|alt=tech.plant.items.1.alt}}<figcaption>{{t:tech.plant.items.1.caption}}</figcaption></figure>
@@ -190,7 +198,7 @@
 <section class="section" id="products" aria-labelledby="products-title">
   <div class="container">
     <p class="eyebrow">{{t:tech.products.eyebrow}}</p>
-    <h2 id="products-title" data-split>{{t:tech.products.title}}</h2>
+    <h2 id="products-title" data-split="blur">{{t:tech.products.title}}</h2>
     <p class="lead" data-reveal>{{t:tech.products.lead}}</p>
   </div>
 

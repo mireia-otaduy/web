@@ -1,12 +1,12 @@
 <!-- Pie de página: marca, navegación, datos de contacto y avisos legales -->
-<footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div class="site-footer__brand">
+<footer class="site-footer" data-depth="60">
+  <div class="container site-footer__grid" data-stagger>
+    <div class="site-footer__brand" data-reveal="left">
       {{img:logo-lcc-blanco.png|alt=common.brandAlt|class=site-footer__logo}}
       <p>{{t:common.footer.tagline}}</p>
     </div>
 
-    <nav class="site-footer__col" aria-label="{{a:common.footer.menuTitle}}">
+    <nav class="site-footer__col" data-reveal aria-label="{{a:common.footer.menuTitle}}">
       <h2 class="site-footer__title">{{t:common.footer.menuTitle}}</h2>
       <ul>
         <li><a href="{{link:home}}">{{t:common.nav.home}}</a></li>
@@ -16,7 +16,7 @@
       </ul>
     </nav>
 
-    <div class="site-footer__col">
+    <div class="site-footer__col" data-reveal>
       <h2 class="site-footer__title">{{t:common.footer.contactTitle}}</h2>
       <address>
         <p>{{s:address.street}}<br>{{s:address.postalCode}} {{s:address.city}} ({{s:address.region}})</p>
@@ -26,7 +26,7 @@
     </div>
   </div>
 
-  <div class="container site-footer__legal">
+  <div class="container site-footer__legal" data-reveal="fade">
     <p>© {{v:year}} {{s:legalName}} · {{t:common.footer.rights}}</p>
     <ul>
       <li><a href="{{link:legal}}">{{t:common.footer.legal}}</a></li>

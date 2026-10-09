@@ -7,7 +7,7 @@
   <div class="page-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow">{{t:process.hero.eyebrow}}</p>
-    <h1 id="page-title" data-split>{{t:process.hero.title}}</h1>
+    <h1 id="page-title" data-split="chars">{{t:process.hero.title}}</h1>
     <p class="lead">{{t:process.hero.lead}}</p>
   </div>
 </section>
@@ -20,9 +20,9 @@
 <section class="section section--soft" id="steps" aria-labelledby="steps-title">
   <div class="container">
     <p class="eyebrow">{{t:process.steps.eyebrow}}</p>
-    <h2 id="steps-title" data-split>{{t:process.steps.title}}</h2>
+    <h2 id="steps-title" data-split="slide">{{t:process.steps.title}}</h2>
 
-    <fieldset class="steps" data-reveal>
+    <fieldset class="steps" data-reveal="zoom">
       <legend class="sr-only">{{t:process.steps.legend}}</legend>
 
       <input type="radio" name="step" id="step-1" checked>
@@ -146,33 +146,33 @@
 <section class="section route-section is-dark cut" id="route" aria-labelledby="route-title">
   <div class="container">
     <p class="eyebrow">{{t:process.route.eyebrow}}</p>
-    <h2 id="route-title" data-split>{{t:process.route.title}}</h2>
+    <h2 id="route-title" data-split="flip">{{t:process.route.title}}</h2>
     <p class="lead" data-reveal>{{t:process.route.lead}}</p>
 
     <ol class="route" data-stagger>
-      <li class="route__stop" data-reveal data-spot>
+      <li class="route__stop" data-reveal="tilt" data-spot data-tilt>
         <span class="route__node" aria-hidden="true"></span>
         <span class="route__num" aria-hidden="true">01</span>
         {{icon:step-1|class=route__icon}}
         <h3>{{t:process.route.stops.1.title}}</h3>
         <p>{{t:process.route.stops.1.text}}</p>
-        <ul class="tags"><li>{{t:process.route.stops.1.tags.1}}</li><li>{{t:process.route.stops.1.tags.2}}</li></ul>
+        <ul class="tags" data-cascade="pop"><li>{{t:process.route.stops.1.tags.1}}</li><li>{{t:process.route.stops.1.tags.2}}</li></ul>
       </li>
-      <li class="route__stop" data-reveal data-spot>
+      <li class="route__stop" data-reveal="flip" data-spot data-tilt>
         <span class="route__node" aria-hidden="true"></span>
         <span class="route__num" aria-hidden="true">02</span>
         {{icon:step-5|class=route__icon}}
         <h3>{{t:process.route.stops.2.title}}</h3>
         <p>{{t:process.route.stops.2.text}}</p>
-        <ul class="tags"><li>{{t:process.route.stops.2.tags.1}}</li></ul>
+        <ul class="tags" data-cascade="pop"><li>{{t:process.route.stops.2.tags.1}}</li></ul>
       </li>
-      <li class="route__stop" data-reveal data-spot>
+      <li class="route__stop" data-reveal="tilt-r" data-spot data-tilt>
         <span class="route__node" aria-hidden="true"></span>
         <span class="route__num" aria-hidden="true">03</span>
         {{icon:step-8|class=route__icon}}
         <h3>{{t:process.route.stops.3.title}}</h3>
         <p>{{t:process.route.stops.3.text}}</p>
-        <ul class="tags"><li>{{t:process.route.stops.3.tags.1}}</li><li>{{t:process.route.stops.3.tags.2}}</li><li>{{t:process.route.stops.3.tags.3}}</li></ul>
+        <ul class="tags" data-cascade="pop"><li>{{t:process.route.stops.3.tags.1}}</li><li>{{t:process.route.stops.3.tags.2}}</li><li>{{t:process.route.stops.3.tags.3}}</li></ul>
       </li>
     </ol>
   </div>
@@ -181,14 +181,14 @@
 <!-- ======================================================================
      4. VENTAJAS
      ====================================================================== -->
-<section class="section" id="benefits" aria-labelledby="benefits-title">
+<section class="section" id="benefits" aria-labelledby="benefits-title" data-recede>
   <div class="container">
     <p class="eyebrow">{{t:process.benefits.eyebrow}}</p>
-    <h2 id="benefits-title" data-split>{{t:process.benefits.title}}</h2>
+    <h2 id="benefits-title" data-split="scale">{{t:process.benefits.title}}</h2>
 
     <ul class="grid grid--3 benefits" data-stagger>
       {{#repeat 3}}
-      <li class="card benefit" data-reveal data-spot>
+      <li class="card benefit" data-reveal="flip" data-spot data-tilt>
         <span class="benefit__icon">{{icon:benefit-{{@i}}}}</span>
         <span class="benefit__num" aria-hidden="true">0{{@i}}</span>
         <h3>{{t:benefits.{{@i}}.title}}</h3>
@@ -198,5 +198,10 @@
     </ul>
   </div>
 </section>
+
+<!-- Franja de texto gigante: los ocho pasos, solo con contorno, se desplazan de lado al hacer scroll (decorativo) -->
+<div class="band" aria-hidden="true">
+  <div class="band__track" data-scroll-x="26">{{#repeat 8}}<span data-text="{{a:steps.{{@i}}.title}}"></span>{{/repeat}}</div>
+</div>
 
 {{> cta}}

@@ -1,0 +1,717 @@
+/* ==========================================================================
+   09 · EFECTOS AVANZADOS (segunda capa de movimiento)
+   Añade profundidad y variedad sobre la capa básica de 08-effects.css. Todo es
+   mejora progresiva: sin JavaScript, o con "reducir movimiento", la página se
+   ve completa y quieta. Los estados "ocultos" solo existen con la clase
+   html.js.js-ready (la pone src/js/90-init.js) y dentro de
+   @media (prefers-reduced-motion: no-preference).
+
+   Índice
+     1. Variantes de aparición de bloques ([data-reveal="…"])
+     2. Variantes de titulares ([data-split="…"])
+     3. Rótulos: texto que se descifra y línea que se dibuja
+     4. Iconos que se dibujan
+     5. Aparición en cascada de hijos ([data-cascade])
+     6. Formas decorativas con profundidad (parallax)
+     7. Foco de luz que sigue al cursor
+     8. Franjas de texto gigante ligadas al scroll
+     9. Sección que se aleja ([data-recede]) y cintas con inercia
+    10. Cabeceras de página: entrada y salida
+    11. Inclinación 3D, botones magnéticos y onda al pulsar
+    12. Cursor personalizado
+    13. Navegación por puntos entre secciones
+   ========================================================================== */
+
+/* Cada sección forma su propio contexto de apilado: las formas decorativas
+   (z-index negativo) quedan sobre el fondo de la sección y bajo su contenido. */
+.section {
+  isolation: isolate;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fx-rise {
+  from { opacity: 0; translate: 0 1.6rem; }
+}
+
+@keyframes cascade-up {
+  from { opacity: 0; translate: 0 1.8rem; }
+}
+
+@keyframes cascade-left {
+  from { opacity: 0; translate: -2rem 0; }
+}
+
+@keyframes cascade-pop {
+  from { opacity: 0; scale: 0.4; translate: 0 0.8rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ======================================================================
+     1. VARIANTES DE APARICIÓN DE BLOQUES
+     flip · tilt · tilt-r · pop · drop · spin · skew · unfold · swing · rise
+     (se usan las transformaciones con "transform" porque aún no hay
+     propiedades individuales para perspectiva; el atributo se retira al
+     terminar, así que no estorban a los efectos al pasar el cursor).
+     ====================================================================== */
+
+  .js [data-reveal="flip"] {
+    translate: 0 1.5rem;
+    transform: perspective(900px) rotateX(-72deg);
+    transform-origin: 50% 0;
+  }
+
+  .js [data-reveal="tilt"] {
+    translate: -2.5rem 0;
+    transform: perspective(1000px) rotateY(-34deg);
+    transform-origin: 0 50%;
+  }
+
+  .js [data-reveal="tilt-r"] {
+    translate: 2.5rem 0;
+    transform: perspective(1000px) rotateY(34deg);
+    transform-origin: 100% 50%;
+  }
+
+  /* Rebote con "muelle": se pasa de tamaño y se asienta */
+  .js [data-reveal="pop"] {
+    translate: 0 1rem;
+    scale: 0.5;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .js [data-reveal="drop"] {
+    translate: 0 -3.2rem;
+    transform: rotate(-3deg);
+    transform-origin: 50% 0;
+  }
+
+  .js [data-reveal="spin"] {
+    scale: 0.85;
+    transform: rotate(-9deg);
+  }
+
+  .js [data-reveal="skew"] {
+    translate: 0 2.5rem;
+    transform: skewY(7deg);
+    transform-origin: 0 100%;
+  }
+
+  .js [data-reveal="unfold"] {
+    translate: 0 1rem;
+    transform: scaleY(0.35);
+    transform-origin: 50% 0;
+  }
+
+  .js [data-reveal="swing"] {
+    translate: 0 1.6rem;
+    transform: rotate(7deg);
+    transform-origin: 0 0;
+  }
+
+  .js [data-reveal="rise"] {
+    translate: 0 6rem;
+  }
+
+  .js :is([data-reveal="flip"], [data-reveal="tilt"], [data-reveal="tilt-r"], [data-reveal="drop"], [data-reveal="spin"], [data-reveal="skew"], [data-reveal="unfold"], [data-reveal="swing"]).is-in {
+    transform: none;
+  }
+
+  /* ======================================================================
+     2. VARIANTES DE TITULARES
+     (el JavaScript ya ha dividido el texto en palabras .w y, con "chars",
+     en letras .ch). Sin atributo: las palabras suben desde una máscara.
+     ====================================================================== */
+
+  /* chars: cada letra sube con un pequeño giro, en cascada */
+  .js [data-split="chars"] .w > span {
+    translate: none;
+    transition: none;
+  }
+
+  .js [data-split="chars"] .ch {
+    display: inline-block;
+    translate: 0 118%;
+    rotate: 8deg;
+    transition: translate 0.9s var(--ease-out), rotate 0.9s var(--ease-out);
+    transition-delay: calc(min(var(--c, 0), 70) * 22ms);
+  }
+
+  .js [data-split="chars"].is-in .ch {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+
+  /* blur · flip · slide · scale: las palabras no se recortan, aparecen con otro gesto */
+  .js :is([data-split="blur"], [data-split="flip"], [data-split="slide"], [data-split="scale"]) .w {
+    overflow: visible;
+  }
+
+  .js :is([data-split="blur"], [data-split="flip"], [data-split="slide"], [data-split="scale"]) .w > span {
+    opacity: 0;
+    translate: 0 0;
+    transition: opacity 0.9s var(--ease-out), translate 0.9s var(--ease-out), scale 0.9s var(--ease-out), filter 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+
+  .js [data-split="blur"] .w > span {
+    translate: 0 0.35em;
+    filter: blur(10px);
+  }
+
+  .js [data-split="flip"] .w > span {
+    transform: perspective(500px) rotateX(-95deg);
+    transform-origin: 50% 100%;
+  }
+
+  .js [data-split="slide"] .w:nth-child(odd) > span {
+    translate: -1.1em 0;
+  }
+
+  .js [data-split="slide"] .w:nth-child(even) > span {
+    translate: 1.1em 0;
+  }
+
+  .js [data-split="scale"] .w > span {
+    scale: 1.9;
+    filter: blur(6px);
+  }
+
+  .js :is([data-split="blur"], [data-split="flip"], [data-split="slide"], [data-split="scale"]).is-in .w > span {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    filter: none;
+    transform: none;
+  }
+
+  /* ======================================================================
+     3. RÓTULOS (.eyebrow): el cuadradito gira al aparecer y la línea de cota
+     se dibuja. El texto se "descifra" con JavaScript (src/js/62-fx-reveal.js).
+     ====================================================================== */
+
+  .eyebrow::before {
+    transition: scale 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), rotate 0.9s var(--ease-out);
+  }
+
+  .eyebrow::after {
+    transform-origin: left center;
+    transition: scale 1.2s var(--ease-out) 0.25s;
+  }
+
+  .js.js-ready .eyebrow:not(.is-in)::before {
+    scale: 0;
+    rotate: -180deg;
+  }
+
+  .js.js-ready .eyebrow:not(.is-in)::after {
+    scale: 0 1;
+  }
+
+  /* ======================================================================
+     4. ICONOS QUE SE DIBUJAN
+     Los trazos de los iconos (sprite SVG) heredan stroke-dasharray y
+     stroke-dashoffset: al entrar su contenedor en pantalla se "escriben".
+     ====================================================================== */
+
+  .js.js-ready :is(.benefit, .sector, .steps-mini li, .route__stop, .tech-card, .panel, .contact-card__row, .check-list li, .note, .stat-mini, .step-panel) .icon {
+    transition: stroke-dashoffset 1.6s var(--ease-in-out) 0.3s;
+  }
+
+  .js.js-ready :is(.benefit, .sector, .steps-mini li, .route__stop, .tech-card, .panel, .contact-card__row, .check-list li, .note, .stat-mini, .step-panel):not(.is-in) .icon {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+
+  /* ======================================================================
+     5. APARICIÓN EN CASCADA DE HIJOS
+     [data-cascade] (arriba) · "left" · "pop". El JavaScript numera los hijos
+     (--n) y añade .is-in al contenedor. Se usan animaciones (no transiciones)
+     para no pisar los efectos al pasar el cursor de cada hijo.
+     ====================================================================== */
+
+  .js.js-ready [data-cascade]:not(.is-in) > * {
+    opacity: 0;
+  }
+
+  .js.js-ready [data-cascade].is-in > * {
+    animation: cascade-up 0.85s var(--ease-out) backwards;
+    animation-delay: calc(var(--n, 0) * 90ms + 0.1s);
+  }
+
+  .js.js-ready [data-cascade="left"].is-in > * {
+    animation-name: cascade-left;
+  }
+
+  .js.js-ready [data-cascade="pop"].is-in > * {
+    animation-name: cascade-pop;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* ======================================================================
+     6. FORMAS DECORATIVAS CON PROFUNDIDAD
+     El JavaScript inserta unas pocas formas (anillos, puntos, cruces y arcos)
+     al fondo de cada sección; cada una se mueve a distinta velocidad al hacer
+     scroll (data-depth), lo que da sensación de capas.
+     ====================================================================== */
+
+  .fx-shape--ring,
+  .fx-shape--cross {
+    animation: fx-spin 90s linear infinite;
+  }
+
+  .fx-shape--cross {
+    animation-duration: 40s;
+    animation-direction: reverse;
+  }
+}
+
+.fx-shape {
+  --shape-line: rgb(34 87 189 / 0.2);
+  --shape-fill: rgb(59 128 240 / 0.22);
+  position: absolute;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  z-index: -1;
+  width: var(--s, var(--size, 12rem));
+  aspect-ratio: 1;
+  pointer-events: none;
+  translate: 0 var(--dy, 0px);
+}
+
+.is-dark .fx-shape {
+  --shape-line: rgb(90 180 255 / 0.2);
+  --shape-fill: rgb(90 180 255 / 0.2);
+}
+
+/* Anillo con una órbita punteada y un satélite */
+.fx-shape--ring {
+  border: 1.5px solid var(--shape-line);
+  border-radius: 50%;
+}
+
+.fx-shape--ring::before {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border: 1px dashed var(--shape-line);
+  border-radius: 50%;
+}
+
+.fx-shape--ring::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-left: -0.35rem;
+  border-radius: 50%;
+  background-color: var(--shape-fill);
+}
+
+/* Trama de puntos que se desvanece hacia el borde */
+.fx-shape--dots {
+  background-image: radial-gradient(var(--shape-fill) 1.6px, transparent 2px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 25%, transparent 72%);
+}
+
+/* Cruz de plano técnico */
+.fx-shape--cross {
+  background-image:
+    linear-gradient(var(--shape-fill), var(--shape-fill)),
+    linear-gradient(var(--shape-fill), var(--shape-fill));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 2px 100%, 100% 2px;
+}
+
+/* Arco grueso */
+.fx-shape--arc {
+  border: 1.4rem solid transparent;
+  border-top-color: var(--shape-fill);
+  border-right-color: var(--shape-line);
+  border-radius: 50%;
+  rotate: 25deg;
+}
+
+@keyframes fx-spin {
+  to { rotate: 360deg; }
+}
+
+@media (max-width: 700px) {
+  .fx-shape:nth-child(2) {
+    display: none;
+  }
+
+  /* En móvil las formas son más pequeñas para no cruzar los textos */
+  .fx-shape {
+    --s: min(var(--size, 12rem), 8.5rem);
+  }
+}
+
+/* ==========================================================================
+   7. FOCO DE LUZ QUE SIGUE AL CURSOR
+   El JavaScript añade un .fx-glow a la portada, a las cabeceras y a las
+   secciones oscuras; se enciende al pasar el cursor (solo con ratón).
+   ========================================================================== */
+
+.fx-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(560px circle at var(--gx, 50%) var(--gy, 40%), rgb(90 180 255 / 0.17), transparent 62%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+[data-glow]:hover > .fx-glow {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   8. FRANJAS DE TEXTO GIGANTE
+   Palabras de gran tamaño, solo con contorno, que se desplazan de lado al
+   hacer scroll (data-scroll-x). Decorativas: llevan aria-hidden.
+   ========================================================================== */
+
+.band {
+  overflow: clip;
+  padding-block: clamp(1.5rem, 4vw, 3.2rem);
+  background-color: var(--white);
+}
+
+.band--soft {
+  background-color: var(--surface);
+}
+
+.band__track {
+  display: flex;
+  gap: 0.35em;
+  width: max-content;
+  margin-left: -14vw;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 9rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  translate: calc(var(--sx, 0) * 1vw) 0;
+  white-space: nowrap;
+}
+
+/* El texto va en un atributo y se pinta con ::before: así no hay texto real en el DOM
+   (es decorativo y los lectores de pantalla y los verificadores de contraste lo ignoran). */
+.band__track span {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(34 87 189 / 0.5);
+}
+
+.band__track span::before {
+  content: attr(data-text);
+}
+
+/* Cada tercera palabra va rellena, en un azul muy suave */
+.band__track span:nth-child(3n) {
+  color: rgb(59 128 240 / 0.14);
+  -webkit-text-stroke-width: 0;
+}
+
+.band__track span::after {
+  content: "";
+  display: inline-block;
+  width: 0.22em;
+  height: 0.22em;
+  margin-left: 0.35em;
+  background-color: var(--sky);
+  rotate: 45deg;
+  vertical-align: 0.12em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .band__track {
+    margin-left: 0;
+    translate: none;
+  }
+}
+
+/* ==========================================================================
+   9. SECCIÓN QUE SE ALEJA E INERCIA DE LAS CINTAS
+   [data-recede]: al salir por arriba, el contenido se encoge y se atenúa
+   (--leave lo calcula src/js/61-fx-scroll.js). Las cintas cruzadas se
+   inclinan según la velocidad del scroll (--vel).
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-recede] > .container {
+    opacity: calc(1 - var(--leave, 0) * 0.5);
+    scale: calc(1 - var(--leave, 0) * 0.05);
+    translate: 0 calc(var(--leave, 0) * -26px);
+    transform-origin: 50% 100%;
+  }
+
+  .ribbon {
+    transform: skewX(calc(var(--vel, 0) * -9deg));
+  }
+
+  .site-footer::before {
+    translate: 0 var(--dy, 0px);
+  }
+}
+
+/* ==========================================================================
+   10. CABECERAS DE PÁGINA
+   Entrada del texto al cargar y, al bajar, el contenido sube y se desvanece
+   mientras la mancha de luz se queda atrás (--hero-p, ver 20-scroll.js).
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero .eyebrow {
+    animation: fx-rise 0.9s var(--ease-out) 0.05s backwards;
+  }
+
+  .page-hero .lead {
+    animation: fx-rise 0.9s var(--ease-out) 0.55s backwards;
+  }
+
+  .page-hero .big-mail {
+    animation: fx-rise 0.9s var(--ease-out) 0.75s backwards;
+  }
+
+  .page-hero > .container {
+    opacity: calc(1 - var(--hero-p, 0) * 1.1);
+    translate: 0 calc(var(--hero-p, 0) * -44px);
+  }
+
+  .page-hero__glow {
+    translate: 0 calc(var(--hero-p, 0) * 80px);
+  }
+}
+
+/* Portada de inicio: capas que se mueven con el cursor (--hx / --hy, ver 63-fx-pointer.js) */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .hero__photo {
+    translate: calc(var(--hx, 0) * -14px) calc(var(--hy, 0) * -10px);
+  }
+
+  .hero__ring {
+    translate: calc(var(--hx, 0) * 24px) calc(var(--hy, 0) * 18px);
+  }
+
+  .hero__chip--1 {
+    translate: calc(var(--hx, 0) * -30px) calc(var(--hy, 0) * -20px);
+  }
+
+  .hero__chip--2 {
+    translate: calc(var(--hx, 0) * -20px) calc(var(--hy, 0) * 24px);
+  }
+
+  .hero__chip--3 {
+    translate: calc(var(--hx, 0) * 26px) calc(var(--hy, 0) * 16px);
+  }
+
+  .hero__blueprint {
+    translate: calc(var(--hx, 0) * 10px) calc(var(--hy, 0) * 8px);
+  }
+}
+
+/* ==========================================================================
+   11. INCLINACIÓN 3D, BOTONES MAGNÉTICOS Y ONDA AL PULSAR
+   ========================================================================== */
+
+/* [data-tilt]: el JavaScript calcula --tilt (eje y ángulo) según el cursor.
+   Se usa la propiedad "rotate" para no chocar con el "transform" de los hover. */
+[data-tilt] {
+  rotate: var(--tilt, 0 0 1 0deg);
+}
+
+/* Botones magnéticos: se acercan un poco al cursor (--bx / --by) */
+.btn:not(.fab) {
+  translate: var(--bx, 0px) var(--by, 0px);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease, translate 0.35s var(--ease-out);
+}
+
+/* Onda que nace en el punto pulsado; queda detrás del texto del botón */
+.ripple {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: currentcolor;
+  opacity: 0.22;
+  pointer-events: none;
+  scale: 0;
+  translate: -50% -50%;
+  animation: ripple 0.75s var(--ease-out) forwards;
+}
+
+@keyframes ripple {
+  to {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+/* ==========================================================================
+   12. CURSOR PERSONALIZADO
+   Anillo que sigue al ratón con inercia y crece sobre enlaces y botones. Es
+   un añadido: el cursor del sistema sigue visible. Solo con puntero preciso.
+   ========================================================================== */
+
+.cursor,
+.cursor__dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: -1.2rem 0 0 -1.2rem;
+  border: 1.5px solid rgb(90 180 255 / 0.9);
+  border-radius: 50%;
+  transition: opacity 0.3s ease, scale 0.35s var(--ease-out), background-color 0.3s ease;
+}
+
+.cursor__dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin: -0.2rem 0 0 -0.2rem;
+  border-radius: 50%;
+  background-color: var(--sky);
+}
+
+.cursor.is-on,
+.cursor__dot.is-on {
+  opacity: 1;
+}
+
+.cursor.is-link {
+  background-color: rgb(90 180 255 / 0.16);
+  scale: 1.7;
+}
+
+.cursor.is-down {
+  scale: 0.8;
+}
+
+.cursor.is-text,
+.cursor__dot.is-text {
+  opacity: 0;
+}
+
+/* ==========================================================================
+   13. NAVEGACIÓN POR PUNTOS
+   Columna de puntos fija a la derecha (solo en pantallas anchas) para saltar
+   entre las secciones de la página; el punto activo sigue al scroll.
+   ========================================================================== */
+
+.dots {
+  position: fixed;
+  top: 50%;
+  right: clamp(0.4rem, 1.1vw, 1.2rem);
+  z-index: 90;
+  display: none;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.5rem 0.2rem;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 999px;
+  background-color: rgb(7 22 58 / 0.62);
+  box-shadow: 0 10px 28px rgb(4 13 36 / 0.3);
+  opacity: 0;
+  pointer-events: none;
+  translate: 12px -50%;
+  transition: opacity 0.4s ease, translate 0.4s var(--ease-out);
+}
+
+.dots.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  translate: 0 -50%;
+}
+
+.dots a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.dots__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 0.55);
+  transition: scale 0.3s var(--ease-out), background-color 0.3s ease;
+}
+
+.dots a:hover .dots__dot {
+  background-color: var(--white);
+  scale: 1.4;
+}
+
+.dots a.is-active .dots__dot {
+  background-color: var(--sky);
+  scale: 1.7;
+}
+
+.dots a:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 1px;
+}
+
+.dots__label {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  max-width: 16rem;
+  margin-right: 0.7rem;
+  padding: 0.4em 0.9em;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: var(--navy-900);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  opacity: 0;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  translate: 8px -50%;
+  transition: opacity 0.25s ease, translate 0.25s var(--ease-out);
+  white-space: nowrap;
+}
+
+.dots a:hover .dots__label,
+.dots a:focus-visible .dots__label {
+  opacity: 1;
+  translate: 0 -50%;
+}
+
+@media (min-width: 1101px) {
+  .dots {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dots {
+    translate: 0 -50%;
+  }
+}

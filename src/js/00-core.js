@@ -51,3 +51,56 @@ function fill(template, values) {
 
 /** Registro de tareas que se ejecutan en cada fotograma de scroll (ver 20-scroll.js). */
 const scrollTasks = [];
+
+/** Pide un fotograma de scroll fuera de un evento de scroll (lo asigna startScrollLoop en 20-scroll.js). */
+let kickScroll = () => {};
+
+/** Ratón u otro puntero preciso (no táctil): solo en él tienen sentido las inclinaciones, el cursor y los imanes. */
+const hasFinePointer = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+/** Ejecuta una tarea cuando el navegador está libre, para no competir con el primer pintado. */
+function whenIdle(task, timeout = 1800) {
+  const run = () => {
+    try {
+      task();
+    } catch (error) {
+      console.error('[LCC] Error en una tarea diferida:', error);
+    }
+  };
+  if ('requestIdleCallback' in window) window.requestIdleCallback(run, { timeout });
+  else window.setTimeout(run, 400);
+}
+
+/** Añade una clase (por defecto is-in) a cada elemento la primera vez que entra en pantalla. */
+function watchIn(elements, { className = 'is-in', margin = '0px 0px -8% 0px' } = {}) {
+  const list = Array.from(elements);
+  if (list.length === 0) return;
+  if (!('IntersectionObserver' in window)) {
+    list.forEach((element) => element.classList.add(className));
+    return;
+  }
+  const pending = new Set(list);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add(className);
+        pending.delete(entry.target);
+        observer.unobserve(entry.target);
+      }
+    },
+    { rootMargin: margin, threshold: 0.01 }
+  );
+  list.forEach((element) => observer.observe(element));
+
+  // Al llegar al final de la página, lo que quede en la ventana aparece aunque esté en el margen inferior excluido
+  scrollTasks.push((y, viewport) => {
+    if (pending.size === 0 || y + viewport < root.scrollHeight - 4) return;
+    for (const element of Array.from(pending)) {
+      if (element.getBoundingClientRect().top >= viewport) continue;
+      element.classList.add(className);
+      pending.delete(element);
+      observer.unobserve(element);
+    }
+  });
+}

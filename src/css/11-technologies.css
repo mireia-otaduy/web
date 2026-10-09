@@ -529,6 +529,22 @@
   }
 }
 
+/* Al aparecer la galería, las fotos se despliegan una tras otra (de estrechas a su ancho) */
+@media (min-width: 1001px) and (prefers-reduced-motion: no-preference) {
+  .gallery.is-in .gallery__item {
+    animation: gallery-unfold 1.3s var(--ease-out) backwards;
+  }
+
+  .gallery.is-in .gallery__item:nth-child(2) { animation-delay: 0.12s; }
+  .gallery.is-in .gallery__item:nth-child(3) { animation-delay: 0.24s; }
+  .gallery.is-in .gallery__item:nth-child(4) { animation-delay: 0.36s; }
+  .gallery.is-in .gallery__item:nth-child(5) { animation-delay: 0.48s; }
+}
+
+@keyframes gallery-unfold {
+  from { flex-grow: 0.001; }
+}
+
 /* ==========================================================================
    6. PIEZAS BAJO PLANO Y VISOR DE IMÁGENES
    ========================================================================== */

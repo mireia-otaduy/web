@@ -8,24 +8,33 @@ function startSite() {
   // Señal para el CSS: el script se ha cargado (anula la salvaguarda de 08-effects.css)
   root.classList.add('js-ready');
 
+  // Módulos que ocultan contenido hasta que aparece: si alguno falla, la página vuelve a su estado estático
+  const contentModules = new Set([initReveal, initEyebrows, initIconDraw, initCascade]);
+
   const modules = [
     initReveal,
     initScroll,
+    initAmbient, // antes de initScrollFx: las formas que inserta se mueven con el scroll
+    initScrollFx,
+    initEyebrows,
+    initIconDraw,
+    initCascade,
     initRail,
     initHeroCanvasWhenIdle,
     initLightbox,
     initNav,
     initSpotlight,
-    initQuoteForm
+    initQuoteForm,
+    initSectionNav,
+    () => whenIdle(initPointerFx) // el cursor, las inclinaciones y los imanes esperan a que el navegador esté libre
   ];
 
   for (const init of modules) {
     try {
       init();
     } catch (error) {
-      console.error(`[LCC] Error al iniciar ${init.name}:`, error);
-      // Si falla la aparición animada, se devuelve la página a su estado estático: el contenido nunca queda oculto
-      if (init === initReveal) root.classList.remove('js');
+      console.error(`[LCC] Error al iniciar ${init.name || 'un módulo'}:`, error);
+      if (contentModules.has(init)) root.classList.remove('js');
     }
   }
 

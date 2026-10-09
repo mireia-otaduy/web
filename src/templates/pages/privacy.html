@@ -5,7 +5,7 @@
   <div class="page-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow">{{t:privacy.hero.eyebrow}}</p>
-    <h1 id="page-title" data-split>{{t:privacy.hero.title}}</h1>
+    <h1 id="page-title" data-split="chars">{{t:privacy.hero.title}}</h1>
     <p class="lead">{{t:privacy.hero.lead}}</p>
   </div>
 </section>
@@ -15,7 +15,7 @@
   <div class="container container--narrow prose">
     <p class="prose__updated">{{t:privacy.updated}}</p>
 
-    <section>
+    <section data-reveal>
       <h2>{{t:privacy.controller.title}}</h2>
       <p>{{t:privacy.controller.intro}}</p>
       <dl class="facts">
@@ -27,7 +27,7 @@
     </section>
 
     {{#repeat 8 from 2}}
-    <section>
+    <section data-reveal>
       <h2>{{t:privacy.sections.{{@i}}.title}}</h2>
       {{t:privacy.sections.{{@i}}.body}}
     </section>

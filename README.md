@@ -18,8 +18,8 @@ src/                       ← LO QUE SE EDITA
   site.json                  datos de la empresa, idiomas, páginas y configuración de Firebase
   i18n/es|en|zh/*.json       todos los textos, un archivo por bloque (home.json, tech.json…)
   templates/                 HTML: layout.html, pages/*.html y partials/*.html
-  css/                       00-09 comunes · 10-14 una hoja por página (todo comentado)
-  js/                        módulos pequeños (reveal, scroll, carril, visor, formulario…)
+  css/                       00-09 comunes (08 y 09 = efectos) · 10-14 una hoja por página (todo comentado)
+  js/                        módulos pequeños (reveal, scroll, efectos, carril, visor, formulario…)
   img/ · fonts/ · icons/     imágenes (+WebP), tipografías autoalojadas e iconos SVG
   static/                    favicon, iconos del manifiesto
 tools/                     ← HERRAMIENTAS (Node, sin dependencias salvo esbuild opcional)
@@ -66,6 +66,34 @@ Requisitos: Node 20 o superior. Sin `npm install` el sitio también se genera (s
 Después de cambiar la marca o el eslogan se pueden regenerar los iconos y las imágenes para redes con
 `node tools/make-assets.mjs` (necesita Playwright). Al añadir fotos, `python3 tools/optimize-images.py`
 crea sus versiones WebP.
+
+### Efectos de movimiento
+
+Los efectos se activan con atributos HTML en las plantillas (`src/templates`), sin tocar JavaScript. Todo es
+mejora progresiva: sin JavaScript o con «reducir movimiento» la página se ve completa y quieta. El verificador
+(`npm run check`) avisa si un atributo tiene un valor que no existe.
+
+| Atributo | Valores | Qué hace |
+|----------|---------|----------|
+| `data-reveal` | *(vacío)* · `left` `right` `zoom` `fade` `blur` · `flip` `tilt` `tilt-r` `pop` `drop` `spin` `skew` `unfold` `swing` `rise` | Un bloque aparece al entrar en pantalla con ese gesto (giro 3D, rebote, caída…). |
+| `data-reveal` en `<figure class="frame">` | `curtain` `curtain-up` `curtain-left` `curtain-right` `iris` `diagonal` `blinds` | La foto se descubre como una cortina, un iris o unas persianas. |
+| `data-split` | *(vacío)* · `chars` `blur` `flip` `slide` `scale` | El titular aparece palabra a palabra (o letra a letra con `chars`). |
+| `data-stagger` | — | Escalona la aparición de los hijos con `data-reveal`. |
+| `data-cascade` | *(vacío)* · `left` `pop` | Los hijos aparecen en cascada, uno tras otro. |
+| `data-count` | número opcional | La cifra cuenta desde cero. |
+| `data-tilt` | — | La tarjeta se inclina en 3D hacia el cursor (solo con ratón). |
+| `data-spot` | — | Un foco de luz sigue al cursor sobre la tarjeta. |
+| `data-parallax` | — | (En `.frame__media`) la foto se desplaza más despacio que la página. |
+| `data-depth` | píxeles (puede ser negativo) | El elemento se mueve a otra velocidad al hacer scroll. |
+| `data-scroll-x` | amplitud en `vw` | (En `.band__track`) la franja de texto gigante se desplaza de lado. |
+| `data-recede` | — | (En una `<section>`) el contenido se encoge y atenúa al salir por arriba. |
+
+Efectos automáticos (no necesitan atributo): rótulos `.eyebrow` que se «descifran» y dibujan su línea, iconos
+que se dibujan, formas decorativas al fondo de las secciones, foco de luz en la portada y secciones oscuras,
+capas de la portada que siguen al cursor, botones magnéticos con onda al pulsar, cursor con anillo, cintas
+que se inclinan con la velocidad del scroll, carrusel 3D de tecnologías y columna de puntos para saltar entre
+secciones. El código está en `src/css/08-effects.css`, `src/css/09-fx.css` y `src/js/10…63`. Para quitar un
+efecto concreto basta con borrar su atributo (o su función de arranque en `src/js/90-init.js`).
 
 ### Añadir un idioma
 
@@ -164,7 +192,10 @@ Añade a `firebase.json` el bloque `"functions": [{ "source": "functions", "code
 móvil: 0 errores de consola, 0 peticiones fallidas, sin desbordamiento horizontal desde 320 px hasta 1920 px,
 axe-core sin violaciones (con y sin animaciones), HTML válido (html-validate), formulario completo (validación,
 envío a Firestore simulado, fallo de red, antispam), selector de idioma, menú móvil, filtros, pasos, visor de
-imágenes, modo sin JavaScript, JavaScript bloqueado y «reducir movimiento».
+imágenes, modo sin JavaScript, JavaScript bloqueado y «reducir movimiento». Los efectos de segunda capa (inclinación
+3D, imanes, onda, cursor, puntos de sección, carrusel 3D, franjas, descifrado de rótulos) tienen su propia prueba,
+también en modo táctil, con «reducir movimiento» y en chino. Lighthouse en móvil: Rendimiento 97–99 en inicio y
+99–100 en el resto; Accesibilidad, Buenas prácticas y SEO 100.
 
 **Lo que NO se ha podido comprobar** (el entorno de desarrollo solo dispone de Chromium y no tiene acceso a Google):
 Firefox y Safari (el código usa funciones estándar —`:has()`, `<dialog>`, `popover`, `Intl.Segmenter`— compatibles

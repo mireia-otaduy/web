@@ -3,10 +3,11 @@
    Un único listener (con requestAnimationFrame) reparte el scroll entre tareas:
      - barra de lectura y sombra de la cabecera
      - aparición del botón flotante
-     - desvanecimiento de la portada
+     - desvanecimiento de la portada y de las cabeceras de página
      - frase del manifiesto que se ilumina palabra a palabra
-     - parallax de las fotos
-   Las demás partes (carril, visor…) registran sus propias tareas con scrollTasks.
+   El parallax, las formas con profundidad, las franjas de texto y el resto de efectos
+   de la segunda capa viven en 61-fx-scroll.js; el carril, el visor… registran sus
+   propias tareas con scrollTasks.
    ========================================================================== */
 
 function initScroll() {
@@ -14,7 +15,8 @@ function initScroll() {
   const header = $('.site-header');
   const fab = $('.fab');
   const footer = $('.site-footer');
-  const hero = $('.hero');
+  const heroes = $$('.hero, .page-hero');
+  const progressBar = $('.scroll-progress');
 
   // Manifiesto: se dividen las palabras y se iluminan según el avance
   const manifesto = reduced ? null : $('[data-manifesto]');
@@ -47,22 +49,11 @@ function initScroll() {
     }
   }
 
-  // Parallax: solo se calcula para las fotos visibles
-  const parallax = new Set();
-  if (!reduced && 'IntersectionObserver' in window) {
-    const watcher = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) parallax.add(entry.target);
-        else parallax.delete(entry.target);
-      }
-    });
-    $$('[data-parallax]').forEach((element) => watcher.observe(element));
-  }
-
   scrollTasks.push((y, viewport) => {
     // Barra de lectura
     const max = root.scrollHeight - viewport;
-    root.style.setProperty('--progress', max > 0 ? clamp(y / max, 0, 1).toFixed(4) : '0');
+    // Se escribe en la propia barra (no en <html>) para no invalidar los estilos de toda la página en cada fotograma
+    if (progressBar) progressBar.style.setProperty('--progress', max > 0 ? clamp(y / max, 0, 1).toFixed(4) : '0');
 
     if (header) header.classList.toggle('is-scrolled', y > 8);
     // El botón flotante aparece al bajar un poco y se retira al llegar al pie (para no tapar los enlaces legales)
@@ -71,8 +62,9 @@ function initScroll() {
       fab.classList.toggle('is-visible', y > viewport * 0.35 && !footerInView);
     }
 
-    if (hero && !reduced) {
-      hero.style.setProperty('--hero-p', clamp(y / (viewport * 0.85), 0, 1).toFixed(3));
+    if (!reduced && y < viewport * 1.2) {
+      const progress = clamp(y / (viewport * 0.85), 0, 1).toFixed(3);
+      heroes.forEach((hero) => hero.style.setProperty('--hero-p', progress));
     }
 
     if (manifesto && words.length) {
@@ -81,12 +73,6 @@ function initScroll() {
       const lit = Math.round(progress * words.length);
       words.forEach((word, index) => word.classList.toggle('is-on', index < lit));
     }
-
-    parallax.forEach((element) => {
-      const rect = element.getBoundingClientRect();
-      const offset = (rect.top + rect.height / 2 - viewport / 2) / (viewport / 2 + rect.height / 2);
-      element.style.setProperty('--p', clamp(offset, -1, 1).toFixed(3));
-    });
   });
 }
 
@@ -106,6 +92,7 @@ function startScrollLoop() {
     queued = true;
     requestAnimationFrame(run);
   };
+  kickScroll = request;
 
   window.addEventListener('scroll', request, { passive: true });
   window.addEventListener('resize', request, { passive: true });

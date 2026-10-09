@@ -32,7 +32,7 @@
 
     <div class="hero__visual">
       <div class="hero__ring" aria-hidden="true"></div>
-      <div class="hero__photo">{{img:portada.jpg|alt=home.hero.photoAlt|eager|sizes=(max-width: 1000px) 80vw, 500px}}</div>
+      <div class="hero__photo" data-tilt>{{img:portada.jpg|alt=home.hero.photoAlt|eager|sizes=(max-width: 1000px) 80vw, 500px}}</div>
       <p class="hero__chip hero__chip--1" aria-hidden="true"><strong>{{t:home.hero.chips.1.value}}</strong> {{t:home.hero.chips.1.label}}</p>
       <p class="hero__chip hero__chip--2" aria-hidden="true"><strong>{{t:home.hero.chips.2.value}}</strong> {{t:home.hero.chips.2.label}}</p>
       <p class="hero__chip hero__chip--3" aria-hidden="true"><strong>{{t:home.hero.chips.3.value}}</strong> {{t:home.hero.chips.3.label}}</p>
@@ -78,31 +78,31 @@
      4. QUIÉNES SOMOS
      Rejilla "bento" con texto, foto y cifras animadas, más las tres ventajas.
      ====================================================================== -->
-<section class="section" id="about" aria-labelledby="about-title">
+<section class="section" id="about" aria-labelledby="about-title" data-recede>
   <div class="container">
     <p class="eyebrow">{{t:home.about.eyebrow}}</p>
-    <h2 id="about-title" data-split>{{t:home.about.title}}</h2>
+    <h2 id="about-title" data-split="blur">{{t:home.about.title}}</h2>
 
     <div class="bento">
-      <div class="bento__text" data-reveal><p>{{t:home.about.text}}</p></div>
+      <div class="bento__text" data-reveal="blur"><p>{{t:home.about.text}}</p></div>
 
-      <figure class="bento__photo frame" data-reveal="curtain">
+      <figure class="bento__photo frame" data-reveal="curtain-right">
         <div class="frame__media" data-parallax>{{img:fabrica-01.jpg|alt=home.about.photoAlt}}</div>
       </figure>
 
-      <div class="stat stat--navy" data-reveal data-spot>
+      <div class="stat stat--navy" data-reveal="flip" data-spot data-tilt>
         <span class="stat__value" data-count data-plain>{{t:home.about.stats.1.value}}</span>
         <p>{{t:home.about.stats.1.label}}</p>
       </div>
-      <div class="stat stat--soft" data-reveal data-spot>
+      <div class="stat stat--soft" data-reveal="pop" data-spot data-tilt>
         <span class="stat__value" data-count>{{t:home.about.stats.2.value}}</span>
         <p>{{t:home.about.stats.2.label}}</p>
       </div>
-      <div class="stat stat--sky" data-reveal data-spot>
+      <div class="stat stat--sky" data-reveal="pop" data-spot data-tilt>
         <span class="stat__value" data-count>{{t:home.about.stats.3.value}}</span>
         <p>{{t:home.about.stats.3.label}}</p>
       </div>
-      <div class="stat stat--deep" data-reveal data-spot>
+      <div class="stat stat--deep" data-reveal="flip" data-spot data-tilt>
         <span class="stat__value" data-count>{{t:home.about.stats.4.value}}</span>
         <p>{{t:home.about.stats.4.label}}</p>
       </div>
@@ -110,7 +110,7 @@
 
     <ul class="grid grid--3 benefits" data-stagger>
       {{#repeat 3}}
-      <li class="card benefit" data-reveal data-spot>
+      <li class="card benefit" data-reveal="flip" data-spot data-tilt>
         <span class="benefit__icon">{{icon:benefit-{{@i}}}}</span>
         <span class="benefit__num" aria-hidden="true">0{{@i}}</span>
         <h3>{{t:benefits.{{@i}}.title}}</h3>
@@ -130,7 +130,7 @@
   <div class="rail__sticky">
     <div class="rail__intro">
       <p class="eyebrow">{{t:home.rail.eyebrow}}</p>
-      <h2 id="rail-title" data-split>{{t:home.rail.title}}</h2>
+      <h2 id="rail-title" data-split="slide">{{t:home.rail.title}}</h2>
       <p class="lead">{{t:home.rail.lead}}</p>
       <a class="btn" href="{{link:tech}}"><span>{{t:home.rail.cta}}</span>{{icon:arrow-right|class=btn__arrow}}</a>
     </div>
@@ -161,15 +161,15 @@
      6. SECTORES
      Mosaico de ocho sectores en tonos de azul.
      ====================================================================== -->
-<section class="section section--soft" id="sectors" aria-labelledby="sectors-title">
+<section class="section section--soft" id="sectors" aria-labelledby="sectors-title" data-recede>
   <div class="container">
     <p class="eyebrow">{{t:home.sectors.eyebrow}}</p>
-    <h2 id="sectors-title" data-split>{{t:home.sectors.title}}</h2>
+    <h2 id="sectors-title" data-split="flip">{{t:home.sectors.title}}</h2>
     <p class="lead" data-reveal>{{t:home.sectors.lead}}</p>
 
     <ul class="sectors" data-stagger>
       {{#repeat 8}}
-      <li class="sector sector--{{@i}}" data-reveal="zoom">
+      <li class="sector sector--{{@i}}" data-reveal="pop" data-tilt>
         {{icon:sector-{{@i}}|class=sector__icon}}
         <h3>{{t:sectors.{{@i}}}}</h3>
       </li>
@@ -182,10 +182,10 @@
      7. RESUMEN DEL PROCESO
      Los ocho pasos de la metodología de trabajo.
      ====================================================================== -->
-<section class="section" id="process-summary" aria-labelledby="process-title">
+<section class="section" id="process-summary" aria-labelledby="process-title" data-recede>
   <div class="container">
     <p class="eyebrow">{{t:home.process.eyebrow}}</p>
-    <h2 id="process-title" data-split>{{t:home.process.title}}</h2>
+    <h2 id="process-title" data-split="scale">{{t:home.process.title}}</h2>
 
     <ol class="steps-mini" data-stagger>
       {{#repeat 8}}
@@ -203,17 +203,26 @@
 </section>
 
 <!-- ======================================================================
-     8. CLIENTES
+     8. FRANJA DE TEXTO GIGANTE
+     Los nombres de las ocho tecnologías, solo con contorno, se desplazan de lado
+     al hacer scroll (decorativo; src/js/61-fx-scroll.js).
+     ====================================================================== -->
+<div class="band" aria-hidden="true">
+  <div class="band__track" data-scroll-x="26">{{#repeat 8}}<span data-text="{{a:tech.items.{{@i}}.name}}"></span>{{/repeat}}</div>
+</div>
+
+<!-- ======================================================================
+     9. CLIENTES
      Dos cintas de logotipos en sentidos opuestos. El segundo grupo de cada cinta
      es una copia decorativa para que el bucle no tenga saltos.
      ====================================================================== -->
 <section class="section section--soft clients" id="clients" aria-labelledby="clients-title">
   <div class="container">
     <p class="eyebrow">{{t:home.clients.eyebrow}}</p>
-    <h2 id="clients-title" data-split>{{t:home.clients.title}}</h2>
+    <h2 id="clients-title" data-split="blur">{{t:home.clients.title}}</h2>
   </div>
 
-  <div class="logo-rows" data-reveal>
+  <div class="logo-rows" data-reveal="unfold">
     <div class="logo-row">
       <div class="logo-row__track">
         <div class="logo-row__group">{{#repeat 11}}{{img:cliente-{{@i2}}.png|alts=clients.{{@i}}}}{{/repeat}}</div>

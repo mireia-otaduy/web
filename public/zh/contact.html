@@ -39,12 +39,12 @@
   <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="../assets/css/site.7882777b44.css">
+  <link rel="stylesheet" href="../assets/css/site.7f2794884d.css">
   <link rel="stylesheet" href="../assets/css/page-contact.0c0147b1c1.css">
 
   <!-- Marca la página como "con JavaScript" antes del primer pintado (evita parpadeos en las animaciones) -->
   <script>document.documentElement.classList.add('js')</script>
-  <script src="../assets/js/site.c66b36f0cd.js" defer></script>
+  <script src="../assets/js/site.c2aae381d5.js" defer></script>
 
   <!-- Datos estructurados para buscadores -->
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lcc-manufacturing.web.app/#organization","name":"LCC Manufacturing","legalName":"LCC Manufacturing S.L.","url":"https://lcc-manufacturing.web.app/","logo":"https://lcc-manufacturing.web.app/assets/img/logo-lcc.png","foundingDate":"2008","email":"info@lcc-manufacturing.com","telephone":"+34946510079","address":{"@type":"PostalAddress","streetAddress":"Parque Empresarial Boroa 19, Pabellón 4","postalCode":"48340","addressLocality":"Amorebieta-Etxano","addressRegion":"Bizkaia","addressCountry":"ES"}},{"@type":"WebSite","@id":"https://lcc-manufacturing.web.app/#website","url":"https://lcc-manufacturing.web.app/","name":"LCC Manufacturing","publisher":{"@id":"https://lcc-manufacturing.web.app/#organization"},"inLanguage":["es","en","zh-CN"]},{"@type":"ContactPage","@id":"https://lcc-manufacturing.web.app/zh/contact.html#webpage","url":"https://lcc-manufacturing.web.app/zh/contact.html","name":"获取报价 | LCC Manufacturing","description":"请告诉我们您的项目。LCC Manufacturing，Parque Empresarial Boroa 19，西班牙比斯开省阿莫雷别塔-埃查诺。电话 +34 94 651 00 79。","inLanguage":"zh-CN","isPartOf":{"@id":"https://lcc-manufacturing.web.app/#website"},"about":{"@id":"https://lcc-manufacturing.web.app/#organization"}}]}</script>
@@ -91,7 +91,7 @@
   <div class="page-hero__glow" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow">联系我们</p>
-    <h1 id="page-title" data-split>告诉我们您的项目</h1>
+    <h1 id="page-title" data-split="chars">告诉我们您的项目</h1>
     <p class="lead">我们将尽力尽快回复您。</p>
     <a class="big-mail" href="mailto:info@lcc-manufacturing.com">info@lcc-manufacturing.com</a>
   </div>
@@ -116,7 +116,7 @@
           <div class="progress-bar"><span data-progress-bar></span></div>
         </div>
 
-        <fieldset class="fieldset">
+        <fieldset class="fieldset" data-reveal="left">
           <legend>您的信息</legend>
           <div class="fields">
             <div class="field">
@@ -142,7 +142,7 @@
           </div>
         </fieldset>
 
-        <fieldset class="fieldset">
+        <fieldset class="fieldset" data-reveal="left">
           <legend>您的项目</legend>
           <div class="fields">
             <div class="field field--full field--fixed">
@@ -163,7 +163,7 @@
             <div class="field--full">
               <fieldset class="choice-group">
                 <legend>项目类型</legend>
-                <div class="choice-cards">
+                <div class="choice-cards" data-cascade="pop">
                   <div class="choice-card">
                     <input type="radio" id="f-type-prototype" name="projectType" value="prototype">
                     <label for="f-type-prototype"><strong>样件</strong><span>批量生产前验证零件</span></label>
@@ -198,9 +198,9 @@
           </div>
         </fieldset>
 
-        <fieldset class="fieldset">
+        <fieldset class="fieldset" data-reveal="left">
           <legend>附加服务</legend>
-          <div class="chips">
+          <div class="chips" data-cascade="pop">
             <div class="chip"><input type="checkbox" id="f-srv-approval" name="services" value="approval"><label for="f-srv-approval">认可</label></div>
             <div class="chip"><input type="checkbox" id="f-srv-tooling" name="services" value="tooling"><label for="f-srv-tooling">工装</label></div>
             <div class="chip"><input type="checkbox" id="f-srv-warehouse" name="services" value="warehouse"><label for="f-srv-warehouse">调节仓库</label></div>
@@ -242,7 +242,7 @@
       </div>
     </div>
 
-    <aside class="contact-card" data-reveal data-spot aria-labelledby="contact-card-title">
+    <aside class="contact-card" data-reveal="right" data-spot data-tilt aria-labelledby="contact-card-title">
       <p class="contact-card__status"><span class="pulse-dot" aria-hidden="true"></span>我们将尽力尽快回复您</p>
       <h2 id="contact-card-title">联系方式</h2>
       <address>
@@ -259,39 +259,39 @@
      3. PREGUNTAS FRECUENTES
      <details name="faq"> hace que solo una respuesta esté abierta a la vez.
      ====================================================================== -->
-<section class="section" id="faq" aria-labelledby="faq-title">
+<section class="section" id="faq" aria-labelledby="faq-title" data-recede>
   <div class="container container--narrow">
     <p class="eyebrow">常见问题</p>
-    <h2 id="faq-title" data-split>常见问题解答</h2>
+    <h2 id="faq-title" data-split="blur">常见问题解答</h2>
 
     <div class="faq" data-stagger>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>如何申请报价？</summary>
         <div class="faq__answer"><p>填写本页的表格，或将图纸或零件说明发送至 info@lcc-manufacturing.com。我们将尽力尽快回复您。</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>你们做样件吗？</summary>
         <div class="faq__answer"><p>做。制造样件是我们工作方法中的一个阶段。</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>零件在哪里生产？</summary>
         <div class="faq__answer"><p>工程和项目管理在西班牙完成，批量生产在中国进行，调节仓库位于阿莫雷别塔和巴塞罗那。</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>你们制造注塑模具吗？</summary>
         <div class="faq__answer"><p>制造。我们拥有专注于注塑模具和样件的工程团队，并与一家拥有 2,000 m² 场地的模具厂合作。</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>你们服务哪些行业？</summary>
         <div class="faq__answer"><p>汽车、电气、家用电器、道路安全、装备制造、可再生能源、农业和医疗行业。</p></div>
       </details>
 
-      <details class="faq__item" name="faq" data-reveal>
+      <details class="faq__item" name="faq" data-reveal="skew">
         <summary>你们会外协某些工艺吗？</summary>
         <div class="faq__answer"><p>必要时会。我们拥有专业人员，并对其他工艺（如塑料或铝件注塑）的供应商有广泛了解。</p></div>
       </details>
@@ -305,14 +305,14 @@
   </main>
 
   <!-- Pie de página: marca, navegación, datos de contacto y avisos legales -->
-<footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div class="site-footer__brand">
+<footer class="site-footer" data-depth="60">
+  <div class="container site-footer__grid" data-stagger>
+    <div class="site-footer__brand" data-reveal="left">
       <picture><source type="image/webp" srcset="../assets/img/logo-lcc-blanco.webp"><img src="../assets/img/logo-lcc-blanco.png" alt="LCC Manufacturing" width="249" height="98" class="site-footer__logo" loading="lazy" decoding="async"></picture>
       <p>项目开发与工业产品制造。</p>
     </div>
 
-    <nav class="site-footer__col" aria-label="菜单">
+    <nav class="site-footer__col" data-reveal aria-label="菜单">
       <h2 class="site-footer__title">菜单</h2>
       <ul>
         <li><a href="index.html">首页</a></li>
@@ -322,7 +322,7 @@
       </ul>
     </nav>
 
-    <div class="site-footer__col">
+    <div class="site-footer__col" data-reveal>
       <h2 class="site-footer__title">联系方式</h2>
       <address>
         <p>Parque Empresarial Boroa 19, Pabellón 4<br>48340 Amorebieta-Etxano (Bizkaia)</p>
@@ -332,7 +332,7 @@
     </div>
   </div>
 
-  <div class="container site-footer__legal">
+  <div class="container site-footer__legal" data-reveal="fade">
     <p>© 2026 LCC Manufacturing S.L. · 保留所有权利。</p>
     <ul>
       <li><a href="legal-notice.html">法律声明</a></li>
@@ -342,6 +342,6 @@
 </footer>
 
   <!-- Textos para el JavaScript (formulario, visor de imágenes…) en el idioma de la página -->
-  <script type="application/json" id="i18n-data">{"form":{"errors":{"required":"此项为必填。","email":"请输入有效的电子邮箱地址。","message":"请再多介绍一些您的项目（至少 10 个字符）。","pieces":"请输入 1 至 100,000,000 之间的整数。","phone":"请输入有效的电话号码（数字、空格以及 + - ( ) 符号）。","privacy":"必须接受隐私政策才能提交申请。"},"invalid":"请检查标红的字段。","sending":"正在提交…","sendingStatus":"正在提交您的申请…","failed":"无法提交您的申请。请重试，或发送邮件至 {email}。","mailOpened":"已打开您的邮件程序，并准备好申请内容。如未打开，请发送邮件至 {email}。","mailSubject":"网站报价申请：{company}"},"lightbox":{"label":"图片查看器","close":"关闭","prev":"上一个零件","next":"下一个零件","of":"/"}}</script>
+  <script type="application/json" id="i18n-data">{"form":{"errors":{"required":"此项为必填。","email":"请输入有效的电子邮箱地址。","message":"请再多介绍一些您的项目（至少 10 个字符）。","pieces":"请输入 1 至 100,000,000 之间的整数。","phone":"请输入有效的电话号码（数字、空格以及 + - ( ) 符号）。","privacy":"必须接受隐私政策才能提交申请。"},"invalid":"请检查标红的字段。","sending":"正在提交…","sendingStatus":"正在提交您的申请…","failed":"无法提交您的申请。请重试，或发送邮件至 {email}。","mailOpened":"已打开您的邮件程序，并准备好申请内容。如未打开，请发送邮件至 {email}。","mailSubject":"网站报价申请：{company}"},"lightbox":{"label":"图片查看器","close":"关闭","prev":"上一个零件","next":"下一个零件","of":"/"},"sectionNav":"页面章节"}</script>
 </body>
 </html>

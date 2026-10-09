@@ -75,3 +75,10 @@
   initial-value: 0deg;
   inherits: false;
 }
+
+/* Persianas: porcentaje de cada lama abierta (efecto de aparición "blinds", ver 09-fx.css) */
+@property --blind {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
